@@ -1,0 +1,13 @@
+<div>
+	<% @avaluo_rurales.each do |avaluo| %>
+		<li>
+			<div>
+				<%= avaluo.first_name %> <%= link_to "Editar", edit_avaluo_rural_path(avaluo) %>
+				<%= link_to "Delete", avaluo_rural_path(avaluo), method: :delete, 
+				data: { confirm: 'Estas seguro?'} %>
+				<%= link_to "Show", avaluo_rural_path(avaluo) %>
+			</div>
+		</li>
+	
+	<% end %>
+</div>

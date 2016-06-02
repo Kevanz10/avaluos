@@ -1,0 +1,97 @@
+<div class='container'>
+	<%= form_for @avaluo_rural do |f| %>
+
+		<div class=form-group>
+			<%= f.label :id_type,"Tipo de identificación: " %><br>
+			<%= f.select :id_type, AvaluoRural::TYPE.collect {|p| [p]}, {include_blank: true}%>
+		</div>
+	  
+	 	<div class=form-group>
+	 		<%= f.label :document_number, 'Número de documento: ' %>
+			<%= f.text_field :document_number, class: 'form-control' %>
+	 	</div>
+	  
+	  <div class=form-group>
+		  <%= f.label :first_name,"Primer Nombre: " %><br>
+		  <%= f.text_field :first_name,class: 'form-control' %>
+	  </div>
+
+	  <div class=form-group>
+		  <%= f.label :second_name,"Segundo Nombre: " %><br>
+		  <%= f.text_field :second_name,class: 'form-control' %>
+	  </div>
+	 
+	  <div class=form-group>
+	  	<%= f.label :last_name,"Primer Apellido: " %><br>
+	  	<%= f.text_field :last_name, class: 'form-control' %>
+	  </div>
+	  	
+	  <div class=form-group>
+	  	<%= f.label :s_surname, "Segundo Apellido: " %><br>
+	  	<%= f.text_field :s_surname, class: 'form-control' %>
+	  </div>
+
+	  <div class=form-group>
+	  	<%= f.label :cellphone, "Celular: " %><br>
+	  	<%= f.text_field :cellphone, class: 'form-control' %>
+	  </div>
+
+	  <div class=form-group>
+	  	<%= f.label :email, "Correo Electrónico: " %><br>
+	  	<%= f.text_field :email, class: 'form-control' %>
+	  </div>
+
+	  <div class=form-group>
+	  	<%= f.label :claimant_address, "Dirección del solicitante:" %><br>
+	  	<%= f.label :avaluo_rural['tvia'], "Tipo de via" %><br>
+	  	<%= f.select :id_type, AvaluoRural::TVIA.collect {|p| [p]}, {include_blank: true}%>
+
+	  	<div>
+	  		<%= f.label :avaluo_rural['via'], "Via:" %>
+				<%= text_field_tag "avaluo_rural[tvia]" ,'', class: 'form-control' %>
+	  	</div>
+			
+			<div>
+				<%= f.label :avaluo_rural['compvia'], "Complemento Via:" %>
+				<%= text_field_tag "avaluo_rural[compvia]" ,'', class: 'form-control' %>
+			</div>
+
+	  	<div>
+	  		<%= f.label :avaluo_rural['num'], "Numero:" %>
+	  		<%= text_field_tag "avaluo_rural[num]" ,'', class: 'form-control' %>
+	  	</div>
+
+	  	<div>
+	  		<%= f.label :avaluo_rural['compnum'], "	Complemento Numero:" %>
+	  		<%= text_field_tag "avaluo_rural[compnum]" ,'', class: 'form-control' %>
+	  	</div>
+
+	  	<div>
+	  		<%= f.label :avaluo_rural['placa'], "Placa" %>
+	  		<%= text_field_tag "avaluo_rural[placa]" ,'', class: 'form-control' %>
+	  	</div>
+
+	  	<div>
+	  		<%= f.label :avaluo_rural['adicional'], "Adicional" %>
+	  		<%= text_field_tag "avaluo_rural[adicional]" ,'', class: 'form-control' %>
+	  	</div>
+	  		  
+	  </div>
+
+	  <div class=form-group>
+	  	<%= f.label :claimant_department, "Departamento del solicitante:: " %><br>
+	  	<%= f.select :claimant_department, AvaluoRural::DEPARTMENT.collect {|p| [p]}, {include_blank: true} %>
+	  </div>
+
+	  <div class=form-group>
+	  	<%= f.label :claimant_city, "Ciudad del solicitante: " %><br>
+			<%= f.select :claimant_department, AvaluoRural::CITIES.collect {|p| [p]}, {include_blank: true} %>
+	  </div>
+
+
+	 	<div class=form-group>
+	  	<%= f.submit%>
+	  </div>
+
+  <% end %>
+</div>
