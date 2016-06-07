@@ -28,7 +28,7 @@ class AvaluoRuralsController < ApplicationController
     								 complementvia: params[:compvia], complementnum: params[:compnum], 
     								 placa: params[:placa], adicional: params[:adicional]}
 
-    @avaluo_rural.address = addres_hash
+    @avaluo_rural.claimant_address = address_hash
 
     respond_to do |format|
       if @avaluo_rural.save
@@ -49,7 +49,7 @@ class AvaluoRuralsController < ApplicationController
 
   def towers_params
 		params.require(:avaluo_rural).permit(:id_type, :document_number, :first_name,
-									 :last_name, :s_surname, :cellphone, :email, :claimant_address,
-									 :claimant_department, :claimant_city )
+									 :last_name, :s_surname, :cellphone, :email, :claimant_department, 
+                   :claimant_city, :second_name, :claimant_address => [])
   end
 end

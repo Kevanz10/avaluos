@@ -24,7 +24,7 @@ class TitulationsController < ApplicationController
   def create
     @titulation= Titulation.new(titulation_params)
 
-    address_hash = { tipo_via: params[:tvia], via: params[:via], numero: params[:num],
+    address_hash2 = { tipo_via: params[:tvia], via: params[:via], numero: params[:num],
     								 complementvia: params[:compvia], complementnum: params[:compnum], 
     								 placa: params[:placa], adicional: params[:adicional]}
 
@@ -48,8 +48,8 @@ class TitulationsController < ApplicationController
   end
 
   def titulation_params
-		params.require(:avaluo_rural).permit(:id_type, :document_number, :first_name,
-									 :last_name, :s_surname, :cellphone, :email, :claimant_address,
-									 :claimant_department, :claimant_city )
+		params.require(:avaluo_rural).permit(:id_type, :document_number, :first_name, 
+                  :claimant_department, :last_name, :s_surname, :cellphone, :email, 
+                  :claimant_address, :claimant_city)
   end
 end

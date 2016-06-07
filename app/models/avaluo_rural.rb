@@ -1,4 +1,12 @@
 class AvaluoRural < ActiveRecord::Base
+	has_one :titulation
+	accepts_nested_attributes_for :titulation
+
+
+	def address
+		ad = 
+		
+	end
 	
 	TYPE= ['C.C.', 'Pasaporte']
 
