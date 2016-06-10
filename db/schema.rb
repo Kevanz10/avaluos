@@ -11,10 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160605084137) do
+ActiveRecord::Schema.define(version: 20160610073316) do
 
   create_table "avaluo_rurals", force: :cascade do |t|
-    t.string   "id_type"
     t.string   "document_number"
     t.string   "first_name"
     t.string   "last_name"
@@ -29,6 +28,7 @@ ActiveRecord::Schema.define(version: 20160605084137) do
     t.string   "second_name"
     t.float    "latitude"
     t.float    "longitude"
+    t.string   "cctype"
   end
 
   create_table "titulations", force: :cascade do |t|
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20160605084137) do
     t.string   "barrio"
     t.string   "conjunto"
     t.string   "sector"
-    t.string   "dirinmue"
+    t.string   "claimant_address"
     t.string   "matrinmo"
     t.string   "numescritura"
     t.string   "departescritura"
@@ -45,8 +45,9 @@ ActiveRecord::Schema.define(version: 20160605084137) do
     t.string   "numnotaria"
     t.string   "ciuescritura"
     t.string   "fecha"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "avaluo_rural_id"
   end
 
 end

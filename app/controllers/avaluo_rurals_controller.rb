@@ -18,17 +18,11 @@ class AvaluoRuralsController < ApplicationController
   def destroy
    	@avaluo_rural = AvaluoRural.find(params[:id])
    	@avaluo_rural.destroy
-   	redirect_to students_path
+   	redirect_to avaluo_rurals_path
   end
 
   def create
     @avaluo_rural= AvaluoRural.new(towers_params)
-
-    address_hash = { tipo_via: params[:tvia], via: params[:via], numero: params[:num],
-    								 complementvia: params[:compvia], complementnum: params[:compnum], 
-    								 placa: params[:placa], adicional: params[:adicional]}
-
-    @avaluo_rural.claimant_address = address_hash
 
     respond_to do |format|
       if @avaluo_rural.save
@@ -47,9 +41,17 @@ class AvaluoRuralsController < ApplicationController
     redirect_to avaluo_rurals_path
   end
 
-  def towers_params
-		params.require(:avaluo_rural).permit(:id_type, :document_number, :first_name,
-									 :last_name, :s_surname, :cellphone, :email, :claimant_department, 
-                   :claimant_city, :second_name, :claimant_address => [])
-  end
+  private
+
+    def towers_params
+  		params.require(:avaluo_rural).permit(:document_number, :first_name,
+  									 :last_name, :s_surname, :cellphone, :email, 
+                     :claimant_department, :claimant_city, :second_name,
+                     :cctype, :claimant_address, :tvia, :via, :compvia, 
+                     :num, :compnum, :placa, :adicional, 
+                     titulation_attributes: [:id,  :claimant_address, :depart,:municipio, :avaluo_rural_id, 
+                                            :tvia, :via, :compvia, 
+                                            :num, :compnum, :placa, :adicional])
+    end
 end
+
