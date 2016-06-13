@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160610073316) do
+ActiveRecord::Schema.define(version: 20160611093023) do
 
   create_table "avaluo_rurals", force: :cascade do |t|
     t.string   "document_number"
@@ -48,6 +48,8 @@ ActiveRecord::Schema.define(version: 20160610073316) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.integer  "avaluo_rural_id"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
 end
