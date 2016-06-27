@@ -1,6 +1,31 @@
 SECTOR: ['Urbano', 'Rural']
 
+ESTADO: ['Nueva', 'Usada']
+
+PISOS: ['Reforzado', 'No Reforzado']
+
 TYPE: ['C.C.', 'Pasaporte']
+ 
+ESTRUCTURA: ['Muro de carga', 'Mampostería estructural', 'Tradicional', 'Metalica', 
+            'Industrializada', 'Otros']
+
+SISMO: ['No disponible', 'Reparados', 'No Reparados']
+
+CUBIERTA: ['Placa concreto imp', 'Teja Plástica', 'Teja de Barro', 'Teja Fibrocemento',            'Teja metálica', 'Otros']
+
+FACHADA: ['Ladrillo a la vista', 'Pañete y pintura', 'Graniplast', 'Flotante', 
+        'Concreto Texturado', 'Otros']
+
+TFACHADA: ['0 a 3 metros', '3 a 6 metros', 'Mayor a 3 metros']
+
+REFORZADA: ['Trabes coladas en sitio', 'Trabes Prefabricadas', 'No tiene trabes', 
+            'No disponible']
+
+Daños: ['No disponible', 'Con daños previos', 'Sin daños previos']
+
+MATERIAL: ['Abode bahareque o tapia', 'Madera', 'Mixtas u otros', 'Mampostería', 
+        'Concreto Reforzado', 'Acero']
+
 
 TVIA: ['Calle', 'Carrera', 'Diagonal', 'Transversal', 'Avenida', 'Avenida Calle', 
       'Avenida Carrera', 'Avenida autopista', 'Carretera',  'Circular', 'Camino']

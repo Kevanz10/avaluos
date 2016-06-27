@@ -64,7 +64,7 @@
 			</div>
 
 			<div class= 'col-md-4'>
-				<%= titu.label :Titulation['adicional'], "Adicional" %>
+				<%= titu.label :titulation['adicional'], "Adicional" %>
 				<%= text_field_tag "avaluo_rural[titulation_attributes][adicional]" , @avaluo_rural.titulation.claimant_address.nil? ? "" : @avaluo_rural.titulation.claimant_address['adicional'] , { class: 
 				  		'form-control' } %>
 			</div>	   
@@ -113,4 +113,16 @@
  			<%= titu.label :fecha, "Fecha de escritura:" %>
 	 		<%= titu.text_field :fecha, class: 'form-control' %>
  		</div>
+ 		<br>
+ 		<div class="row">
+ 			<div class="col-md-12">
+	 			<%= titu.hidden_field :latitude,  id: 'latitude' %>
+	 			<%= titu.hidden_field :longitude , id: 'longitude' %>
+ 			</div>
+ 		</div>
+
+		<div class="row">
+			<%=image_tag "https://maps.googleapis.com/maps/api/staticmap?center=6.231733699999999,-75.6080606&zoom=16&size=640x400&path=weight:3%7Ccolor:blue%7Cenc:{coaHnetiVjM??_SkM??~R&key=AIzaSyAG25Xm2Cl8lAq10P9H_ROAPOBC0DtTTcs"%> 
+		</div>
 </div>
+	

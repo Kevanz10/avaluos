@@ -49,9 +49,19 @@ class AvaluoRuralsController < ApplicationController
                      :claimant_department, :claimant_city, :second_name,
                      :cctype, :claimant_address, :tvia, :via, :compvia, 
                      :num, :compnum, :placa, :adicional, 
-                     titulation_attributes: [:id,  :claimant_address, :depart,:municipio, :avaluo_rural_id, 
-                                            :tvia, :via, :compvia, 
-                                            :num, :compnum, :placa, :adicional])
+                     titulation_attributes: [:id,  :claimant_address, :conjunto, :sector, :depart,
+                                             :municipio, :avaluo_rural_id, 
+                                            :tvia, :via, :compvia, :num, :compnum, 
+                                            :placa, :adicional, :barrio],
+                     construction_attributes: [:id,  :estado, :npisos, :sotanos, :años, :vetustez, 
+                                              :pisos, :estructura, :sismoresistente, :cubierta,
+                                              :fachada, :tfachada, :reforzada, :daños, :material,
+                                              :iluminar, :testructura, :ventilar, :planta,
+                                              :altura,:habitacion, :ehabitacion, :shabitacion, :closet,
+                                              :sala, :comedor, :pribanos, :socibanos, :serbanos, :cocina,
+                                              :estudio, :balcon, :terraza, :patiointer, :jardin, :zonaropa,
+                                              :zonaverde, :locales, :oficina, :bodega, :calidad, :tgaraje,
+                                              :observacion, :privado, :exclusivo])
     end
 end
 

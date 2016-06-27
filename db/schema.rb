@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160611093023) do
+ActiveRecord::Schema.define(version: 20160627011018) do
 
   create_table "avaluo_rurals", force: :cascade do |t|
     t.string   "document_number"
@@ -29,6 +29,56 @@ ActiveRecord::Schema.define(version: 20160611093023) do
     t.float    "latitude"
     t.float    "longitude"
     t.string   "cctype"
+  end
+
+  create_table "constructions", force: :cascade do |t|
+    t.text     "estado"
+    t.integer  "npisos"
+    t.integer  "sotanos"
+    t.float    "años"
+    t.string   "vetustez"
+    t.string   "pisos"
+    t.string   "estructura"
+    t.string   "sismoresistente"
+    t.string   "cubierta"
+    t.string   "fachada"
+    t.string   "tfachada"
+    t.string   "reforzada"
+    t.string   "daños"
+    t.string   "material"
+    t.string   "iluminar"
+    t.string   "testructura"
+    t.string   "ventilar"
+    t.string   "planta"
+    t.string   "altura"
+    t.integer  "avaluo_rural_id"
+    t.string   "habitacion"
+    t.string   "ehabitacion"
+    t.string   "shabitacion"
+    t.string   "closet"
+    t.string   "sala"
+    t.string   "comedor"
+    t.string   "pribanos"
+    t.string   "socibanos"
+    t.string   "serbanos"
+    t.string   "cocina"
+    t.string   "estudio"
+    t.string   "balcon"
+    t.string   "terraza"
+    t.string   "patiointer"
+    t.string   "jardin"
+    t.string   "zonaropa"
+    t.string   "zonaverde"
+    t.string   "locales"
+    t.string   "oficina"
+    t.string   "bodega"
+    t.text     "calidad"
+    t.string   "tgaraje"
+    t.string   "observacion"
+    t.string   "privado"
+    t.string   "exclusivo"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "titulations", force: :cascade do |t|

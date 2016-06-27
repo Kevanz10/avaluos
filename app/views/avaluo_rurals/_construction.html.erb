@@ -1,0 +1,101 @@
+<div class="row container">
+	<div class="row">
+		<div class="form-group container">
+			<%= const.label :estado, "Estado de la construcción:"	%>
+			<%= const.select :estado, AVALUOS_RURALS['ESTADO'].collect {|p| [p]},
+				 {include_blank: true} %>
+		</div>
+	</div>
+	<br>
+	<div class="row">
+		<div class="col-md-4">
+			<%= const.label :npisos, "Número de pisos:"	%>
+			<%= const.text_field :npisos, class: 'form-control' %>
+		</div>
+		<div class="col-md-4">
+			<%= const.label :sotanos, "Número de sotanos:"	%>
+			<%= const.text_field :sotanos, class: 'form-control' %>
+		</div>
+		<div class="col-md-4">
+			<%= const.label :sotanos, "Número de sotanos:"	%>
+			<%= const.text_field :sotanos, class: 'form-control' %>
+		</div>	
+	</div>
+	<br>
+	<div class="row">
+		<div class="col-md-4">
+			<%= const.label :años, "Año de construcción:"	%>
+			<%= const.text_field :años, class: 'form-control' %>
+		</div>
+		<div class="col-md-4">
+			<%= const.label :vetustez, "Vetustez"	%>
+			<%= const.text_field :vetustez, class: 'form-control' %>
+		</div>
+		<div class="col-md-4">
+			<%= const.label :pisos, "Número de sotanos:"	%>
+			<%= const.select :pisos, AVALUOS_RURALS['PISOS'].collect {|p| [p]},
+			 {include_blank: true} %>
+		</div>	
+	</div>
+	<br>
+	<div class="row">
+		<div class="col-md-4">
+			<%= const.label :estructura, "Estructura"	%>
+			<%= const.select :estructura, AVALUOS_RURALS['ESTRUCTURA'].collect {|p| [p]},
+			 {include_blank: true} %>
+		</div>
+		<div class="col-md-4">
+			<%= const.label :sismoresistente, "Ajustes Sismoresistente:"	%>
+			<%= const.select :sismoresistente, AVALUOS_RURALS['SISMO'].collect {|p| [p]},
+			 {include_blank: true} %>
+		</div>
+		<div class="col-md-4">
+			<%= const.label :cubierta, "Cubierta:"	%>
+			<%= const.select :cubierta, AVALUOS_RURALS['CUBIERTA'].collect {|p| [p]},
+			 {include_blank: true} %>
+		</div>	
+	</div>
+
+	<br>
+	<div class="row">
+		<div class="col-md-4">
+			<%= const.label :fachada, "Fachada:"	%>
+			<%= const.select :fachada, AVALUOS_RURALS['FACHADA'].collect {|p| [p]},
+			 {include_blank: true} %>
+		</div>
+		<div class="col-md-4">
+			<%= const.label :tfachada, "Tipo de fachada:"	%>
+			<%= const.select :tfachada, AVALUOS_RURALS['TFACHADA'].collect {|p| [p]},
+			 {include_blank: true} %>
+		</div>
+		<div class="col-md-4">
+			<%= const.label :reforzada, "Estructura reforzada:"	%>
+			<%= const.select :reforzada, AVALUOS_RURALS['REFORZADA'].collect {|p| [p]},
+			 {include_blank: true} %>
+		</div>	
+	</div>
+	<br>
+	<div class="row">
+		<div class="col-md-4">
+			<%= const.label :daños, "Daños:"	%>
+			<%= const.select :daños, AVALUOS_RURALS['Daños'].collect {|p| [p]},
+			 {include_blank: true} %>
+		</div>
+		<div class="col-md-4">
+			<%= const.label :material, "Material de construcción:"	%>
+			<%= const.select :material, AVALUOS_RURALS['MATERIAL'].collect {|p| [p]},
+			 {include_blank: true} %>
+		</div>
+		<div class="col-md-4">
+			<%= const.label :reforzada, "Estructura reforzada:"	%>
+			<%= const.select :reforzada, AVALUOS_RURALS['Daños'].collect {|p| [p]},
+			 {include_blank: true} %>
+		</div>	
+	</div>
+
+				
+</div>
+
+
+
+

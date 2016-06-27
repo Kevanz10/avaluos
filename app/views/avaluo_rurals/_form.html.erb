@@ -1,5 +1,5 @@
 <div class='container'>
-	<%= form_for @avaluo_rural do |f| %>
+	<%= form_for @avaluo_rural, html: {class: "avaluo-form"} do |f| %>
 		<h1>Datos del cliente</h1>
 
 		<div class=form-group>
@@ -87,18 +87,34 @@
 			<%= f.select :claimant_city, AVALUOS_RURALS['CITIES'].collect {|p| [p]}, {include_blank: true} %>
 	  </div>
 
-	 	------------------------------------------------------------------
-	  <h1>Ubicacion del inmueble</h1>
+	 	<div class="row">
+	 		<h1>Ubicacion del inmueble</h1>
+			<div class= "titulation-form">
+				<% if @avaluo_rural.titulation.nil? %>
+	  			<%= f.fields_for :titulation, @avaluo_rural.build_titulation do |titu|%>
+	  				<% render "titulations", titu: titu %>
+	  			<% end %>
+	  		<% else %>
+	  		<%= f.fields_for :titulation, @avaluo_rural.titulation do |titu|%>
+	  			<% render "titulations", titu: titu %>
+	  		<% end  %>
+	  	<% end %>
+		</div>
 
-	  <% if @avaluo_rural.titulation.nil? %>
-  		<%= f.fields_for :titulation, @avaluo_rural.build_titulation do |titu|%>
-  			<% render "titulations", titu: titu %>
-  		<% end %>
-  	<% else %>
-  		<%= f.fields_for :titulation, @avaluo_rural.titulation do |titu|%>
-  			<% render "titulations", titu: titu %>
-  		<% end  %>
-  	<% end %>
+		<div class="row">
+	 		<h1>Información de construcción</h1>
+			<div class= "titulation-form">
+				<% if @avaluo_rural.construction.nil? %>
+	  			<%= f.fields_for :construction, @avaluo_rural.build_construction do |const|%>
+	  				<% render "construction", const: const %>
+	  			<% end %>
+	  		<% else %>
+	  		<%= f.fields_for :construction, @avaluo_rural.construction do |const|%>
+	  			<% render "construction", const: const %>
+	  		<% end  %>
+	  	<% end %>
+		</div>
+	  
   		
 
 		<div class=form-group>
