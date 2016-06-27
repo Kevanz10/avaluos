@@ -26,6 +26,14 @@ Daños: ['No disponible', 'Con daños previos', 'Sin daños previos']
 MATERIAL: ['Abode bahareque o tapia', 'Madera', 'Mixtas u otros', 'Mampostería', 
         'Concreto Reforzado', 'Acero']
 
+VENTILAR: ['Bueno', 'Regular', 'Malo']
+
+IRREGULAR: ['Sin irregularidad', 'Con irregularidad', 'No disponible']
+
+TESTRUCTURA: ['Paneles prefabricados', 'Mampostería confinada', 'Bahareque', 'Pórticos',
+             'Sistema dual o combinado', 'Reticular celulado', 'Pórticos Arriostrados',
+             'Pórticos y paneles en madera', 'Adobe', 'Tapia', 'Muros', 'Mampostería confinada',
+             'Mampostería Reforzada', 'Pórticos no Arriostrados', 'No disponible']
 
 TVIA: ['Calle', 'Carrera', 'Diagonal', 'Transversal', 'Avenida', 'Avenida Calle', 
       'Avenida Carrera', 'Avenida autopista', 'Carretera',  'Circular', 'Camino']
@@ -37,6 +45,7 @@ DEPARTMENT: ['Amazonas', 'Antioquia', 'Arauca', 'Atlántico', 'Bolívar',
              'Norte de Santander', 'Putumayo', 'Quindío', 'Risaralda',
              'San Andrés y Providencia ', 'Santander', 'Sucre', ' Tolima',
              'Valle del Cauca', 'Vaupés', 'Vichada']  
+
 
 CITIES: ['Aguachica', 'Apartadó', 'Arauca', 'Armenia',
         'Barrancabermeja', 'Barranquilla', 'Bello', 'Bogotá',

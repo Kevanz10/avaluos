@@ -87,10 +87,147 @@
 			 {include_blank: true} %>
 		</div>
 		<div class="col-md-4">
-			<%= const.label :reforzada, "Estructura reforzada:"	%>
-			<%= const.select :reforzada, AVALUOS_RURALS['Daños'].collect {|p| [p]},
+			<%= const.label :iluminar, "Iluminación:"	%>
+			<%= const.select :iluminar, AVALUOS_RURALS['VENTILAR'].collect {|p| [p]},
 			 {include_blank: true} %>
 		</div>	
+	</div>
+
+	<div class="row">
+		<div class="col-md-3">
+			<%= const.label :ventilar, "Ventilación:"	%>
+			<%= const.select :ventilar, AVALUOS_RURALS['VENTILAR'].collect {|p| [p]},
+			 {include_blank: true} %>
+		</div>
+		<div class="col-md-3">
+			<%= const.label :testructura, "Material o Tipo de estructura:"	%>
+			<%= const.select :testructura, AVALUOS_RURALS['TESTRUCTURA'].collect {|p| [p]},
+			 {include_blank: true} %>
+		</div>
+		<div class="col-md-3">
+			<%= const.label :planta, "Irregularidad Planta:"	%>
+			<%= const.select :planta, AVALUOS_RURALS['IRREGULAR'].collect {|p| [p]},
+			 {include_blank: true} %>
+		</div>	
+		<div class="col-md-3">
+			<%= const.label :altura, "Irregularidad Altura:"	%>
+			<%= const.select :altura, AVALUOS_RURALS['IRREGULAR'].collect {|p| [p]},
+			 {include_blank: true} %>
+		</div>
+	</div>
+
+	<div class="row">
+		<h1>Dependencias</h1>
+
+		<div class="row">
+			<div class="col-md-4">
+				<%= const.label :habitacion, "Habitaciones:"	%>
+				<%= const.text_field :habitacion, class: 'form-control' %>
+			</div>
+			<div class="col-md-4">
+				<%= const.label :ehabitacion, "Estar habitaciones:"	%>
+					<%= const.text_field :ehabitacion, class: 'form-control' %>
+			</div>
+			<div class="col-md-4">
+				<%= const.label :shabitacion, "Cuartos servicio: "	%>
+					<%= const.text_field :shabitacion, class: 'form-control' %>
+			</div>	
+		</div>
+
+		<div class="row">
+			<div class="col-md-4">
+				<%= const.label :closet, "Closets:"	%>
+				<%= const.text_field :closet, class: 'form-control' %>
+			</div>
+			<div class="col-md-4">
+				<%= const.label :sala, "Salas:"	%>
+					<%= const.text_field :sala, class: 'form-control' %>
+			</div>
+			<div class="col-md-4">
+				<%= const.label :comedor, "Comedores: "	%>
+					<%= const.text_field :comedor, class: 'form-control' %>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-4">
+				<%= const.label :pribanos, "Baños privados:"	%>
+				<%= const.text_field :pribanos, class: 'form-control' %>
+			</div>
+			<div class="col-md-4">
+				<%= const.label :socibanos, "Baños sociales:"	%>
+					<%= const.text_field :socibanos, class: 'form-control' %>
+			</div>
+			<div class="col-md-4">
+				<%= const.label :serbanos, "Baños servicio:"	%>
+					<%= const.text_field :serbanos, class: 'form-control' %>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-md-4">
+				<%= const.label :cocina, "Cocinas:"	%>
+				<%= const.text_field :cocina, class: 'form-control' %>
+			</div>
+			<div class="col-md-4">
+				<%= const.label :estudio, "Estudios:"	%>
+					<%= const.text_field :estudio, class: 'form-control' %>
+			</div>
+			<div class="col-md-4">
+				<%= const.label :balcon, "Balcones: "	%>
+					<%= const.text_field :balcon, class: 'form-control' %>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-4">
+				<%= const.label :terraza, "Terrazas:"	%>
+				<%= const.text_field :terraza, class: 'form-control' %>
+			</div>
+			<div class="col-md-4">
+				<%= const.label :patiointer, "Patios internos:"	%>
+					<%= const.text_field :patiointer, class: 'form-control' %>
+			</div>
+			<div class="col-md-4">
+				<%= const.label :jardin, "Jardines: "	%>
+					<%= const.text_field :jardin, class: 'form-control' %>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-4">
+				<%= const.label :zonaropa, "Zonas de ropas:"	%>
+				<%= const.text_field :zonaropa, class: 'form-control' %>
+			</div>
+			<div class="col-md-4">
+				<%= const.label :zonaverde, "Zonas verdes privadas:"	%>
+					<%= const.text_field :zonaverde, class: 'form-control' %>
+			</div>
+			<div class="col-md-4">
+				<%= const.label :locales, "Locales: "	%>
+					<%= const.text_field :locales, class: 'form-control' %>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-6">
+				<%= const.label :oficina, "Oficinas:"	%>
+				<%= const.text_field :oficina, class: 'form-control' %>
+			</div>
+			<div class="col-md-6">
+				<%= const.label :bodega, "Bodegas:"	%>
+					<%= const.text_field :bodega, class: 'form-control' %>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<h1>Acabados</h1>
+		<div class="row">
+			
+		</div>
+
+		
 	</div>
 
 				
