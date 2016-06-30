@@ -121,8 +121,14 @@
  			</div>
  		</div>
 
+		
+
 		<div class="row">
-			<%=image_tag "https://maps.googleapis.com/maps/api/staticmap?center=6.231733699999999,-75.6080606&zoom=16&size=640x400&path=weight:3%7Ccolor:blue%7Cenc:{coaHnetiVjM??_SkM??~R&key=AIzaSyAG25Xm2Cl8lAq10P9H_ROAPOBC0DtTTcs"%> 
+			<%=image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{titu.object.latitude},#{titu.object.longitude}&zoom=17&size=600x300&maptype=roadmap%20&markers=color:blue%7Clabel:S%7C#{titu.object.latitude},#{titu.object.longitude}&key=AIzaSyAG25Xm2Cl8lAq10P9H_ROAPOBC0DtTTcs"%> 
 		</div>
+
+
+
+		
 </div>
 	

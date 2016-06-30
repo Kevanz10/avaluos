@@ -48,12 +48,8 @@ class AvaluoRuralsController < ApplicationController
   									 :last_name, :s_surname, :cellphone, :email, 
                      :claimant_department, :claimant_city, :second_name,
                      :cctype, :claimant_address, :tvia, :via, :compvia, 
-                     :num, :compnum, :placa, :adicional, 
-                     titulation_attributes: [:id,  :claimant_address, :conjunto, :sector, :depart,
-                                             :municipio, :avaluo_rural_id, 
-                                            :tvia, :via, :compvia, :num, :compnum, 
-                                            :placa, :adicional, :barrio],
-                     construction_attributes: [:id,  :estado, :npisos, :sotanos, :años, :vetustez, 
+                     :num, :compnum, :placa, :adicional,
+                     construction_attributes: [:id, :avaluo_rural_id, :estado, :npisos, :sotanos, :años, :vetustez, 
                                               :pisos, :estructura, :sismoresistente, :cubierta,
                                               :fachada, :tfachada, :reforzada, :daños, :material,
                                               :iluminar, :testructura, :ventilar, :planta,
@@ -61,7 +57,14 @@ class AvaluoRuralsController < ApplicationController
                                               :sala, :comedor, :pribanos, :socibanos, :serbanos, :cocina,
                                               :estudio, :balcon, :terraza, :patiointer, :jardin, :zonaropa,
                                               :zonaverde, :locales, :oficina, :bodega, :calidad, :tgaraje,
-                                              :observacion, :privado, :exclusivo])
+                                              :observacion, :privado, :exclusivo], 
+                     titulation_attributes: [:id,  :claimant_address, :conjunto, :sector, :depart,
+                                             :municipio, :avaluo_rural_id, 
+                                            :tvia, :via, :compvia, :num, :compnum, 
+                                            :placa, :adicional, :barrio, :matrinmo, :numescritura,
+                                            :departescritura, :sematrinmo, :numnotaria, :ciuescritura, 
+                                            :fecha, :latitude, :longitude])
+                     
     end
 end
 

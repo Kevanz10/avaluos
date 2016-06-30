@@ -35,6 +35,9 @@ TESTRUCTURA: ['Paneles prefabricados', 'Mampostería confinada', 'Bahareque', 'P
              'Pórticos y paneles en madera', 'Adobe', 'Tapia', 'Muros', 'Mampostería confinada',
              'Mampostería Reforzada', 'Pórticos no Arriostrados', 'No disponible']
 
+ILUMINAR: ['Bueno', 'Regular', 'Malo']
+
+
 TVIA: ['Calle', 'Carrera', 'Diagonal', 'Transversal', 'Avenida', 'Avenida Calle', 
       'Avenida Carrera', 'Avenida autopista', 'Carretera',  'Circular', 'Camino']
 
