@@ -42,8 +42,17 @@ class ConstructionsController < ApplicationController
   end
 
   def construction_params
-		params.require(:avaluo_rural).permit(:id_type, :document_number, :first_name, 
-                  :claimant_department, :last_name, :s_surname, :cellphone, :email, 
-                  :claimant_address, :claimant_city)
+		params.require(:avaluo_rural).permit(:id, :estado, :npisos, 
+                  :sotanos, :años, :vetustez, :pisos, :estructura, 
+                  :sismoresistente, :cubierta, :tfachada, :fachada, :reforzada, 
+                  :daños, :material, :iluminar, :testructura, :ventilar, 
+                  :planta, :altura, :id, :estado, :npisos, 
+                  :sotanos, :años, :habitacion, :ehabitacion, :shabitacion, 
+                  :closet, :sala, :comedor, :pribanos, :socibanos, 
+                  :serbanos, :cocina, :estudio, :balcon, :terraza, 
+                  :patiointer, :jardin, :zonaropa, :zonaverde, :locales, 
+                  :locales, :bodega, :calidad, :tgaraje, :observacion, 
+                  :privado, :exclusivo, :cpisos, :muros, :techos,
+                                               :cmadera, :cmetal, :banos, :cocina)
   end
 end

@@ -28,7 +28,11 @@ MATERIAL: ['Abode bahareque o tapia', 'Madera', 'Mixtas u otros', 'Mampostería'
 
 VENTILAR: ['Bueno', 'Regular', 'Malo']
 
+PACABADO: ['Bueno', 'Regular', 'Malo', 'Sin acabados']
+
+
 IRREGULAR: ['Sin irregularidad', 'Con irregularidad', 'No disponible']
+
 
 TESTRUCTURA: ['Paneles prefabricados', 'Mampostería confinada', 'Bahareque', 'Pórticos',
              'Sistema dual o combinado', 'Reticular celulado', 'Pórticos Arriostrados',
@@ -64,3 +68,7 @@ CITIES: ['Aguachica', 'Apartadó', 'Arauca', 'Armenia',
         'Santa Marta', 'Sincelejo', 'Soacha', 'Sogamoso', 'Soledad', 'Tibú',
         'Tuluá', 'Tumaco', 'Tunja', 'Turbo', 'Valledupar', 'Villa de leyva',
         'Villa del Rosario', 'Villavicencio', 'Yopal', 'Yumbo', 'Zipaquira']  
+
+TGARAJE: ['Privado', 'Exclusivo', 'Comunal']
+
+ESTRATO: ['1', '2', '3', '4', '5']
