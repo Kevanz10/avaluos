@@ -58,7 +58,7 @@ class AvaluoRuralsController < ApplicationController
                                               :estudio, :balcon, :terraza, :patiointer, :jardin, :zonaropa,
                                               :zonaverde, :locales, :oficina, :bodega, :calidad, :tgaraje,
                                               :observacion, :privado, :exclusivo, :cpisos, :cmuros, :ctechos, :cmadera,
-                                              :cmetal,:cbanos, :ccocina], 
+                                              :cmetal,:cbanos, :ccocina, :cobra, :econstruction], 
                      titulation_attributes: [:id,  :claimant_address, :conjunto, :sector, :depart,
                                              :municipio, :avaluo_rural_id, 
                                             :tvia, :via, :compvia, :num, :compnum, 

@@ -1,6 +1,10 @@
 <div class="row container">
 	
 	<br>
+	<div class= "text-center">
+		<%= const.label :econstruction, "Estado de la construcción"	%>
+		<%= const.select :econstruction,AVALUOS_RURALS['ESTADO'].collect {|p| [p]}, {include_blank: true} %>
+	</div>
 	<div class="row">
 		<div class="col-md-4">
 			<%= const.label :npisos, "Número de pisos:"	%>
@@ -11,8 +15,12 @@
 			<%= const.text_field :sotanos, class: 'form-control' %>
 		</div>
 		<div class="col-md-4">
-			<%= const.label :sotanos, "Número de sotanos:"	%>
-			<%= const.text_field :sotanos, class: 'form-control' %>
+			<div class="on-off">
+				<%= const.label :cobra, "En obra?"	%>
+				<div class="toggle toggle-modern" data-toggle-on="<%= !const.object.cobra.to_i.zero? %>"></div>
+
+				<%= const.check_box :cobra, class: "cobra", hidden: true %>		
+			</div>
 		</div>	
 	</div>
 	<br>
@@ -273,17 +281,9 @@
 			<%= const.select :privado, AVALUOS_RURALS['ESTRATO'].collect {|p| [p]},
 			 {include_blank: true} %>
 		</div>
-		<br>
-		<div class= 'col-md-6'>
-			<%= const.label :exclusivo, "Exclusivo:"	%>
-				<%= const.select :exclusivo, AVALUOS_RURALS['ESTRATO'].collect {|p| [p]},
-			 {include_blank: true} %>
-		</div>
+		
 	</div>
+	
 
-				
 </div>
-
-
-
 
