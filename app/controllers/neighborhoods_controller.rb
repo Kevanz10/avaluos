@@ -42,7 +42,7 @@ class NeighborhoodsController < ApplicationController
   end
 
   def construction_params
-		params.require(:avaluo_rural).permit(:estrato, :evias , :acueducto, :blegal, :vpavimentadas, :gas
+		params.require(:avaluo_rural).permit(:estrato, :evias , :acueducto, :blegal, :vpavimentadas, :gas,
 																				:toposector, :svias, :telefono, :transporte, :condiciones, :engeria,
 																				:andenes, :usector, :parques, :aire, :paradero, :basura, :alumbrado,
 																				:inseguridad, :zverdes, :ruido, :arborizacion, :saguas, :alamedas, 
