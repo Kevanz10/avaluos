@@ -1,0 +1,21 @@
+<div class="row container">
+	<div class="col-xs-6">
+		<div class="col-md-4">
+			<%= neighborhood.label :estrato, "Estrato"	%>
+			<%= neighborhood.text_field :estrato, class: 'form-control' %>
+		</div>
+	</div>
+	<div class="col-md-6">
+			<div class="on-off">
+				<%= neighborhood.label :alcantarillado, "En obra?"	%>
+				<div class="cotopla toggle-modern" data-toggle-on="<%= !neighborhood.object.alcantarillado['sector'].to_i.zero? %>"></div>
+
+				<%= check_box_tag "avaluo_rural[neighborhood_attributes][sector]", @avaluo_rural.neighborhood.alcantarillado.nil? ? "" : @avaluo_rural.neighborhood.alcantarillado['sector'] , false, { class: "alcantarillado", hidden: true}  %>		
+			</div>
+		</div>	
+	</div>
+	
+
+
+</div>
+

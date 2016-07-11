@@ -115,7 +115,21 @@
 	  	<% end %>
 		</div>
 	  
-  		
+  	
+		<div class="row">
+	 		<h1>Información de neighborhood</h1>
+			<div class= "titulation-form">
+				<% if @avaluo_rural.neighborhood.nil? %>
+	  			<%= f.fields_for :neighborhood, @avaluo_rural.build_neighborhood do |neighborhood|%>
+	  				<% render "neighborhood", neighborhood: neighborhood %>
+	  			<% end %>
+	  		<% else %>
+	  		<%= f.fields_for :neighborhood, @avaluo_rural.neighborhood do |neighborhood|%>
+	  			<% render "neighborhood", neighborhood: neighborhood %>
+	  		<% end  %>
+	  	<% end %>
+		</div>
+	  
 
 		<div class=form-group>
 	  	<%= f.submit%>

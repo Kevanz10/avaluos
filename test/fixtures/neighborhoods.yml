@@ -1,0 +1,63 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  alcantarillado: MyText
+  estrato: MyString
+  evias: MyString
+  acueducto: MyText
+  blegal: MyString
+  vpavimentadas: MyString
+  gas: MyText
+  toposector: MyString
+  svias: MyString
+  telefono: MyText
+  transporte: MyString
+  condiciones: MyString
+  engeria: MyText
+  andenes: MyString
+  usector: MyString
+  parques: MyString
+  aire: MyString
+  paradero: MyString
+  basura: MyString
+  alumbrado: MyString
+  inseguridad: MyString
+  zverdes: MyString
+  ruido: MyString
+  arborizacion: MyString
+  saguas: MyString
+  alamedas: MyString
+  otro: MyString
+  cicloruta: MyString
+  pvalorizacion: MyString
+
+two:
+  alcantarillado: MyText
+  estrato: MyString
+  evias: MyString
+  acueducto: MyText
+  blegal: MyString
+  vpavimentadas: MyString
+  gas: MyText
+  toposector: MyString
+  svias: MyString
+  telefono: MyText
+  transporte: MyString
+  condiciones: MyString
+  engeria: MyText
+  andenes: MyString
+  usector: MyString
+  parques: MyString
+  aire: MyString
+  paradero: MyString
+  basura: MyString
+  alumbrado: MyString
+  inseguridad: MyString
+  zverdes: MyString
+  ruido: MyString
+  arborizacion: MyString
+  saguas: MyString
+  alamedas: MyString
+  otro: MyString
+  cicloruta: MyString
+  pvalorizacion: MyString

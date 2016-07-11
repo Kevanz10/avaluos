@@ -10,6 +10,15 @@ jQuery(document).ready(function($) {
     checkbox:$('.cobra')
 	});
 
+	$('.cotopla').toggles({
+		drag: false,
+    text:{
+      on:"Si",
+      off:"No"
+    },
+    checkbox:$('.alcantarillado')
+	});
+
 	// $('.toggle').on('toggle', function(e, active) {
 	// 	debugger
 	// 	input = $(this).siblings('input')

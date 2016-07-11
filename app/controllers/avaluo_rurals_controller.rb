@@ -49,6 +49,7 @@ class AvaluoRuralsController < ApplicationController
                      :claimant_department, :claimant_city, :second_name,
                      :cctype, :claimant_address, :tvia, :via, :compvia, 
                      :num, :compnum, :placa, :adicional,
+                     neighborhood_attributes: [:id, :avaluo_rural_id, :alcantarillado, :sector, :previo, :estrato],
                      construction_attributes: [:id, :avaluo_rural_id, :estado, :npisos, :sotanos, :años, :vetustez, 
                                               :pisos, :estructura, :sismoresistente, :cubierta,
                                               :fachada, :tfachada, :reforzada, :daños, :material,

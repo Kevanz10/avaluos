@@ -13,4 +13,9 @@ module AddressHash
              cmetal: cmetal, cbanos: cbanos, ccocina: ccocina }
   	self.estado = estados_hash
   end
+
+  def alcantarillados
+    alcantarillado_hash = {sector: sector, predio: predio}
+    self.alcantarillado = alcantarillado_hash
+  end
 end
