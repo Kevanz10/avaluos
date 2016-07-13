@@ -14,6 +14,7 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require toggles
+//= require toggles.min
 //= require form
 //= require jquery.nested-fields
 //= require bootstrap-sprockets

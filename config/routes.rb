@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-   root "avaluo_rurales#new"
+  root "avaluo_rurals#index"
+
 
   resources :avaluo_rurals
   # The priority is based upon order of creation: first created -> highest priority.

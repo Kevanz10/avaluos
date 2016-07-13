@@ -1,6 +1,7 @@
 jQuery(document).ready(function($) {
 	longitude = $(".avaluo-form").find(".titulation-form").find("#longitude").val()
 	latitude = $(".avaluo-form").find(".titulation-form").find("#latitude").val()
+	
 	$('.toggle').toggles({
 		drag: false,
     text:{
@@ -10,7 +11,7 @@ jQuery(document).ready(function($) {
     checkbox:$('.cobra')
 	});
 
-	$('.cotopla').toggles({
+	$('.alcanta').toggles({
 		drag: false,
     text:{
       on:"Si",
@@ -19,6 +20,23 @@ jQuery(document).ready(function($) {
     checkbox:$('.alcantarillado')
 	});
 
+	$('.legal').toggles({
+		drag: false,
+    text:{
+      on:"Si",
+      off:"No"
+    },
+    checkbox:$('.legals')
+	});
+
+	// 	$('.neighbor_blegal').toggles({
+	// 	drag: false,
+ //    text:{
+ //      on:"Si",
+ //      off:"No"
+ //    },
+ //    checkbox:$('.blegal')
+	// });
 	// $('.toggle').on('toggle', function(e, active) {
 	// 	debugger
 	// 	input = $(this).siblings('input')

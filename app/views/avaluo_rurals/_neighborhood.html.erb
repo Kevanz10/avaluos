@@ -1,21 +1,40 @@
 <div class="row container">
-	<div class="col-xs-6">
-		<div class="col-md-4">
-			<%= neighborhood.label :estrato, "Estrato"	%>
-			<%= neighborhood.text_field :estrato, class: 'form-control' %>
-		</div>
-	</div>
-	<div class="col-md-6">
+	<div class="row">
+		<h4 class= "col-md-2 text-center">Alcantarillado</h1>
+		<div class="col-md-2">
 			<div class="on-off">
-				<%= neighborhood.label :alcantarillado, "En obra?"	%>
-				<div class="cotopla toggle-modern" data-toggle-on="<%= !neighborhood.object.alcantarillado['sector'].to_i.zero? %>"></div>
+					<%= neighborhood.label :alcantarillado, "Sector"	%>
+					<div class="alcanta toggle-modern" data-toggle-on="<%= @avaluo_rural.neighborhood.alcantarillado.nil? ? false : !neighborhood.object.alcantarillado['sector'].to_i.zero? %>"></div>
 
-				<%= check_box_tag "avaluo_rural[neighborhood_attributes][sector]", @avaluo_rural.neighborhood.alcantarillado.nil? ? "" : @avaluo_rural.neighborhood.alcantarillado['sector'] , false, { class: "alcantarillado", hidden: true}  %>		
-			</div>
+					<%= check_box_tag "avaluo_rural[neighborhood_attributes][sector]", @avaluo_rural.neighborhood.alcantarillado.nil? ? "" : @avaluo_rural.neighborhood.alcantarillado['sector'] , false, {class: "alcantarillado"}  %>	
+				</div>
+		</div>
+
+		<div class="col-md-2">
+			<div class="on-off">
+					<%= neighborhood.label :blegal, "Legal"	%>
+					<div class="legal toggle-modern" data-toggle-on="<%= @avaluo_rural.neighborhood.nil? ? false : !neighborhood.object.blegal.to_i.zero? %>"></div>
+
+					<%= neighborhood.check_box :blegal, class: "legals" %>	
+				</div>
+		</div>
+		
+		<div class="col-md-3 text-center">
+			<%= neighborhood.label :estrato, "Estrato:"	%>
+			<%= neighborhood.select :estrato, AVALUOS_RURALS['ESTRATO'].collect {|p| [p]},
+			 {include_blank: true} %>
 		</div>	
-	</div>
-	
 
+			<div class="col-md-3">
+			<%= neighborhood.label :evias, "Estado de las vias:"	%>
+			<%= neighborhood.select :evias, AVALUOS_RURALS['VENTILAR'].collect {|p| [p]},
+			 {include_blank: true} %>
+		</div>				
+	</div>
+
+	
+		
+	</div>
 
 </div>
 
