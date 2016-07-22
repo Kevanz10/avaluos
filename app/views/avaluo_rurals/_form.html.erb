@@ -129,6 +129,20 @@
 	  		<% end  %>
 	  	<% end %>
 		</div>
+
+		<div class="row">
+	 		<h1>Información del inmueble</h1>
+			<div class= "titulation-form">
+				<% if @avaluo_rural.property.nil? %>
+	  			<%= f.fields_for :property, @avaluo_rural.build_property do |property|%>
+	  				<% render "property", property: property %>
+	  			<% end %>
+	  		<% else %>
+	  		<%= f.fields_for :property, @avaluo_rural.property do |property|%>
+	  			<% render "property", property: property %>
+	  		<% end  %>
+	  	<% end %>
+		</div>
 	  
 
 		<div class=form-group>

@@ -4,7 +4,8 @@ class AvaluoRural < ActiveRecord::Base
 	has_one :titulation
 	has_one :construction
 	has_one :neighborhood
-	accepts_nested_attributes_for :titulation, :construction, :neighborhood
+	has_one :property
+	accepts_nested_attributes_for :titulation, :construction, :neighborhood, :property
 	serialize :claimant_address, JSON
 	before_save :address_hash
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160708080738) do
+ActiveRecord::Schema.define(version: 20160722071913) do
 
   create_table "avaluo_rurals", force: :cascade do |t|
     t.string   "document_number"
@@ -84,19 +84,14 @@ ActiveRecord::Schema.define(version: 20160708080738) do
   end
 
   create_table "neighborhoods", force: :cascade do |t|
-    t.text     "alcantarillado"
     t.string   "estrato"
     t.string   "evias"
-    t.text     "acueducto"
     t.string   "blegal"
     t.string   "vpavimentadas"
-    t.text     "gas"
     t.string   "toposector"
     t.string   "svias"
-    t.text     "telefono"
     t.string   "transporte"
     t.string   "condiciones"
-    t.text     "engeria"
     t.string   "andenes"
     t.string   "usector"
     t.string   "parques"
@@ -116,6 +111,54 @@ ActiveRecord::Schema.define(version: 20160708080738) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.integer  "avaluo_rural_id"
+    t.string   "alcantasector"
+    t.string   "alcantapredio"
+    t.string   "acueducsector"
+    t.string   "acueducpredio"
+    t.string   "gassector"
+    t.string   "gaspredio"
+    t.string   "telsector"
+    t.string   "telpredio"
+    t.string   "energiasector"
+    t.string   "energiapredio"
+  end
+
+  create_table "properties", force: :cascade do |t|
+    t.text     "tinmueble"
+    t.text     "uinmueble"
+    t.text     "clainmueble"
+    t.text     "tvivienda"
+    t.string   "phorizontal"
+    t.string   "conjunto"
+    t.string   "nedificios"
+    t.string   "upisos"
+    t.string   "ubicacion"
+    t.string   "tunidades"
+    t.string   "coeficiente"
+    t.string   "porteria"
+    t.string   "juegos"
+    t.string   "citofono"
+    t.string   "cmultiple"
+    t.string   "scomunal"
+    t.string   "bicicletero"
+    t.string   "beyectora"
+    t.string   "shutbasuras"
+    t.string   "piscina"
+    t.string   "airecentral"
+    t.string   "econstante"
+    t.string   "tagua"
+    t.string   "csquash"
+    t.string   "chouse"
+    t.string   "zverdes"
+    t.string   "pelectrica"
+    t.string   "gvisitantes"
+    t.string   "gimnasio"
+    t.string   "ascensor"
+    t.integer  "avaluo_rural_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "otro"
+    t.string   "golfito"
   end
 
   create_table "titulations", force: :cascade do |t|

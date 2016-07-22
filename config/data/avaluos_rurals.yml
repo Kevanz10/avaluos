@@ -72,3 +72,17 @@ CITIES: ['Aguachica', 'Apartadó', 'Arauca', 'Armenia',
 TGARAJE: ['Privado', 'Exclusivo', 'Comunal']
 
 ESTRATO: ['1', '2', '3', '4', '5','6']
+
+TOPOSECTOR: ['Plano', 'Ligera', 'Inclinado', 'Accidentada']
+
+USOSECTOR: ['Vivienda', 'Comercio', 'Bodega', 'Oficina', 'V. Multihabitacional', 'Otro', 
+            'Educacion', 'Salud', 'Hotelero', 'Industrial', 'Iglesia', 'Parqueadero', 'Auditorio',
+            'instalación Deportiva', 'Mixto']
+
+TINMUEBLE: ['Apartamento', 'Casa', 'Bodega', 'Local', 'Oficina', 'Lote', 'Casa Rural', 'Lote Urbano']
+
+CINMUEBLE: ['Unifamiliar', 'Bifamiliar', 'Multifamiliar', 'Viv. Subdividida', 'Industrial', 'Comercial',
+            'Ed. Oficinas', 'Otro']
+TIVIVIENDA: ['VIS', 'No VIS', 'VIP']
+
+UBICACION: ['Interior', 'Exterior']
