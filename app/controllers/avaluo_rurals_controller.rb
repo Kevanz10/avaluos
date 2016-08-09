@@ -79,7 +79,11 @@ class AvaluoRuralsController < ApplicationController
                                             :tvia, :via, :compvia, :num, :compnum, 
                                             :placa, :adicional, :barrio, :matrinmo, :numescritura,
                                             :departescritura, :sematrinmo, :numnotaria, :ciuescritura, 
-                                            :fecha, :latitude, :longitude])
+                                            :fecha, :latitude, :longitude],
+                      value_attributes: [:actualidad, :comportamiento, :valoruvr, :avaluouvr,
+                                         :id, :vasegurable, :vterreno, :vconstruccion, 
+                                         :vconstruccion, :garantia, :observacion, :danexo,
+                                         :odireccion, :avaluo_rural_id, :iterreno ])
                      
     end
 end

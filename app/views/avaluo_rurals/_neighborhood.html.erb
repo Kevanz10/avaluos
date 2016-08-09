@@ -164,80 +164,81 @@
 		<br>
 
 		<!-- Amoblamiento e impacto row -->
-		<div class="row">
-			<h4 class= 'col-md-6'>Amoblamiento urbano</h4>
-			<h4 class= 'col-md-6'>Impacto ambiental negativo</h4>
-		</div>
-		<div class="row">
-			<div class="col-md-6">
-				<div class="on-off">
-					<%= neighborhood.label :parques, "Parques"	%>
-					<div class="nparques toggle-modern" data-toggle-on="<%= @avaluo_rural.neighborhood.parques.nil? ? false : !neighborhood.object.parques.to_i.zero? %>"></div>
-					<%= neighborhood.check_box :parques, class: "parque", hidden: true %>		
+		<div class= 'container'>
+			<div>
+				<h4 class= 'col-md-6'>Amoblamiento urbano</h4>
+				<h4 class= 'col-md-6'>Impacto ambiental negativo</h4>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="on-off">
+						<%= neighborhood.label :parques, "Parques"	%>
+						<div class="nparques toggle-modern" data-toggle-on="<%= @avaluo_rural.neighborhood.parques.nil? ? false : !neighborhood.object.parques.to_i.zero? %>"></div>
+						<%= neighborhood.check_box :parques, class: "parque", hidden: true %>		
+					</div>
+				</div>
+
+				<div class="col-md-6">
+					<div class="on-off">
+						<%= neighborhood.label :aire, "Aire"	%>
+						<div class="naire toggle-modern" data-toggle-on="<%= @avaluo_rural.neighborhood.aire.nil? ? false : !neighborhood.object.aire.to_i.zero? %>"></div>
+						<%= neighborhood.check_box :aire, class: "aire", hidden: true %>	
+					</div>
 				</div>
 			</div>
 
-			<div class="col-md-6">
-				<div class="on-off">
-					<%= neighborhood.label :aire, "Aire"	%>
-					<div class="naire toggle-modern" data-toggle-on="<%= @avaluo_rural.neighborhood.aire.nil? ? false : !neighborhood.object.aire.to_i.zero? %>"></div>
-					<%= neighborhood.check_box :aire, class: "aire", hidden: true %>	
+			<div class="row">
+				<div class="col-md-6">
+					<div class="on-off">
+						<%= neighborhood.label :paradero, "Paradero"	%>
+						<div class="nparquear toggle-modern" data-toggle-on="<%= @avaluo_rural.neighborhood.paradero.nil? ? false : !neighborhood.object.paradero.to_i.zero? %>"></div>
+						<%= neighborhood.check_box :paradero, class: "parquear", hidden: true %>		
+					</div>
 				</div>
-			</div>
-		</div>
 
-		<div class="row">
-			<div class="col-md-6">
-				<div class="on-off">
-					<%= neighborhood.label :paradero, "Paradero"	%>
-					<div class="nparquear toggle-modern" data-toggle-on="<%= @avaluo_rural.neighborhood.paradero.nil? ? false : !neighborhood.object.paradero.to_i.zero? %>"></div>
-					<%= neighborhood.check_box :paradero, class: "parquear", hidden: true %>		
-				</div>
-			</div>
-
-			<div class="col-md-6">
-				<div class="on-off">
-					<%= neighborhood.label :basura, "Basura"	%>
-					<div class="nbasura toggle-modern" data-toggle-on="<%= @avaluo_rural.neighborhood.basura.nil? ? false : !neighborhood.object.basura.to_i.zero? %>"></div>
-					<%= neighborhood.check_box :basura, class: "basura", hidden: true %>	
-				</div>
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-md-6">
-				<div class="on-off">
-					<%= neighborhood.label :alumbrado, "Alumbrado"	%>
-					<div class="nalumbra toggle-modern" data-toggle-on="<%= @avaluo_rural.neighborhood.alumbrado.nil? ? false : !neighborhood.object.alumbrado.to_i.zero? %>"></div>
-					<%= neighborhood.check_box :alumbrado, class: "alumbra", hidden: true %>		
+				<div class="col-md-6">
+					<div class="on-off">
+						<%= neighborhood.label :basura, "Basura"	%>
+						<div class="nbasura toggle-modern" data-toggle-on="<%= @avaluo_rural.neighborhood.basura.nil? ? false : !neighborhood.object.basura.to_i.zero? %>"></div>
+						<%= neighborhood.check_box :basura, class: "basura", hidden: true %>	
+					</div>
 				</div>
 			</div>
 
-			<div class="col-md-6">
-				<div class="on-off">
-					<%= neighborhood.label :inseguridad, "Inseguridad"	%>
-					<div class="ninseguri toggle-modern" data-toggle-on="<%= @avaluo_rural.neighborhood.inseguridad.nil? ? false : !neighborhood.object.inseguridad.to_i.zero? %>"></div>
-					<%= neighborhood.check_box :inseguridad, class: "inseguri", hidden: true %>	
+			<div class="row">
+				<div class="col-md-6">
+					<div class="on-off">
+						<%= neighborhood.label :alumbrado, "Alumbrado"	%>
+						<div class="nalumbra toggle-modern" data-toggle-on="<%= @avaluo_rural.neighborhood.alumbrado.nil? ? false : !neighborhood.object.alumbrado.to_i.zero? %>"></div>
+						<%= neighborhood.check_box :alumbrado, class: "alumbra", hidden: true %>		
+					</div>
 				</div>
-			</div>
-		</div>
 
-		<div class="row">
-			<div class="col-md-6">
-				<div class="on-off">
-					<%= neighborhood.label :zverdes, "Zonas verdes públicas"	%>
-					<div class="zverdes toggle-modern" data-toggle-on="<%= @avaluo_rural.neighborhood.zverdes.nil? ? false : !neighborhood.object.zverdes.to_i.zero? %>"></div>
-					<%= neighborhood.check_box :zverdes, class: "verdes", hidden: true %>		
+				<div class="col-md-6">
+					<div class="on-off">
+						<%= neighborhood.label :inseguridad, "Inseguridad"	%>
+						<div class="ninseguri toggle-modern" data-toggle-on="<%= @avaluo_rural.neighborhood.inseguridad.nil? ? false : !neighborhood.object.inseguridad.to_i.zero? %>"></div>
+						<%= neighborhood.check_box :inseguridad, class: "inseguri", hidden: true %>	
+					</div>
 				</div>
 			</div>
 
-			<div class="col-md-6">
-				<div class="on-off">
-					<%= neighborhood.label :ruido, "Ruido"	%>
-					<div class="nruido toggle-modern" data-toggle-on="<%= @avaluo_rural.neighborhood.ruido.nil? ? false : !neighborhood.object.ruido.to_i.zero? %>"></div>
-					<%= neighborhood.check_box :ruido, class: "ruido", hidden: true %>	
+			<div class="row">
+				<div class="col-md-6">
+					<div class="on-off">
+						<%= neighborhood.label :zverdes, "Zonas verdes públicas"	%>
+						<div class="zverdes toggle-modern" data-toggle-on="<%= @avaluo_rural.neighborhood.zverdes.nil? ? false : !neighborhood.object.zverdes.to_i.zero? %>"></div>
+						<%= neighborhood.check_box :zverdes, class: "verdes", hidden: true %>		
+					</div>
 				</div>
-			</div>
+
+				<div class="col-md-6">
+					<div class="on-off">
+						<%= neighborhood.label :ruido, "Ruido"	%>
+						<div class="nruido toggle-modern" data-toggle-on="<%= @avaluo_rural.neighborhood.ruido.nil? ? false : !neighborhood.object.ruido.to_i.zero? %>"></div>
+						<%= neighborhood.check_box :ruido, class: "ruido", hidden: true %>	
+					</div>
+				</div>
 		</div>
 
 
@@ -293,9 +294,8 @@
 			<h3>Perspectivas de valorización</h3>
 			<div class="col-md-12">
 				<%= neighborhood.text_field :pvalorizacion, class: 'form-control' %>
-			</div>
-			
+			</div>	
 		</div>
-	
+	</div>
 
 </div>

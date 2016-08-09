@@ -86,3 +86,5 @@ CINMUEBLE: ['Unifamiliar', 'Bifamiliar', 'Multifamiliar', 'Viv. Subdividida', 'I
 TIVIVIENDA: ['VIS', 'No VIS', 'VIP']
 
 UBICACION: ['Interior', 'Exterior']
+
+DESCRIPCION: ['Area de construcción', 'Otros']

@@ -12,7 +12,9 @@ class Titulation < ActiveRecord::Base
 	after_validation :geocode       # auto-fetch coordinates
 
 	def full_street_address
-		a = claimant_address.values.join('')
-		a + ', ' + municipio + ', ' + depart
+		if !self.claimant_address.nil?
+			a = claimant_address.values.join('')
+			a + ', ' + municipio + ', ' + depart
+		end
 	end
 end

@@ -87,7 +87,7 @@
 			<%= f.select :claimant_city, AVALUOS_RURALS['CITIES'].collect {|p| [p]}, {include_blank: true} %>
 	  </div>
 
-	 	<div class="row">
+	 	<div>
 	 		<h1>Ubicacion del inmueble</h1>
 			<div class= "titulation-form">
 				<% if @avaluo_rural.titulation.nil? %>
@@ -101,7 +101,7 @@
 	  	<% end %>
 		</div>
 
-		<div class="row">
+		<div>
 	 		<h1>Información de construcción</h1>
 			<div class= "titulation-form">
 				<% if @avaluo_rural.construction.nil? %>
@@ -116,7 +116,7 @@
 		</div>
 	  
   	
-		<div class="row">
+		<div>
 	 		<h1>Información de neighborhood</h1>
 			<div class= "titulation-form">
 				<% if @avaluo_rural.neighborhood.nil? %>
@@ -130,9 +130,9 @@
 	  	<% end %>
 		</div>
 
-		<div class="row">
+		<div>
 	 		<h1>Información del inmueble</h1>
-			<div class= "titulation-form">
+			<div class= "titulation-form container">
 				<% if @avaluo_rural.property.nil? %>
 	  			<%= f.fields_for :property, @avaluo_rural.build_property do |property|%>
 	  				<% render "property", property: property %>
@@ -143,8 +143,23 @@
 	  		<% end  %>
 	  	<% end %>
 		</div>
-	  
 
+
+		<div>
+	 		<h1>Valor razonable</h1>
+			<div class= "value container">
+				<% if @avaluo_rural.value.nil? %>
+	  			<%= f.fields_for :value, @avaluo_rural.build_value do |value|%>
+	  				<% render "value", value: value %>
+	  			<% end %>
+	  		<% else %>
+	  		<%= f.fields_for :value, @avaluo_rural.value do |value|%>
+	  			<% render "value", value: value %>
+	  		<% end  %>
+	  	<% end %>
+		</div>
+	  
+		<br>
 		<div class=form-group>
 	  	<%= f.submit%>
 	  </div>

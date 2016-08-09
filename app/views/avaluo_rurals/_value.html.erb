@@ -1,0 +1,87 @@
+<div class="form-group">
+	<%= value.label :actualidad, "Actualidad Edificadora:"	%>
+	<%= value.text_field :actualidad, class: 'form-control' %>
+</div>
+
+<div class="form-group">
+	<%= value.label :comportamiento, "Comportamiento oferta y demanda:"	%>
+	<%= value.text_field :comportamiento, class: 'form-control' %>
+</div>
+
+<div class="row">
+	<div class="col-md-4">
+		<%= value.label :valoruvr, "Valor UVR"	%>
+		<%= value.text_field :valoruvr, class: 'form-control' %>	
+	</div>
+	<div class="col-md-4">
+		<%= value.label :avaluouvr, "Valor avaluo en UVR"	%>
+		<%= value.text_field :avaluouvr, class: 'form-control' %>	
+	</div>
+	<div class="col-md-4">
+		<%= value.label :vasegurable, "Valor asegurable"	%>
+		<%= value.text_field :vasegurable, class: 'form-control' %>	
+	</div>
+</div>
+<br>
+
+<div class="row">
+	<div class="col-md-3">
+		<%= value.label :vterreno, "Valor proporcional del terreno	"	%>
+		<%= value.text_field :vterreno, class: 'form-control' %>	
+	</div>
+	<div class="col-md-3">
+		<%= value.label :iterreno, "Valor integral del terreno	"	%>
+		<%= value.text_field :iterreno, class: 'form-control' %>	
+	</div>
+	<div class="col-md-3">
+		<%= value.label :vconstruccion, "Valor proporcional de la construcción	"	%>
+		<%= value.text_field :vconstruccion, class: 'form-control' %>	
+	</div>
+	<div class="col-md-3">
+		<%= value.label :vconstruccion, "Valor integral de la construcción	"	%>
+		<%= value.text_field :vconstruccion, class: 'form-control' %>	
+	</div>
+</div>
+<br>
+<div>
+	<%= value.label :garantia, "Calificación garantia"	%>
+	<%= value.text_field :garantia, class: 'form-control' %>		
+</div>
+
+<br>
+<div>
+	<%= value.label :observacion, "Observaciones"	%>
+	<%= value.text_field :observacion, class: 'form-control' %>		
+</div>
+
+<br>
+<div class="row">
+	<div class="col-md-6">
+		<%= value.label :danexo, "Dirección anexos"	%>
+		<%= value.text_field :danexo, class: 'form-control' %>		
+	</div>
+	<div class="col-md-6">
+		<%= value.label :odireccion, "Otras direcciones"	%>
+		<%= value.text_field :odireccion, class: 'form-control' %>		
+	</div>
+</div>
+
+<br>
+<h2>Valor Razonable</h2>
+  <div class=".container">
+    <%= value.nested_fields_for :evaluates do |h| %>
+      <fieldset class="item">
+        <%= h.label :descripcion %>
+        <%= h.select :descripcion, AVALUOS_RURALS['UBICACION'].collect {|p| [p]}, {include_blank: true} %>
+
+        <a href="" class="remove">remove</a>
+
+        <%= h.hidden_field :id %>
+        <%= h.hidden_field :_destroy %>
+      </fieldset>
+    <% end %>
+  </div>
+  <a href="#" class="add" >add phone</a>
+	
+	<div class="evaluate"></div>
+

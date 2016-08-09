@@ -1,4 +1,4 @@
-jQuery(document).ready(function($) {
+document.addEventListener("turbolinks:load", function(e) {
 	longitude = $(".avaluo-form").find(".titulation-form").find("#longitude").val()
 	latitude = $(".avaluo-form").find(".titulation-form").find("#latitude").val()
 	

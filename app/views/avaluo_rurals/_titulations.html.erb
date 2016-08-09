@@ -1,13 +1,16 @@
-<div class=row container>
-	<div class="form-group col-md-6">
-		<%= titu.label :depart, "Departamento"	%>
-		<%= titu.select :depart, AVALUOS_RURALS['DEPARTMENT'].collect {|p| [p]}, {include_blank: true} %>
-	</div>
+<div class=row>
+	<div class='row'>
+		<div class="form-group col-md-6">
+			<%= titu.label :depart, "Departamento"	%>
+			<%= titu.select :depart, AVALUOS_RURALS['DEPARTMENT'].collect {|p| [p]}, {include_blank: true} %>
+		</div>
 
-	<div class="form-group col-md-6">
-		<%= titu.label :municipio, "Municipio:"	%>
-		<%= titu.select :municipio, AVALUOS_RURALS['CITIES'].collect {|p| [p]}, {include_blank: true} %>
+		<div class="form-group col-md-6">
+			<%= titu.label :municipio, "Municipio:"	%>
+			<%= titu.select :municipio, AVALUOS_RURALS['CITIES'].collect {|p| [p]}, {include_blank: true} %>
+		</div>
 	</div>
+	
 	  		
 	<div class='row'>
 		<div class="col-md-4">

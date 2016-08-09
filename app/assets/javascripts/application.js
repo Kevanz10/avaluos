@@ -13,10 +13,11 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
+//= require jquery.nested-fields
 //= require toggles
 //= require toggles.min
 //= require form
-//= require jquery.nested-fields
+//= requiero map
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
