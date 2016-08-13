@@ -66,22 +66,21 @@
 	</div>
 </div>
 
-<br>
-<h2>Valor Razonable</h2>
-  <div class=".container">
-    <%= value.nested_fields_for :evaluates do |h| %>
-      <fieldset class="item">
-        <%= h.label :descripcion %>
-        <%= h.select :descripcion, AVALUOS_RURALS['UBICACION'].collect {|p| [p]}, {include_blank: true} %>
 
-        <a href="" class="remove">remove</a>
+<h2>lo que sea</h2>
+<div class="items">
+  <%= value.nested_fields_for :evaluates, html: {class: "evaluate"}  do |e|%>
+    <fieldset class="item">
+      <%= e.label :descripcion %>
+      <%= e.text_field :descripcion %>
 
-        <%= h.hidden_field :id %>
-        <%= h.hidden_field :_destroy %>
+      <a href="#" class="remove">remove</a>
+
+      <%= e.hidden_field :id %>
+      <%= e.hidden_field :_destroy %>
       </fieldset>
-    <% end %>
-  </div>
-  <a href="#" class="add" >add phone</a>
-	
-	<div class="evaluate"></div>
+  <% end %>
+</div>
+<a href="#" class="add">add phone</a>
+
 

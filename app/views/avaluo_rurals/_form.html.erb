@@ -147,7 +147,7 @@
 
 		<div>
 	 		<h1>Valor razonable</h1>
-			<div class= "value container">
+			<div class= "container">
 				<% if @avaluo_rural.value.nil? %>
 	  			<%= f.fields_for :value, @avaluo_rural.build_value do |value|%>
 	  				<% render "value", value: value %>
