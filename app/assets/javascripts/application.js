@@ -11,16 +11,15 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery.turbolinks
 //= require jquery_ujs
 //= require jquery.nested-fields
 //= require toggles
 //= require toggles.min
 //= require form
-//= requiero map
-//= require bootstrap-sprockets
 //= require turbolinks
+//= require bootstrap.min
 //= require_tree .
+
 
 
 

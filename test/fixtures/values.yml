@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  actualidad: MyString
+  comportamiento: MyString
+  tiempo: MyString
+  valoruvr: MyString
+  avaluouvr: MyString
+  vasegurable: MyString
+  vterreno: MyString
+  iterreno: MyString
+  vconstruccion: MyString
+  iconstruccion: MyString
+  garantia: MyString
+  observacion: MyString
+  danexo: MyString
+  odireccion: MyString
+  avaluo_rural_id: MyString
+
+two:
+  actualidad: MyString
+  comportamiento: MyString
+  tiempo: MyString
+  valoruvr: MyString
+  avaluouvr: MyString
+  vasegurable: MyString
+  vterreno: MyString
+  iterreno: MyString
+  vconstruccion: MyString
+  iconstruccion: MyString
+  garantia: MyString
+  observacion: MyString
+  danexo: MyString
+  odireccion: MyString
+  avaluo_rural_id: MyString

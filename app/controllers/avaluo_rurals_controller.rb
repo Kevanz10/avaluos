@@ -1,4 +1,8 @@
 class AvaluoRuralsController < ApplicationController
+
+  def test
+  end
+  
 	def index
    	@avaluo_rurales= AvaluoRural.all
   end

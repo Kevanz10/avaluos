@@ -12,15 +12,12 @@
  *
  *= require toggles
  *= require toggles-modern
+  *= require font-awesome
  *= require_tree .
  *= require_self
- 
 
- */
-	
-@import "bootstrap-sprockets";
-@import "bootstrap";
+*/
 
-	
+
 
 
