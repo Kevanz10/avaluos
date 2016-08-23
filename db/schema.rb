@@ -11,26 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160819203142) do
-
-  create_table "avaluo_rurals", force: :cascade do |t|
-    t.string   "document_number"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "s_surname"
-    t.string   "cellphone"
-    t.string   "email"
-    t.text     "claimant_address"
-    t.string   "claimant_department"
-    t.string   "claimant_city"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
-    t.string   "second_name"
-    t.float    "latitude"
-    t.float    "longitude"
-    t.string   "cctype"
-    t.integer  "user_id"
-  end
+ActiveRecord::Schema.define(version: 20160823204402) do
 
   create_table "constructions", force: :cascade do |t|
     t.text     "estado"
@@ -52,7 +33,6 @@ ActiveRecord::Schema.define(version: 20160819203142) do
     t.string   "ventilar"
     t.string   "planta"
     t.string   "altura"
-    t.integer  "avaluo_rural_id"
     t.string   "habitacion"
     t.string   "ehabitacion"
     t.string   "shabitacion"
@@ -82,6 +62,7 @@ ActiveRecord::Schema.define(version: 20160819203142) do
     t.datetime "updated_at",      null: false
     t.string   "cobra"
     t.string   "econstruction"
+    t.integer  "rural_id"
   end
 
   create_table "evaluates", force: :cascade do |t|
@@ -90,10 +71,10 @@ ActiveRecord::Schema.define(version: 20160819203142) do
     t.string   "unidad"
     t.string   "area"
     t.string   "unitario"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.integer  "value_id"
-    t.integer  "avaluo_rural_id"
+    t.integer  "rural_id"
   end
 
   create_table "neighborhoods", force: :cascade do |t|
@@ -121,9 +102,8 @@ ActiveRecord::Schema.define(version: 20160819203142) do
     t.string   "otro"
     t.string   "cicloruta"
     t.string   "pvalorizacion"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.integer  "avaluo_rural_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.string   "alcantasector"
     t.string   "alcantapredio"
     t.string   "acueducsector"
@@ -134,6 +114,7 @@ ActiveRecord::Schema.define(version: 20160819203142) do
     t.string   "telpredio"
     t.string   "energiasector"
     t.string   "energiapredio"
+    t.integer  "rural_id"
   end
 
   create_table "properties", force: :cascade do |t|
@@ -167,11 +148,30 @@ ActiveRecord::Schema.define(version: 20160819203142) do
     t.string   "gvisitantes"
     t.string   "gimnasio"
     t.string   "ascensor"
-    t.integer  "avaluo_rural_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.string   "otro"
     t.string   "golfito"
+    t.integer  "rural_id"
+  end
+
+  create_table "rurals", force: :cascade do |t|
+    t.string   "document_number"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "s_surname"
+    t.string   "cellphone"
+    t.string   "email"
+    t.text     "claimant_address"
+    t.string   "claimant_department"
+    t.string   "claimant_city"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "second_name"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "cctype"
+    t.integer  "user_id"
   end
 
   create_table "titulations", force: :cascade do |t|
@@ -190,9 +190,9 @@ ActiveRecord::Schema.define(version: 20160819203142) do
     t.string   "fecha"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
-    t.integer  "avaluo_rural_id"
     t.float    "latitude"
     t.float    "longitude"
+    t.integer  "rural_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -229,9 +229,9 @@ ActiveRecord::Schema.define(version: 20160819203142) do
     t.string   "observacion"
     t.string   "danexo"
     t.string   "odireccion"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.integer  "avaluo_rural_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "rural_id"
   end
 
 end

@@ -1,32 +1,32 @@
-class AvaluoRuralsController < ApplicationController
+class RuralsController < ApplicationController
 
   def test
   end
   
 	def index
-   	@avaluo_rurales= AvaluoRural.all
+   	@avaluo_rurales= Rural.all
   end
 
   def new
-    @avaluo_rural= AvaluoRural.new
+    @avaluo_rural= Rural.new
   end
 
   def edit
-    @avaluo_rural = AvaluoRural.find(params[:id])
+    @avaluo_rural = Rural.find(params[:id])
   end
 
   def show
-  	@avaluo_rural =AvaluoRural.find(params[:id])
+  	@avaluo_rural = Rural.find(params[:id])
   end
 
   def destroy
-   	@avaluo_rural = AvaluoRural.find(params[:id])
+   	@avaluo_rural = Rural.find(params[:id])
    	@avaluo_rural.destroy
-   	redirect_to avaluo_rurals_path
+   	redirect_to rurals_path
   end
 
   def create
-    @avaluo_rural= AvaluoRural.new(towers_params)
+    @avaluo_rural= current_user.rurals.build(avaluo_params)
 
     respond_to do |format|
       if @avaluo_rural.save
@@ -40,15 +40,15 @@ class AvaluoRuralsController < ApplicationController
   end
 
   def update
-	 	@avaluo_rural =AvaluoRural.find(params[:id])
-    @avaluo_rural.update(towers_params)
-    redirect_to avaluo_rurals_path
+	 	@avaluo_rural = Rural.find(params[:id])
+    @avaluo_rural.update(avaluo_params)
+    redirect_to rurals_path
   end
 
   private
 
-    def towers_params
-  		params.require(:avaluo_rural).permit(:document_number, :first_name,
+    def avaluo_params
+  		params.require(:rural).permit(:document_number, :first_name,
   									 :last_name, :s_surname, :cellphone, :email, 
                      :claimant_department, :claimant_city, :second_name,
                      :cctype, :claimant_address, :tvia, :via, :compvia, 

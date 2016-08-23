@@ -1,0 +1,279 @@
+<div class="row container">
+	<div class="row">
+		<div class= "col-md-3">
+			<%= property.label :t_inmue, "Tipo del inmueble"	%>
+			<br>
+				<%= select_tag "avaluo_rural[property_attributes][t_inmue]", options_for_select(AVALUOS_RURALS['TINMUEBLE'].collect {|p| [p]}, @avaluo_rural.property.tinmueble.nil? ? 
+			"" : @avaluo_rural.property.tinmueble['t_inmue']) %>
+		</div>
+
+		<div class= "col-md-3">
+			<%= property.label :u_inmue, "Uso del inmueble"	%>
+			<br>
+				<%= select_tag "avaluo_rural[property_attributes][u_inmue]", options_for_select(AVALUOS_RURALS['USOSECTOR'].collect {|p| [p]}, @avaluo_rural.property.uinmueble.nil? ? 
+			"" : @avaluo_rural.property.uinmueble['u_inmue']) %>
+		</div>
+
+		<div class= "col-md-3">
+			<%= property.label :cla_inmue, "Clase de inmueble"	%>
+			<br>
+				<%= select_tag "avaluo_rural[property_attributes][cla_inmue]", options_for_select(AVALUOS_RURALS['CINMUEBLE'].collect {|p| [p]}, @avaluo_rural.property.clainmueble.nil? ? 
+			"" : @avaluo_rural.property.clainmueble['cla_inmue']) %>
+		</div>
+
+		<div class= "col-md-3">
+			<%= property.label :t_vivienda, "Tipo del vivienda"	%>
+			<br>
+				<%= select_tag "avaluo_rural[property_attributes][t_vivienda]", options_for_select(AVALUOS_RURALS['TIVIVIENDA'].collect {|p| [p]}, @avaluo_rural.property.tvivienda.nil? ? 
+			"" : @avaluo_rural.property.tvivienda['t_vivienda']) %>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class= "col-md-3">
+			<%= property.label :d_tinmue, "Descripción"	%>
+			<br>
+				<%= text_field_tag "avaluo_rural[property_attributes][d_tinmue]" , @avaluo_rural.property.tinmueble.nil? ? "" : @avaluo_rural.property.tinmueble['d_tinmue'], { class: 'form-control' }  %>
+		</div>
+		
+		<div class= "col-md-3">
+			<%= property.label :d_uinmue, "Descripción"	%>
+			<br>
+				<%= text_field_tag "avaluo_rural[property_attributes][d_uinmue]", @avaluo_rural.property.uinmueble.nil? ? "" : @avaluo_rural.property.uinmueble['d_uinmue'], { class: 'form-control' }  %>
+		</div>
+
+		<div class= "col-md-3">
+			<%= property.label :d_clainme, "Descripción"	%>
+			<br>
+				<%= text_field_tag "avaluo_rural[property_attributes][d_clainme]", @avaluo_rural.property.clainmueble.nil? ? "" : @avaluo_rural.property.clainmueble['d_clainme'], { class: 'form-control' }  %>
+		</div>
+
+		<div class= "col-md-3">
+			<%= property.label :d_tvivienda, "Descripción"	%>
+			<br>
+				<%= text_field_tag "avaluo_rural[property_attributes][d_tvivienda]", @avaluo_rural.property.tvivienda.nil? ? "" : @avaluo_rural.property.tvivienda['d_tvivienda'], { class: 'form-control' }  %>
+		</div>
+	</div>
+	
+	<div class= 'fades'>
+		<div class="row">
+			<%= property.label :phorizontal, "Sometido a propiedad horizontal"	%>
+			<div class="click horizontal toggle-modern" data-toggle-on="<%= @avaluo_rural.property.phorizontal.nil? ? false : !property.object.phorizontal.to_i.zero? %>"></div>
+			<%= property.check_box :phorizontal, class: "phorizontal", hidden: true %>
+		</div>
+
+		<div class="row faded">
+						<br>
+						<div class="row">
+							<div class="row">
+								<div class= "col-md-4">
+									<%= property.label :conjunto, "Conjunto o agrupación"	%>
+									<div class="conjunto toggle-modern" data-toggle-on="<%= @avaluo_rural.property.conjunto.nil? ? false : !property.object.conjunto.to_i.zero? %>"></div>
+									<%= property.check_box :conjunto, class: "click pconjunto", hidden: true %>
+								</div>
+								
+								<div class= "col-md-4">
+									<%= property.label :nedificios, "No. Edificios"	%>
+									<br>
+									<%= property.text_field :nedificios, class: 'form-control' %>
+								</div>
+
+								<div class= "col-md-4">
+									<%= property.label :upisos, "Unidades por piso"	%>
+									<br>
+									<%= property.text_field :upisos, class: 'form-control' %>
+								</div>
+							</div>
+						</div>
+						<br>
+						<div class="row">
+							<div class="row">
+								<div class= "col-md-4">
+									<%= property.label :ubicacion, "Ubicación"	%>
+									<br>
+									<%= property.select :ubicacion, AVALUOS_RURALS['UBICACION'].collect {|p| [p]}, {include_blank: true} %>
+								</div>
+								
+								<div class= "col-md-4">
+									<%= property.label :tunidades, "Total unidades"	%>
+									<br>
+									<%= property.text_field :tunidades, class: 'form-control' %>
+								</div>
+
+								<div class= "col-md-4">
+									<%= property.label :coeficiente, "Coeficiente %"	%>
+									<br>
+									<%= property.text_field :coeficiente, class: 'form-control' %>
+								</div>
+							</div>
+						</div>
+
+						<br>
+						<div class="row">
+						<h4>Dotación comunal</h4>
+							<div class="row">
+								<div class= "col-md-6">
+									<%= property.label :porteria, "Portería"	%>
+									<div class="porteria horizontal toggle-modern" data-toggle-on="<%= @avaluo_rural.property.porteria.nil? ? false : !property.object.porteria.to_i.zero? %>"></div>
+									<%= property.check_box :porteria, class: "pporteria", hidden: true %>
+								</div>
+								
+								<div class= "col-md-6">
+									<%= property.label :juegos, "Juegos Niños"	%>
+									<div class="juegos horizontal toggle-modern" data-toggle-on="<%= @avaluo_rural.property.juegos.nil? ? false : !property.object.juegos.to_i.zero? %>"></div>
+									<%= property.check_box :juegos, class: "pjuegos", hidden: true %>
+								</div>
+
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="row">
+								<div class= "col-md-4">
+									<%= property.label :citofono, "Citófono"	%>
+									<div class="citofono horizontal toggle-modern" data-toggle-on="<%= @avaluo_rural.property.citofono.nil? ? false : !property.object.citofono.to_i.zero? %>"></div>
+									<%= property.check_box :citofono, class: "pcitofono", hidden: true %>
+								</div>
+
+								<div class= "col-md-4">
+									<%= property.label :cmultiple, "Cancha Múltiple"	%>
+									<div class="multiple horizontal toggle-modern" data-toggle-on="<%= @avaluo_rural.property.cmultiple.nil? ? false : !property.object.cmultiple.to_i.zero? %>"></div>
+									<%= property.check_box :cmultiple, class: "pmultiple", hidden: true %>
+								</div>
+
+								<div class= "col-md-4">
+									<%= property.label :golfito, "Golfito"	%>
+									<div class="golfito horizontal toggle-modern" data-toggle-on="<%= @avaluo_rural.property.golfito.nil? ? false : !property.object.golfito.to_i.zero? %>"></div>
+									<%= property.check_box :golfito, class: "pgolfito", hidden: true %>
+								</div>
+						</div>
+						</div>
+
+						<div class="row">
+							<div class="row">
+								<div class= "col-md-4">
+									<%= property.label :scomunal, "Salón Comunal"	%>
+									<div class="comunal horizontal toggle-modern" data-toggle-on="<%= @avaluo_rural.property.scomunal.nil? ? false : !property.object.scomunal.to_i.zero? %>"></div>
+									<%= property.check_box :scomunal, class: "pcomunal", hidden: true %>
+								</div>
+
+								<div class= "col-md-4">
+									<%= property.label :beyectora, "Bomba Eyectora"	%>
+									<div class="eyectora horizontal toggle-modern" data-toggle-on="<%= @avaluo_rural.property.beyectora.nil? ? false : !property.object.beyectora.to_i.zero? %>"></div>
+									<%= property.check_box :beyectora, class: "peyectora", hidden: true %>
+								</div>
+
+								<div class= "col-md-4">
+									<%= property.label :bicicletero, "Bicicletero"	%>
+									<div class="bici horizontal toggle-modern" data-toggle-on="<%= @avaluo_rural.property.bicicletero.nil? ? false : !property.object.bicicletero.to_i.zero? %>"></div>
+									<%= property.check_box :bicicletero, class: "pbici", hidden: true %>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="row">
+								<div class= "col-md-4">
+									<%= property.label :piscina, "Piscina"	%>
+									<div class="piscina horizontal toggle-modern" data-toggle-on="<%= @avaluo_rural.property.piscina.nil? ? false : !property.object.piscina.to_i.zero? %>"></div>
+									<%= property.check_box :piscina, class: "ppiscina", hidden: true %>
+								</div>
+								
+								<div class= "col-md-4">
+									<%= property.label :airecentral, "Aire Acondicionado Central"	%>
+									<div class="central horizontal toggle-modern" data-toggle-on="<%= @avaluo_rural.property.airecentral.nil? ? false : !property.object.airecentral.to_i.zero? %>"></div>
+									<%= property.check_box :airecentral, class: "pcentral", hidden: true %>
+								</div>
+
+								<div class= "col-md-4">
+									<%= property.label :shutbasuras, "Shut Basuras"	%>
+									<div class="basura horizontal toggle-modern" data-toggle-on="<%= @avaluo_rural.property.shutbasuras.nil? ? false : !property.object.shutbasuras.to_i.zero? %>"></div>
+									<%= property.check_box :shutbasuras, class: "pbasura", hidden: true %>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="row">
+								<div class= "col-md-4">
+									<%= property.label :csquash, "Cancha Squash"	%>
+									<div class="squash horizontal toggle-modern" data-toggle-on="<%= @avaluo_rural.property.csquash.nil? ? false : !property.object.csquash.to_i.zero? %>"></div>
+									<%= property.check_box :csquash, class: "psquash", hidden: true %>
+								</div>
+								
+								<div class= "col-md-4">
+									<%= property.label :pelectrica, "Planta Eléctrica"	%>
+									<div class="electrica horizontal toggle-modern" data-toggle-on="<%= @avaluo_rural.property.pelectrica.nil? ? false : !property.object.pelectrica.to_i.zero? %>"></div>
+									<%= property.check_box :pelectrica, class: "pelectrica", hidden: true %>
+								</div>
+
+								<div class= "col-md-4">
+									<%= property.label :econstante, "Equipo De Presion Constante"	%>
+									<div class="constante horizontal toggle-modern" data-toggle-on="<%= @avaluo_rural.property.econstante.nil? ? false : !property.object.econstante.to_i.zero? %>"></div>
+									<%= property.check_box :econstante, class: "pconstante", hidden: true %>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="row">
+								<div class= "col-md-4">
+									<%= property.label :tagua, "Tanque de agua"	%>
+									<div class="agua horizontal toggle-modern" data-toggle-on="<%= @avaluo_rural.property.tagua.nil? ? false : !property.object.tagua.to_i.zero? %>"></div>
+									<%= property.check_box :tagua, class: "pagua", hidden: true %>
+								</div>
+					
+								
+								<div class= "col-md-4">
+									<%= property.label :zverdes, "Zonas Verdes Comunales"	%>
+									<div class="verde horizontal toggle-modern" data-toggle-on="<%= @avaluo_rural.property.zverdes.nil? ? false : !property.object.zverdes.to_i.zero? %>"></div>
+									<%= property.check_box :zverdes, class: "pverde", hidden: true %>
+								</div>
+
+								<div class= "col-md-4">
+									<%= property.label :chouse, "Club House"	%>
+									<div class="house horizontal toggle-modern" data-toggle-on="<%= @avaluo_rural.property.chouse.nil? ? false : !property.object.chouse.to_i.zero? %>"></div>
+									<%= property.check_box :chouse, class: "phouse", hidden: true %>
+								</div>
+							</div>
+						</div>
+							
+						<div class="row">
+							<div class="row">
+								<div class= "col-md-4">
+									<%= property.label :ascensor, "Ascensor"	%>
+									<div class="ascensor horizontal toggle-modern" data-toggle-on="<%= @avaluo_rural.property.ascensor.nil? ? false : !property.object.ascensor.to_i.zero? %>"></div>
+									<%= property.check_box :ascensor, class: "pascensor", hidden: true %>
+								</div>
+					
+								
+								<div class= "col-md-4">
+									<%= property.label :gimnasio, "Gimnasio"	%>
+									<div class="gym horizontal toggle-modern" data-toggle-on="<%= @avaluo_rural.property.gimnasio.nil? ? false : !property.object.gimnasio.to_i.zero? %>"></div>
+									<%= property.check_box :gimnasio, class: "pgym", hidden: true %>
+								</div>
+
+								<div class= "col-md-4">
+									<%= property.label :gvisitantes, "Garaje Visitantes"	%>
+									<div class="visitan horizontal toggle-modern" data-toggle-on="<%= @avaluo_rural.property.gvisitantes.nil? ? false : !property.object.gvisitantes.to_i.zero? %>"></div>
+									<%= property.check_box :gvisitantes, class: "pvisitan", hidden: true %>
+								</div>
+							</div>
+						</div>
+
+						<div>
+							<%= property.label :otro, "Otros:"	%>
+							<%= property.text_field :otro, class: 'form-control' %>
+						</div>
+		</div>
+	</div>
+
+
+	
+	
+	
+
+	
+
+</div>
+

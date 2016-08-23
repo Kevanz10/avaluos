@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  root "avaluo_rurals#index"
+  root "rurals#index"
 
-  get '/a', to: 'avaluo_rurals#test'
-  resources :avaluo_rurals
+  get '/a', to: 'rurals#test'
+  resources :rurals
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

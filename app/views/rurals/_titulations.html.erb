@@ -1,0 +1,136 @@
+<div class=row>
+	<div class='row'>
+		<div class="form-group col-md-6">
+			<%= titu.label :depart, "Departamento"	%>
+			<%= titu.select :depart, AVALUOS_RURALS['DEPARTMENT'].collect {|p| [p]}, {include_blank: true} %>
+		</div>
+
+		<div class="form-group col-md-6">
+			<%= titu.label :municipio, "Municipio:"	%>
+			<%= titu.select :municipio, AVALUOS_RURALS['CITIES'].collect {|p| [p]}, {include_blank: true} %>
+		</div>
+	</div>
+	
+	  		
+	<div class='row'>
+		<div class="col-md-4">
+			<%= titu.label :barrio, "Barrio:"	%>
+			<%= titu.text_field :barrio, class: 'form-control' %>
+		</div>
+
+		<div class="col-md-4">
+			<%= titu.label :conjunto, "Conjunto:"	%>
+			<%= titu.text_field :conjunto, class: 'form-control' %>
+		</div>
+
+		<div class="col-md-4">
+			<%= titu.label :sector, "Sector:"	%>
+			<br>
+			<%= titu.select :sector, AVALUOS_RURALS['SECTOR'].collect {|p| [p]},{include_blank: true} %>
+		</div>
+	</div>
+
+	<h3>Direccion del inmueble</h3>
+ 		<div class='row'>
+ 			<div class="col-md-3">
+		 		<%= titu.label :titulation['tvia'], "Tipo de via" %><br>
+			  <%= select_tag "avaluo_rural[titulation_attributes][tvia]", options_for_select(AVALUOS_RURALS['TVIA'].collect {|p| [p]}, @avaluo_rural.titulation.claimant_address.nil? ? 
+			"" : @avaluo_rural.titulation.claimant_address['tipo_via']) %>
+			</div>	
+
+			<div class= 'col-md-3'>
+				<%= titu.label :titulation['via'], "Via:" %>
+				<%= text_field_tag "avaluo_rural[titulation_attributes][via]" , @avaluo_rural.titulation.claimant_address.nil? ? "" : @avaluo_rural.titulation.claimant_address['via'] , { class: 'form-control' } %>
+			</div>
+
+			<div class= 'col-md-3'>
+				<%= titu.label :titulation['compvia'], "Complemento Via:" %>
+				<%= text_field_tag "avaluo_rural[titulation_attributes][compvia]" , @avaluo_rural.titulation.claimant_address.nil? ? "" : @avaluo_rural.titulation.claimant_address['compvia'] , { class: 'form-control' } %>
+			</div>
+
+			<div class= 'col-md-3'>
+			  <%= titu.label :titulation['num'], "Numero:" %>
+			  <%= text_field_tag "avaluo_rural[titulation_attributes][num]" , @avaluo_rural.titulation.claimant_address.nil? ? "" : @avaluo_rural.titulation.claimant_address['num'] , { class: 'form-control' } %>
+			</div>
+ 		</div>
+ 					
+ 		<div class="row">
+ 			<br>
+ 			<div class= 'col-md-4'>
+			  <%= titu.label :titulation['compnum'], "	Complemento Numero:" %>
+			  <%= text_field_tag "avaluo_rural[titulation_attributes][compnum]" , @avaluo_rural.titulation.claimant_address.nil? ? "" : @avaluo_rural.titulation.claimant_address['compnum'] , { class: 'form-control' } %>
+			</div>
+
+			<div class= 'col-md-4'>
+				<%= titu.label :Titulation['placa'], "Placa" %>
+				<%= text_field_tag "avaluo_rural[titulation_attributes][placa]" , @avaluo_rural.titulation.claimant_address.nil? ? "" : @avaluo_rural.titulation.claimant_address['placa'] ,  { class: 'form-control' } %>
+			</div>
+
+			<div class= 'col-md-4'>
+				<%= titu.label :titulation['adicional'], "Adicional" %>
+				<%= text_field_tag "avaluo_rural[titulation_attributes][adicional]" , @avaluo_rural.titulation.claimant_address.nil? ? "" : @avaluo_rural.titulation.claimant_address['adicional'] , { class: 
+				  		'form-control' } %>
+			</div>	   
+ 		</div>
+
+ 		<br>
+
+ 		<div class="row">
+ 			<div class="col-md-4">
+	 			<%= titu.label :matrinmo, "Matricula inmobiliaria 1º:" %>
+	 			<%= titu.text_field :matrinmo, class: 'form-control' %>
+ 			</div>
+
+ 			<div class="col-md-4">
+	 			<%= titu.label :numescritura, "Número de escritura:" %>
+	 			<%= titu.text_field :numescritura, class: 'form-control' %>
+ 			</div>
+
+ 			<div class="col-md-4">
+	 			<%= titu.label :departescritura, "Departamento de escritura:" %>
+	 			<%= titu.select :departescritura, AVALUOS_RURALS['DEPARTMENT'].collect {|p| [p]}, {include_blank: true}%>	
+ 			</div>
+ 		</div>
+
+				<br>
+
+ 		<div class="row">
+ 			<div class="col-md-4">
+	 			<%= titu.label :sematrinmo, "Matricula inmobiliaria 2º:" %>
+	 			<%= titu.text_field :sematrinmo, class: 'form-control' %>
+ 			</div>
+
+ 			<div class="col-md-4">
+	 			<%= titu.label :numnotaria, "Número notaría escritura:" %>
+	 			<%= titu.text_field :numnotaria, class: 'form-control' %>
+ 			</div>
+
+ 			<div class="col-md-4">
+	 			<%= titu.label :ciuescritura, "Ciudad de escritura:" %>
+	 			<br>
+	 			<%= titu.select :ciuescritura, AVALUOS_RURALS['CITIES'].collect {|p| [p]}, {include_blank: true}%>
+ 			</div>
+ 		</div>
+
+ 		<div class="row">
+ 			<%= titu.label :fecha, "Fecha de escritura:" %>
+	 		<%= titu.text_field :fecha, class: 'form-control' %>
+ 		</div>
+ 		<br>
+ 		<div class="row">
+ 			<div class="col-md-12">
+	 			<%= titu.hidden_field :latitude,  id: 'latitude' %>
+	 			<%= titu.hidden_field :longitude , id: 'longitude' %>
+ 			</div>
+ 		</div>
+
+		
+
+		<div class="row">
+			<%=image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{titu.object.latitude},#{titu.object.longitude}&zoom=17&size=600x300&maptype=roadmap%20&markers=color:blue%7Clabel:S%7C#{titu.object.latitude},#{titu.object.longitude}&key=AIzaSyAG25Xm2Cl8lAq10P9H_ROAPOBC0DtTTcs"%> 
+		</div>
+
+
+		
+</div>
+	

@@ -1,4 +1,4 @@
-class AvaluoRural < ActiveRecord::Base
+class Rural < ActiveRecord::Base
 	belongs_to :user
 	include AddressHash
 	has_one :value
