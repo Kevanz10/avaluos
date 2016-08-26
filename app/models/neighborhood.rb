@@ -1,6 +1,6 @@
 class Neighborhood < ActiveRecord::Base
 	include AddressHash
-	belongs_to :avaluo_rural
+	belongs_to :rural
 	
 	
 end

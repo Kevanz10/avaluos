@@ -1,6 +1,6 @@
 class Property < ActiveRecord::Base
 	include AddressHash
-	belongs_to :avaluo_rural
+	belongs_to :rural
 	serialize :tinmueble, JSON
 	serialize :uinmueble, JSON
 	serialize :clainmueble, JSON

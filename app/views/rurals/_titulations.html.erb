@@ -34,23 +34,23 @@
  		<div class='row'>
  			<div class="col-md-3">
 		 		<%= titu.label :titulation['tvia'], "Tipo de via" %><br>
-			  <%= select_tag "avaluo_rural[titulation_attributes][tvia]", options_for_select(AVALUOS_RURALS['TVIA'].collect {|p| [p]}, @avaluo_rural.titulation.claimant_address.nil? ? 
-			"" : @avaluo_rural.titulation.claimant_address['tipo_via']) %>
+			  <%= select_tag "rural[titulation_attributes][tvia]", options_for_select(AVALUOS_RURALS['TVIA'].collect {|p| [p]}, @rural.titulation.claimant_address.nil? ? 
+			"" : @rural.titulation.claimant_address['tipo_via']) %>
 			</div>	
 
 			<div class= 'col-md-3'>
 				<%= titu.label :titulation['via'], "Via:" %>
-				<%= text_field_tag "avaluo_rural[titulation_attributes][via]" , @avaluo_rural.titulation.claimant_address.nil? ? "" : @avaluo_rural.titulation.claimant_address['via'] , { class: 'form-control' } %>
+				<%= text_field_tag "rural[titulation_attributes][via]" , @rural.titulation.claimant_address.nil? ? "" : @rural.titulation.claimant_address['via'] , { class: 'form-control' } %>
 			</div>
 
 			<div class= 'col-md-3'>
 				<%= titu.label :titulation['compvia'], "Complemento Via:" %>
-				<%= text_field_tag "avaluo_rural[titulation_attributes][compvia]" , @avaluo_rural.titulation.claimant_address.nil? ? "" : @avaluo_rural.titulation.claimant_address['compvia'] , { class: 'form-control' } %>
+				<%= text_field_tag "rural[titulation_attributes][compvia]" , @rural.titulation.claimant_address.nil? ? "" : @rural.titulation.claimant_address['compvia'] , { class: 'form-control' } %>
 			</div>
 
 			<div class= 'col-md-3'>
 			  <%= titu.label :titulation['num'], "Numero:" %>
-			  <%= text_field_tag "avaluo_rural[titulation_attributes][num]" , @avaluo_rural.titulation.claimant_address.nil? ? "" : @avaluo_rural.titulation.claimant_address['num'] , { class: 'form-control' } %>
+			  <%= text_field_tag "rural[titulation_attributes][num]" , @rural.titulation.claimant_address.nil? ? "" : @rural.titulation.claimant_address['num'] , { class: 'form-control' } %>
 			</div>
  		</div>
  					
@@ -58,17 +58,17 @@
  			<br>
  			<div class= 'col-md-4'>
 			  <%= titu.label :titulation['compnum'], "	Complemento Numero:" %>
-			  <%= text_field_tag "avaluo_rural[titulation_attributes][compnum]" , @avaluo_rural.titulation.claimant_address.nil? ? "" : @avaluo_rural.titulation.claimant_address['compnum'] , { class: 'form-control' } %>
+			  <%= text_field_tag "rural[titulation_attributes][compnum]" , @rural.titulation.claimant_address.nil? ? "" : @rural.titulation.claimant_address['compnum'] , { class: 'form-control' } %>
 			</div>
 
 			<div class= 'col-md-4'>
 				<%= titu.label :Titulation['placa'], "Placa" %>
-				<%= text_field_tag "avaluo_rural[titulation_attributes][placa]" , @avaluo_rural.titulation.claimant_address.nil? ? "" : @avaluo_rural.titulation.claimant_address['placa'] ,  { class: 'form-control' } %>
+				<%= text_field_tag "rural[titulation_attributes][placa]" , @rural.titulation.claimant_address.nil? ? "" : @rural.titulation.claimant_address['placa'] ,  { class: 'form-control' } %>
 			</div>
 
 			<div class= 'col-md-4'>
 				<%= titu.label :titulation['adicional'], "Adicional" %>
-				<%= text_field_tag "avaluo_rural[titulation_attributes][adicional]" , @avaluo_rural.titulation.claimant_address.nil? ? "" : @avaluo_rural.titulation.claimant_address['adicional'] , { class: 
+				<%= text_field_tag "rural[titulation_attributes][adicional]" , @rural.titulation.claimant_address.nil? ? "" : @rural.titulation.claimant_address['adicional'] , { class: 
 				  		'form-control' } %>
 			</div>	   
  		</div>

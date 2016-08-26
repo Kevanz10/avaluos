@@ -18,38 +18,8 @@
   <div class="sidebar-menu">
     <ul class="menu-items">
       <li class="m-t-30">
-        <a href="#" class="detailed">
-          <span class="title">Page 1</span>
-          <span class="details">234 notifications</span>
-        </a>
-        <span class="icon-thumbnail "><i class="pg-mail"></i></span>
-      </li>
-      <li class="">
-        <a href="#">
-          <span class="title">Page 2</span>
-        </a>
-        <span class="icon-thumbnail "><i class="pg-social"></i></span>
-      </li>
-      <li class="">
-        <a href="javascript:;">
-          <span class="title">Page 3</span>
-          <span class=" arrow"></span>
-        </a>
-        <span class="icon-thumbnail"><i class="pg-grid"></i></span>
-        <ul class="sub-menu">
-          <li class="">
-            <a href="#">Sub Page 1</a>
-            <span class="icon-thumbnail">sp</span>
-          </li>
-          <li class="">
-            <a href="#">Sub Page 2</a>
-            <span class="icon-thumbnail">sp</span>
-          </li>
-          <li class="">
-            <a href="#">Sub Page 3</a>
-            <span class="icon-thumbnail">sp</span>
-          </li>
-        </ul>
+        <%= link_to "Lista Avalúos", rurals_path, class: 'detailed' %>
+        <span class="icon-thumbnail "><i class="fa fa-home fa-fw"></i></span>
       </li>
     </ul>
     <div class="clearfix"></div>
@@ -166,7 +136,6 @@
           </li>
         </ul>
         <!-- END NOTIFICATION DROPDOWN -->
-        <a href="#" class="search-link" data-toggle="search"><i class="pg-search"></i>Type anywhere to <span class="bold">search</span></a>
       </div>
     </div>
     <div class=" pull-right">
@@ -187,26 +156,10 @@
         </span>
           </button>
           <ul class="dropdown-menu profile-dropdown" role="menu">
-            <li><a href="#"><i class="pg-settings_small"></i> Settings</a>
-            </li>
-            <li><a href="#"><i class="pg-outdent"></i> Feedback</a>
-            </li>
-            <li><a href="#"><i class="pg-signals"></i> Help</a>
+            <li><a href="#"><i class="fa fa-cog fa-fw"></i> Cambiar Contraseña</a>
             </li>
             <li class="bg-master-lighter">
-              <a href="#" class="clearfix">
-                <% if user_signed_in? %>
-                  <li>
-                  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
-                  </li>
-                <% else %>
-                  <li>
-                  <%= link_to('Login', new_user_session_path)  %>  
-                   <i class="fa fa-power-off" aria-hidden="true"></i>
-                  </li>
-                 
-                <% end %>
-              </a>
+              <a href="/users/sign_out" data-method="delete"><i class="fa fa-power-off"></i>Cerrar sesión</a>     
             </li>
           </ul>
         </div>
@@ -226,11 +179,7 @@
           <div class="inner">
             <!-- START BREADCRUMB -->
             <ul class="breadcrumb">
-              <li>
-                <p>Pages</p>
-              </li>
-              <li><a href="#" class="active">Barebone template</a>
-              </li>
+              <li>Lista de Solicitudes para Avalúos</li>
             </ul>
             <!-- END BREADCRUMB -->
           </div>
@@ -276,27 +225,28 @@
                       </tr>
                     </thead>
 
-										<% @avaluo_rurales.each do |avaluo| %>
+										<% @rurals.each do |avaluo| %>
                     <tbody>
                       <tr>
                         <td class="v-align-middle">
                           <div class="checkbox ">
-                            <input type="checkbox" value="3" id="checkbox1">
-                            <label for="checkbox1"></label>
                           </div>
                         </td>
                         <td class="v-align-middle ">
                           <p><%= avaluo.first_name %> <%= avaluo.last_name %></p>
                         </td>
                         <td class="v-align-middle">
-                          <p> <%= link_to "Editar", edit_rural_path(avaluo) %></p>
+                          
                         </td>
                         <td class="v-align-middle">
-                          <p><%= link_to "Delete", rural_path(avaluo), method: :delete, 
-													data: { confirm: 'Estas seguro?'} %></p>
+                          <p><%= link_to "Borrar", rural_path(avaluo), method: :delete, 
+                          data: { confirm: 'Estas seguro?'}, class: 'btn btn-default' %>
+                          <%= link_to "Editar", edit_rural_path(avaluo), class: 'btn btn-default' %>
+                          <%= link_to "Show", rural_path(avaluo),class: 'btn btn-default' %></p>
                         </td>
                         <td class="v-align-middle">
-                          <p><%= link_to "Show", rural_path(avaluo) %></p>
+                          <p>
+                          </p>
                         </td>
                       
                       </tr>

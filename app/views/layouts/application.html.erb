@@ -2,10 +2,11 @@
 <html>
 <head>
   <title>Avaluos</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   <%= csrf_meta_tags %>
- <link href="../assets/font-awesome.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="assets/toggles.css">
+ 	<link rel="stylesheet" href="assets/toggles-modern.css">
 </head>
 <body class='fixed-header dashboard'>
 
@@ -18,5 +19,7 @@
 
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
 	</script>
+	<script src="../assets/toggles.js" type="text/javascript"></script>
+ 	<script src="../assets/toggles.min.js" type="text/javascript"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-<div class="row container">
+<div class="row">
 	
 	<br>
 	<div class= "text-center">
@@ -228,34 +228,34 @@
 	<div class="row">
 		<div class="col-md-3">
 			<%= const.label :construction['cpisos'],"Estado Pisos: " %><br>
-			<%= select_tag "avaluo_rural[construction_attributes][cpisos]", options_for_select(AVALUOS_RURALS['PACABADO'].collect {|p| [p]}, @avaluo_rural.construction.estado.nil? ? "" : @avaluo_rural.construction.estado['cpisos']), {include_blank: true} %>
+			<%= select_tag "rural[construction_attributes][cpisos]", options_for_select(AVALUOS_RURALS['PACABADO'].collect {|p| [p]}, @rural.construction.estado.nil? ? "" : @rural.construction.estado['cpisos']), {include_blank: true} %>
 		</div>
 		<div class="col-md-3">
 			<%= const.label :construction['cmuroscmuros'],"Estado Muros: " %><br>
-			<%= select_tag "avaluo_rural[construction_attributes][cmuros]", options_for_select(AVALUOS_RURALS['PACABADO'].collect {|p| [p]}, @avaluo_rural.construction.estado.nil? ? "" : @avaluo_rural.construction.estado['cmuros']),{include_blank: true} %>
+			<%= select_tag "rural[construction_attributes][cmuros]", options_for_select(AVALUOS_RURALS['PACABADO'].collect {|p| [p]}, @rural.construction.estado.nil? ? "" : @rural.construction.estado['cmuros']),{include_blank: true} %>
 		</div>
 		<div class="col-md-3">
 			<%= const.label :construction['ctechos'],"Estado Techos: " %><br>
-			<%= select_tag "avaluo_rural[construction_attributes][ctechos]", options_for_select(AVALUOS_RURALS['PACABADO'].collect {|p| [p]}, @avaluo_rural.construction.estado.nil? ? "" : @avaluo_rural.construction.estado['ctechos']),{include_blank: true} %>
+			<%= select_tag "rural[construction_attributes][ctechos]", options_for_select(AVALUOS_RURALS['PACABADO'].collect {|p| [p]}, @rural.construction.estado.nil? ? "" : @rural.construction.estado['ctechos']),{include_blank: true} %>
 		</div>
 		<div class="col-md-3">
 			<%= const.label :construction['cmadera'],"Estado C. Madera: " %><br>
-			<%= select_tag "avaluo_rural[construction_attributes][cmadera]", options_for_select(AVALUOS_RURALS['PACABADO'].collect {|p| [p]}, @avaluo_rural.construction.estado.nil? ? "" : @avaluo_rural.construction.estado['cmadera']),{include_blank: true} %>
+			<%= select_tag "rural[construction_attributes][cmadera]", options_for_select(AVALUOS_RURALS['PACABADO'].collect {|p| [p]}, @rural.construction.estado.nil? ? "" : @rural.construction.estado['cmadera']),{include_blank: true} %>
 		</div>
 	</div>
 
 	<div class="row">
 				<div class="col-md-4">
 			<%= const.label :construction['cmetal'],"Estado C.metal: " %><br>
-			<%= select_tag "avaluo_rural[construction_attributes][cmetal]", options_for_select(AVALUOS_RURALS['PACABADO'].collect {|p| [p]}, @avaluo_rural.construction.estado.nil? ? "" : @avaluo_rural.construction.estado['cmetal']),{include_blank: true} %>
+			<%= select_tag "rural[construction_attributes][cmetal]", options_for_select(AVALUOS_RURALS['PACABADO'].collect {|p| [p]}, @rural.construction.estado.nil? ? "" : @rural.construction.estado['cmetal']),{include_blank: true} %>
 		</div>
 		<div class="col-md-4">
 			<%= const.label :construction['cbanos'],"Estado Baños: " %><br>
-			<%= select_tag "avaluo_rural[construction_attributes][cbanos]", options_for_select(AVALUOS_RURALS['PACABADO'].collect {|p| [p]}, @avaluo_rural.construction.estado.nil? ? "" : @avaluo_rural.construction.estado['cbanos']),{include_blank: true} %>
+			<%= select_tag "rural[construction_attributes][cbanos]", options_for_select(AVALUOS_RURALS['PACABADO'].collect {|p| [p]}, @rural.construction.estado.nil? ? "" : @rural.construction.estado['cbanos']),{include_blank: true} %>
 		</div>
 		<div class="col-md-4">
 			<%= const.label :construction['ccocina'],"Estado Cocina: " %><br>
-			<%= select_tag "avaluo_rural[construction_attributes][ccocina]", options_for_select(AVALUOS_RURALS['PACABADO'].collect {|p| [p]}, @avaluo_rural.construction.estado.nil? ? "" : @avaluo_rural.construction.estado['ccocina']),{include_blank: true} %>
+			<%= select_tag "rural[construction_attributes][ccocina]", options_for_select(AVALUOS_RURALS['PACABADO'].collect {|p| [p]}, @rural.construction.estado.nil? ? "" : @rural.construction.estado['ccocina']),{include_blank: true} %>
 		</div>
 	</div>
 
