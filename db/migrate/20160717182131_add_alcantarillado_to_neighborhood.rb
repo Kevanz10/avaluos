@@ -1,11 +1,5 @@
 class AddAlcantarilladoToNeighborhood < ActiveRecord::Migration
   def change
-  	remove_column :neighborhoods, :alcantarillado
-  	remove_column :neighborhoods, :acueducto
-  	remove_column :neighborhoods, :gas
-  	remove_column :neighborhoods, :acueducto
-  	remove_column :neighborhoods, :telefono
-  	remove_column :neighborhoods, :engeria
   	add_column :neighborhoods, :alcantasector , :string
   	add_column :neighborhoods, :alcantapredio , :string
    	add_column :neighborhoods, :acueducsector , :string
