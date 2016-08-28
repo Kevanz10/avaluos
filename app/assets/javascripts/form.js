@@ -1,6 +1,26 @@
+//Google maps function
+
+function initMap() {
+  longitude = parseFloat($(".avaluo-form").find(".titulation-form").find("#longitude").val())
+  latitude = parseFloat($(".avaluo-form").find(".titulation-form").find("#latitude").val())
+        // Create a map object and specify the DOM element for display.
+          var myLatLng = {lat: latitude, lng: longitude};
+          var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 18,
+            center: myLatLng
+          });
+
+          var marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            title: 'Hello World!'
+          });
+
+}
+
+//form's toogles functions
 document.addEventListener("turbolinks:load", function(e) {
-	longitude = $(".avaluo-form").find(".titulation-form").find("#longitude").val()
-	latitude = $(".avaluo-form").find(".titulation-form").find("#latitude").val()
+	
 	
 	$('.toggle').toggles({
 		drag: false,
@@ -515,19 +535,8 @@ document.addEventListener("turbolinks:load", function(e) {
     checkbox:$('.pvisitan')
   });
 
-
-   
-
-
-  // $('.conjunto').on('click', 'click', showIt());
-
-  // function showIt (argument) {
-  //   debugger
-  //   $(this).closest('.conjunto').find('.div').slideToggle();
-  // }
-
   
-  
+//Slide toggle function 
   function showTicket (event) {
     debugger;
     event.preventDefault()
@@ -538,8 +547,6 @@ document.addEventListener("turbolinks:load", function(e) {
   
  
 
-
-	
 
 	
 	
