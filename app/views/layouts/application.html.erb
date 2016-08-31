@@ -5,23 +5,23 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   <%= csrf_meta_tags %>
-  <link rel="stylesheet" href="assets/toggles.css">
- 	<link rel="stylesheet" href="assets/toggles-modern.css">
+
+  <%= stylesheet_link_tag    'toggles.css' %>
+  <%= stylesheet_link_tag    'toggles-modern.css' %>
+  
+  <meta name="turbolinks-cache-control" content="no-cache">
 </head>
-<body class='fixed-header dashboard'>
-
+<body data-no-turbolinks='true' class='fixed-header dashboard'>
 	<%= yield %>
-	<script src="../assets/pace.min.js" type="text/javascript"></script>	
-	<script src="../assets/modernizr.custom.js" type="text/javascript"></script>
-  <script src="../assets/jquery.scrollbar.min.js"></script>
-	<script src="../assets/pages.min.js" type="text/javascript"></script>
-	<!-- Latest compiled and minified JavaScript -->
-
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
 	</script>
-	<script src="../assets/toggles.js" type="text/javascript"></script>
- 	<script src="../assets/toggles.min.js" type="text/javascript"></script>
- 	 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAG25Xm2Cl8lAq10P9H_ROAPOBC0DtTTcs&callback=initMap"
-    async defer></script>
+	<script src="assets/pace.min.js"></script>	
+	<script src="assets/modernizr.custom.js"></script>
+  <script src="assets/jquery.scrollbar.min.js"></script>
+	<script src="assets/pages.min.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+
+	<script src="assets/toggles.js" type="text/javascript"></script>
+ 	<script src="assets/toggles.min.js"></script>
 </body>
 </html>

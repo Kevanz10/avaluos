@@ -4,6 +4,7 @@
   </div>
   <!-- BEGIN SIDEBAR HEADER -->
   <div class="sidebar-header">
+
     <img src="../assets/logo.png" alt="logo" class="brand" data-src="../assets/logo.png" data-src-retina="../assets/logo.png" width="78" height="22">
 
     <div class="sidebar-header-controls">
@@ -88,54 +89,6 @@
         <div class="brand inline">
           <img src="assets/logo.png" alt="logo" data-src="assets/logo.png" data-src-retina="assets/logo.png" width="78" height="22">
         </div>
-        <!-- BEGIN NOTIFICATION DROPDOWN -->
-        <ul class="notification-list no-margin hidden-sm hidden-xs b-grey b-l b-r no-style p-l-30 p-r-20">
-          <li class="p-r-15 inline">
-            <div class="dropdown">
-              <a href="javascript:;" id="notification-center" class="icon-set globe-fill" data-toggle="dropdown">
-                <span class="bubble"></span>
-              </a>
-              <div class="dropdown-menu notification-toggle" role="menu" aria-labelledby="notification-center">
-                <div class="notification-panel">
-                  <!-- START Notification Body-->
-                  <div class="notification-body scrollable">
-                    <!-- START Notification Item-->
-                    <div class="notification-item  clearfix">
-                      <div class="heading">
-                        <a href="#" class="text-danger">
-                          <i class="fa fa-exclamation-triangle m-r-10"></i>
-                          <span class="bold">98% Server Load</span>
-                          <span class="fs-12 m-l-10">Take Action</span>
-                        </a>
-                        <span class="pull-right time">2 mins ago</span>
-                      </div>
-                      <div class="option">
-                        <a href="#" class="mark"></a>
-                      </div>
-                    </div>
-                    <!-- END Notification Item-->
-                  </div>
-                  <!-- END Notification Body-->
-                  <!-- START Notification Footer-->
-                  <div class="notification-footer text-center">
-                    <a href="#" class="">Read all notifications</a>
-                    <a data-toggle="refresh" class="portlet-refresh text-black pull-right" href="#">
-                      <i class="pg-refresh_new"></i>
-                    </a>
-                  </div>
-                  <!-- END Notification Footer-->
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="p-r-15 inline">
-            <a href="#" class="icon-set clip "></a>
-          </li>
-          <li class="p-r-15 inline">
-            <a href="#" class="icon-set grid-box"></a>
-          </li>
-        </ul>
-        <!-- END NOTIFICATION DROPDOWN -->
       </div>
     </div>
     <div class=" pull-right">
@@ -148,15 +101,23 @@
       <div class="visible-lg visible-md m-t-10">
         <div class="pull-left p-r-10 p-t-10 fs-16 font-heading">
           <span class="semi-bold"><%= current_user.email %></span>
+          
         </div>
         <div class="dropdown pull-right">
           <button class="profile-dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span class="thumbnail-wrapper d32 circular inline m-t-5">
-            <img src="assets/green_house.jpg" alt="" data-src="assets/green_house.jpg" data-src-retina="assets/green_house.jpg" width="32" height="32">
+            <%= image_tag('green_house.jpg') %>
+          
         </span>
           </button>
           <ul class="dropdown-menu profile-dropdown" role="menu">
-            <li><a href="#"><i class="fa fa-cog fa-fw"></i> Cambiar Contraseña</a>
+
+            <li>
+              <%= link_to edit_user_registration_path do %>
+                Cambiar Contrasena
+               <i class="fa fa-cog fa-fw"></i> 
+              <% end %>
+
             </li>
             <li class="bg-master-lighter">
               <a href="/users/sign_out" data-method="delete"><i class="fa fa-power-off"></i>Cerrar sesión</a>     
@@ -178,7 +139,7 @@
         <div class="container-fluid container-fixed-lg sm-p-l-20 sm-p-r-20">
           <div class="inner">
             <!-- START BREADCRUMB -->
-            <ul class="breadcrumb">
+            <ul class="breadcrumb text-center">
               <li>Lista de Solicitudes para Avalúos</li>
             </ul>
             <!-- END BREADCRUMB -->
@@ -192,16 +153,8 @@
             <!-- START PANEL -->
             <div class="panel panel-transparent">
               <div class="panel-heading">
-                <div class="panel-title">Pages Default Tables Style
-                </div>
                 <div class="btn-group pull-right m-b-10">
-                  <%= link_to "Crear Avaluo rural", new_rural_path, class: 'btn btn-default' %>
-                  <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Settings</a>
-                    </li>
-                    <li><a href="#">Help</a>
-                    </li>
-                  </ul>
+                  <%= link_to "Crear Avaluo", new_rural_path, class: 'btn btn-default' %>
                 </div>
                 <div class="clearfix"></div>
               </div>
@@ -236,17 +189,15 @@
                           <p><%= avaluo.first_name %> <%= avaluo.last_name %></p>
                         </td>
                         <td class="v-align-middle">
-                          
+                        algo va aqui
                         </td>
                         <td class="v-align-middle">
-                          <p><%= link_to "Borrar", rural_path(avaluo), method: :delete, 
-                          data: { confirm: 'Estas seguro?'}, class: 'btn btn-default' %>
                           <%= link_to "Editar", edit_rural_path(avaluo), class: 'btn btn-default' %>
-                          <%= link_to "Show", rural_path(avaluo),class: 'btn btn-default' %></p>
+                          <%= link_to "Borrar", rural_path(avaluo), method: :delete, 
+                          data: { confirm: 'Estas seguro?'}, class: 'btn btn-default' %> 
                         </td>
                         <td class="v-align-middle">
-                          <p>
-                          </p>
+
                         </td>
                       
                       </tr>
@@ -275,7 +226,7 @@
     <!-- BEGIN Overlay Header !-->
     <div class="container-fluid">
       <!-- BEGIN Overlay Logo !-->
-      <img class="overlay-brand" src="assets/img/logo.png" alt="logo" data-src="assets/img/logo.png" data-src-retina="assets/img/logo_2x.png" width="78" height="22">
+      <img class="overlay-brand" src="assets/logo.png" alt="logo" data-src="assets/logo.png" data-src-retina="assets/logo_2x.png" width="78" height="22">
       <!-- END Overlay Logo !-->
       <!-- BEGIN Overlay Close !-->
       <a href="#" class="close-icon-light overlay-close text-black fs-16">
@@ -299,111 +250,10 @@
       </div>
       <!-- END Overlay Controls !-->
     </div>
-    <!-- BEGIN Overlay Search Results, This part is for demo purpose, you can add anything you like !-->
-    <div class="container-fluid">
-      <span>
-            <strong>suggestions :</strong>
-        </span>
-      <span id="overlay-suggestions"></span>
-      <br>
-      <div class="search-results m-t-40">
-        <p class="bold">Pages Search Results</p>
-        <div class="row">
-          <div class="col-md-6">
-            <!-- BEGIN Search Result Item !-->
-            <div class="">
-              <!-- BEGIN Search Result Item Thumbnail !-->
-              <div class="thumbnail-wrapper d48 circular bg-success text-white inline m-t-10">
-                <div>
-                  <img width="50" height="50" src="assets/img/profiles/avatar.jpg" data-src="assets/img/profiles/avatar.jpg" data-src-retina="assets/img/profiles/avatar2x.jpg" alt="">
-                </div>
-              </div>
-              <!-- END Search Result Item Thumbnail !-->
-              <div class="p-l-10 inline p-t-5">
-                <h5 class="m-b-5"><span class="semi-bold result-name">ice cream</span> on pages</h5>
-                <p class="hint-text">via john smith</p>
-              </div>
-            </div>
-            <!-- END Search Result Item !-->
-            <!-- BEGIN Search Result Item !-->
-            <div class="">
-              <!-- BEGIN Search Result Item Thumbnail !-->
-              <div class="thumbnail-wrapper d48 circular bg-success text-white inline m-t-10">
-                <div>T</div>
-              </div>
-              <!-- END Search Result Item Thumbnail !-->
-              <div class="p-l-10 inline p-t-5">
-                <h5 class="m-b-5"><span class="semi-bold result-name">ice cream</span> related topics</h5>
-                <p class="hint-text">via pages</p>
-              </div>
-            </div>
-            <!-- END Search Result Item !-->
-            <!-- BEGIN Search Result Item !-->
-            <div class="">
-              <!-- BEGIN Search Result Item Thumbnail !-->
-              <div class="thumbnail-wrapper d48 circular bg-success text-white inline m-t-10">
-                <div><i class="fa fa-headphones large-text "></i>
-                </div>
-              </div>
-              <!-- END Search Result Item Thumbnail !-->
-              <div class="p-l-10 inline p-t-5">
-                <h5 class="m-b-5"><span class="semi-bold result-name">ice cream</span> music</h5>
-                <p class="hint-text">via pagesmix</p>
-              </div>
-            </div>
-            <!-- END Search Result Item !-->
-          </div>
-          <div class="col-md-6">
-            <!-- BEGIN Search Result Item !-->
-            <div class="">
-              <!-- BEGIN Search Result Item Thumbnail !-->
-              <div class="thumbnail-wrapper d48 circular bg-info text-white inline m-t-10">
-                <div><i class="fa fa-facebook large-text "></i>
-                </div>
-              </div>
-              <!-- END Search Result Item Thumbnail !-->
-              <div class="p-l-10 inline p-t-5">
-                <h5 class="m-b-5"><span class="semi-bold result-name">ice cream</span> on facebook</h5>
-                <p class="hint-text">via facebook</p>
-              </div>
-            </div>
-            <!-- END Search Result Item !-->
-            <!-- BEGIN Search Result Item !-->
-            <div class="">
-              <!-- BEGIN Search Result Item Thumbnail !-->
-              <div class="thumbnail-wrapper d48 circular bg-complete text-white inline m-t-10">
-                <div><i class="fa fa-twitter large-text "></i>
-                </div>
-              </div>
-              <!-- END Search Result Item Thumbnail !-->
-              <div class="p-l-10 inline p-t-5">
-                <h5 class="m-b-5">Tweats on<span class="semi-bold result-name"> ice cream</span></h5>
-                <p class="hint-text">via twitter</p>
-              </div>
-            </div>
-            <!-- END Search Result Item !-->
-            <!-- BEGIN Search Result Item !-->
-            <div class="">
-              <!-- BEGIN Search Result Item Thumbnail !-->
-              <div class="thumbnail-wrapper d48 circular text-white bg-danger inline m-t-10">
-                <div><i class="fa fa-google-plus large-text "></i>
-                </div>
-              </div>
-              <!-- END Search Result Item Thumbnail !-->
-              <div class="p-l-10 inline p-t-5">
-                <h5 class="m-b-5">Circles on<span class="semi-bold result-name"> ice cream</span></h5>
-                <p class="hint-text">via google plus</p>
-              </div>
-            </div>
-            <!-- END Search Result Item !-->
-          </div>
-        </div>
-      </div>
-    </div>
+   
     <!-- END Overlay Search Results !-->
   </div>
   <!-- END Overlay Content !-->
 </div>
 <!-- END OVERLAY -->
-<!-- BEGIN VENDOR JS -->
 	

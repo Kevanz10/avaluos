@@ -12,6 +12,10 @@
  *
  *= require toggles
  *= require toggles-modern
+ *= require bootstrap.min
+ *= require jquery.scrollbar
+ *= require pages.css
+ *= require toggles
  *= require_tree .
  *= require_self
 */
@@ -19,7 +23,12 @@
 @import "font-awesome";
 
 
+.row{
+	margin-top: 1%;
+}
 
+label {
+	display: block;
+}
 
- 
     

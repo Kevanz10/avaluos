@@ -13,13 +13,17 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.nested-fields
+//= require jquery.scrollbar.min
 //= require bootstrap-sprockets
+//= require pace.min
+//= require modernizr.custom
+//= require pages.min
+//= require pages
 //= require toggles
 //= require toggles.min
 //= require form
 //= require turbolinks
 //= require bootstrap.min
-//= require_tree .
 
 
 

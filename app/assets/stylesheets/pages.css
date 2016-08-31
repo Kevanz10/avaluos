@@ -129,7 +129,7 @@ body.rtl [class*="col-"] {
   -webkit-animation: none;
   animation: none;
   top: 73px;
-  background: url('../img/progress/progress-circle-success.svg') no-repeat top left;
+  background: url('../assets/progress-circle-success.svg') no-repeat top left;
   background-size: 100% auto;
   margin: 0 auto;
   border-width: 0;
@@ -1240,7 +1240,7 @@ body.rtl [class*="col-"] {
 */
 .icon-set {
   
-  background: url('assets/images/top_tray.png') no-repeat -58px -13px;
+  background: url('../assets/top_tray.png') no-repeat -58px -13px;
   width: 15px;
   height: 3px;
   position: relative;
@@ -4590,7 +4590,7 @@ body > .pgn-wrapper {
   background-image: url('../img/progress/progress-circle-primary.svg');
 }
 .progress-circle-indeterminate.progress-circle-success {
-  background-image: url('../img/progress/progress-circle-success.svg');
+  background-image: url('../assets/progress-circle-success.svg');
 }
 .progress-circle-indeterminate.progress-circle-complete {
   background-image: url('../img/progress/progress-circle-complete.svg');

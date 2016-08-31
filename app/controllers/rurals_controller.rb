@@ -1,4 +1,5 @@
 class RuralsController < ApplicationController
+  layout 'rural', except: [:index]
 
   def test
     @rural= Rural.new

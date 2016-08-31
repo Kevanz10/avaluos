@@ -1,184 +1,189 @@
-<div class='row'>
-  <div class= 'container'>
-    <div class="panel panel-default">
+<div class="panel-heading">  
+  <%= form_for @rural, html: {class: "avaluo-form panel-body"} do |f| %>
+    <h4><b>Datos del cliente</b></h4>
+    <div class="row">
+      <div class='col-md-6 text-center'>
+        <%= f.label :cctype,"Tipo de identificación: " %>
+        <%= f.select :cctype, AVALUOS_RURALS['TYPE'].collect {|p| [p]},  {include_blank: true}%>
+      </div>
+    
+      <div class='col-md-6 text-center'>
+        <%= f.label :document_number, 'Número de documento: ' %>
+        <%= f.text_field :document_number, class: 'form-control' %>
+      </div>
+      
+    </div>
+    
+    <div class="row">
+      <div class='col-md-6 text-center'>
+       <%= f.label :first_name,"Primer Nombre: " %>
+       <%= f.text_field :first_name,class: 'form-control' %>
+     </div>
 
-      <div class="panel-heading">
-        <div class="panel-title">
-          Datos del Cliente
+      <div class='col-md-6 text-center'>
+        <%= f.label :second_name,"Segundo Nombre: " %>
+        <%= f.text_field :second_name,class: 'form-control' %>
+      </div>
+      
+    </div>
+    
+    <div class="row">
+      <div class='col-md-6 text-center'>
+       <%= f.label :last_name,"Primer Apellido: " %>
+       <%= f.text_field :last_name, class: 'form-control' %>
+      </div>
+      
+      <div class='col-md-6 text-center'>
+        <%= f.label :s_surname, "Segundo Apellido: " %>
+        <%= f.text_field :s_surname, class: 'form-control' %>
+      </div>
+      
+    </div>
+   
+    <div class="row">
+      <div class='col-md-6 text-center'>
+        <%= f.label :cellphone, "Celular: " %>
+        <%= f.text_field :cellphone, class: 'form-control' %>
+      </div>
+
+      <div class='col-md-6 text-center'>
+        <%= f.label :email, "Correo Electrónico: " %>
+        <%= f.text_field :email, class: 'form-control' %>
+      </div>
+      
+    </div>
+
+    <div class="row">
+      <div>
+        <div class="row">
+        <h4><b>Dirección del solicitante</b></h4> 
         </div>
+
+        <div class="row">
+          <div class='col-md-6 text-center'>
+            <%= f.label :claimant_department, "Departamento del solicitante: " %>
+            <%= f.select :claimant_department, AVALUOS_RURALS['DEPARTMENT'].collect {|p| [p]}, {include_blank: true} %>
           </div>
-        <%= form_for @rural, html: {class: "avaluo-form panel-body"} do |f| %>
-     
 
-        <div class=form-group>
-          <%= f.label :cctype,"Tipo de identificación: " %><br>
-          <%= f.select :cctype, AVALUOS_RURALS['TYPE'].collect {|p| [p]},  {include_blank: true}%>
-        </div>
-        
-        <div class=form-group>
-          <%= f.label :document_number, 'Número de documento: ' %>
-          <%= f.text_field :document_number, class: 'form-control' %>
-        </div>
-        
-        <div class=form-group>
-          <%= f.label :first_name,"Primer Nombre: " %><br>
-          <%= f.text_field :first_name,class: 'form-control' %>
+          <div class= 'col-md-6 text-center'>
+            <%= f.label :claimant_city, "Ciudad del solicitante: " %>
+            <%= f.select :claimant_city, AVALUOS_RURALS['CITIES'].collect {|p| [p]}, {include_blank: true} %>
+          </div>
         </div>
 
-        <div class=form-group>
-          <%= f.label :second_name,"Segundo Nombre: " %><br>
-          <%= f.text_field :second_name,class: 'form-control' %>
-        </div>
-       
-        <div class=form-group>
-          <%= f.label :last_name,"Primer Apellido: " %><br>
-          <%= f.text_field :last_name, class: 'form-control' %>
-        </div>
-          
-        <div class=form-group>
-          <%= f.label :s_surname, "Segundo Apellido: " %><br>
-          <%= f.text_field :s_surname, class: 'form-control' %>
-        </div>
-
-        <div class=form-group>
-          <%= f.label :cellphone, "Celular: " %><br>
-          <%= f.text_field :cellphone, class: 'form-control' %>
-        </div>
-
-        <div class=form-group>
-          <%= f.label :email, "Correo Electrónico: " %><br>
-          <%= f.text_field :email, class: 'form-control' %>
-        </div>
-
-        <div class=form-group>
-          <%= f.label :claimant_address, "Dirección del solicitante:" %><br>
-          <%= f.label "rural[tvia]", "Tipo de via" %><br>
-          <%= select_tag "rural[tvia]", options_for_select(AVALUOS_RURALS['TVIA'].collect {|p| [p]}, @rural.claimant_address.nil? ? "" : @rural.claimant_address['tipo_via']) %>
-          
-          <div>
+        <div class="row">
+          <div class="col-md-2 text-center">
+            <%= f.label "rural[tvia]", "Tipo de via" %>
+            <%= select_tag "rural[tvia]", options_for_select(AVALUOS_RURALS['TVIA'].collect {|p| [p]}, @rural.claimant_address.nil? ? "" : @rural.claimant_address['tipo_via']) %> 
+          </div>
+          <div class="col-md-2 text-center">
             <%= f.label "rural[via]", "Via:" %>
-            <%= text_field_tag "rural[via]" , @rural.claimant_address.nil? ? "" : @rural.claimant_address['via'], { class: 'form-control'} %>
+          <%= text_field_tag "rural[via]" , @rural.claimant_address.nil? ? "" : @rural.claimant_address['via'], { class: 'form-control'} %>
           </div>
-          
-          <div>
+          <div class="col-md-2 text-center">
             <%= f.label "rural[compvia]", "Complemento Via:" %>
             <%= text_field_tag "rural[compvia]" , @rural.claimant_address.nil? ? "" : @rural.claimant_address['compvia'], { class: 'form-control' } %>
           </div>
-
-          <div>
+       
+          <div class="col-md-2 text-center">
             <%= f.label "rural[num]", "Numero:" %>
             <%= text_field_tag "rural[num]" , @rural.claimant_address.nil? ? "" : @rural.claimant_address['num'], { class: 'form-control' } %>
           </div>
 
-          <div>
+          <div class="col-md-2 text-center">
             <%= f.label  "rural[compnum]", "  Complemento Numero:" %>
             <%= text_field_tag "rural[compnum]" , @rural.claimant_address.nil? ? "" : @rural.claimant_address['compnum'], { class: 'form-control' } %>
           </div>
 
-          <div>
+          <div class="col-md-1 text-center">
             <%= f.label "rural[placa]", "Placa" %>
             <%= text_field_tag "rural[placa]" , @rural.claimant_address.nil? ? "" : @rural.claimant_address['placa'], { class: 'form-control' } %>
           </div>
 
-          <div>
+          <div class="col-md-1 text-center">
             <%= f.label "rural[adicional]", "Adicional" %>
             <%= text_field_tag "rural[adicional]" , @rural.claimant_address.nil? ? "" : @rural.claimant_address['placa'], { class: 'form-control' } %>
-          </div>     
+          </div>    
         </div>
-
-        <div class=form-group>
-          <%= f.label :claimant_department, "Departamento del solicitante: " %><br>
-          <%= f.select :claimant_department, AVALUOS_RURALS['DEPARTMENT'].collect {|p| [p]}, {include_blank: true} %>
-        </div>
-
-        <div class=form-group>
-          <%= f.label :claimant_city, "Ciudad del solicitante: " %><br>
-          <%= f.select :claimant_city, AVALUOS_RURALS['CITIES'].collect {|p| [p]}, {include_blank: true} %>
-        </div>
-
-        <div>
-          <h1>Ubicacion del inmueble</h1>
-          <div class= "titulation-form">
-            <% if @rural.titulation.nil? %>
-              <%= f.fields_for :titulation, @rural.build_titulation do |titu|%>
-                <% render "titulations", titu: titu %>
-              <% end %>
-            <% else %>
-            <%= f.fields_for :titulation, @rural.titulation do |titu|%>
-              <% render "titulations", titu: titu %>
-            <% end  %>
-          <% end %>
-        </div>
-
-        <div>
-          <h1>Información de construcción</h1>
-          <div class= "titulation-form">
-            <% if @rural.construction.nil? %>
-              <%= f.fields_for :construction, @rural.build_construction do |const|%>
-                <% render "construction", const: const %>
-              <% end %>
-            <% else %>
-            <%= f.fields_for :construction, @rural.construction do |const|%>
-              <% render "construction", const: const %>
-            <% end  %>
-          <% end %>
-        </div>
-        
-        
-        <div>
-          <h1>Información de neighborhood</h1>
-          <div class= "titulation-form">
-            <% if @rural.neighborhood.nil? %>
-              <%= f.fields_for :neighborhood, @rural.build_neighborhood do |neighborhood|%>
-                <% render "neighborhood", neighborhood: neighborhood %>
-              <% end %>
-            <% else %>
-            <%= f.fields_for :neighborhood, @rural.neighborhood do |neighborhood|%>
-              <% render "neighborhood", neighborhood: neighborhood %>
-            <% end  %>
-          <% end %>
-        </div>
-
-        <div>
-          <h1>Información del inmueble</h1>
-          <div class= "titulation-form">
-            <% if @rural.property.nil? %>
-              <%= f.fields_for :property, @rural.build_property do |property|%>
-                <% render "property", property: property %>
-              <% end %>
-            <% else %>
-            <%= f.fields_for :property, @rural.property do |property|%>
-              <% render "property", property: property %>
-            <% end  %>
-          <% end %>
-        </div>
-
-
-        <div>
-          <h1>Valor razonable</h1>
-          <div>
-            <% if @rural.value.nil? %>
-              <%= f.fields_for :value, @rural.build_value do |value|%>
-                <% render "value", value: value %>
-              <% end %>
-            <% else %>
-            <%= f.fields_for :value, @rural.value do |value|%>
-              <% render "value", value: value %>
-            <% end  %>
-          <% end %>
-        </div>
-        
-        <br>
-        <div class=form-group>
-          <%= f.submit%>
-        </div>
-      <% end %>
       </div>
     </div>
+
+    <div>
+      <h1>Ubicacion del inmueble</h1>
+      <div class= "titulation-form">
+        <% if @rural.titulation.nil? %>
+          <%= f.fields_for :titulation, @rural.build_titulation do |titu|%>
+            <% render "titulations", titu: titu %>
+          <% end %>
+        <% else %>
+        <%= f.fields_for :titulation, @rural.titulation do |titu|%>
+          <% render "titulations", titu: titu %>
+        <% end  %>
+      <% end %>
+    </div>
+
+    <div>
+      <h1>Información de construcción</h1>
+      <div class= "titulation-form">
+        <% if @rural.construction.nil? %>
+          <%= f.fields_for :construction, @rural.build_construction do |const|%>
+            <% render "construction", const: const %>
+          <% end %>
+        <% else %>
+        <%= f.fields_for :construction, @rural.construction do |const|%>
+          <% render "construction", const: const %>
+        <% end  %>
+      <% end %>
+    </div>
+    
+    
+    <div>
+      <h1>Información de neighborhood</h1>
+      <div class= "titulation-form">
+        <% if @rural.neighborhood.nil? %>
+          <%= f.fields_for :neighborhood, @rural.build_neighborhood do |neighborhood|%>
+            <% render "neighborhood", neighborhood: neighborhood %>
+          <% end %>
+        <% else %>
+        <%= f.fields_for :neighborhood, @rural.neighborhood do |neighborhood|%>
+          <% render "neighborhood", neighborhood: neighborhood %>
+        <% end  %>
+      <% end %>
+    </div>
+
+    <div>
+      <h1>Información del inmueble</h1>
+      <div class= "titulation-form">
+        <% if @rural.property.nil? %>
+          <%= f.fields_for :property, @rural.build_property do |property|%>
+            <% render "property", property: property %>
+          <% end %>
+        <% else %>
+        <%= f.fields_for :property, @rural.property do |property|%>
+          <% render "property", property: property %>
+        <% end  %>
+      <% end %>
+    </div>
+
+
+    <div>
+      <h1>Valor razonable</h1>
+      <div>
+        <% if @rural.value.nil? %>
+          <%= f.fields_for :value, @rural.build_value do |value|%>
+            <% render "value", value: value %>
+          <% end %>
+        <% else %>
+        <%= f.fields_for :value, @rural.value do |value|%>
+          <% render "value", value: value %>
+        <% end  %>
+      <% end %>
+    </div>
+    
+    <div class=form-group>
+      <%= f.submit%>
+    </div>
+  <% end %>
 </div>
 
-<style>
-  body{
-    background-color: white !important;
-  }
-</style>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAG25Xm2Cl8lAq10P9H_ROAPOBC0DtTTcs&callback=initMap" async defer></script>
