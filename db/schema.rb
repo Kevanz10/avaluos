@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160902083429) do
+ActiveRecord::Schema.define(version: 20160902093331) do
 
   create_table "constructions", force: :cascade do |t|
     t.text     "estado"
@@ -186,6 +186,7 @@ ActiveRecord::Schema.define(version: 20160902083429) do
     t.string   "objecto"
     t.string   "motivo"
     t.string   "credito"
+    t.string   "estado"
   end
 
   create_table "titulations", force: :cascade do |t|

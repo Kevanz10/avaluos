@@ -2,6 +2,8 @@ SECTOR: ['Urbano', 'Rural']
 
 ESTADO: ['Nueva', 'Usada']
 
+RESTADO: ['Pendiente por Documento', 'Correciones', 'Por Programar', 'En proceso', 'Devuelto']
+
 PISOS: ['Reforzado', 'No Reforzado']
 
 TYPE: ['C.C.', 'Pasaporte']

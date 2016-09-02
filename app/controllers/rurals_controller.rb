@@ -32,7 +32,7 @@ class RuralsController < ApplicationController
 
     respond_to do |format|
       if @rural.save
-        format.html { redirect_to @rural, notice: 'Se ha guardado correctamente.' }
+        format.html { redirect_to rurals_path, notice: 'Se ha guardado correctamente.' }
         format.json { render json: @rural, status: :created, location: @rural }
       else
         format.html { render action: "new" }
@@ -54,7 +54,7 @@ class RuralsController < ApplicationController
   									 :last_name, :s_surname, :cellphone, :email, 
                      :claimant_department, :claimant_city, :second_name,
                      :cctype, :claimant_address, :entidad,:segmento, :objecto, :motivo, :credito,
-                     :tvia, :via, :compvia, :num, :compnum, :placa, :adicional,
+                     :tvia, :via, :compvia, :num, :compnum, :placa, :adicional, :estado,
                      neighborhood_attributes: [:id, :alcantasector, :alcantapredio, :estrato, :evias,
                       :rural_id, :acueducsector, :acueducpredio, :blegal, :vpavimentadas, :gassector,
                       :gaspredio, :toposector, :svias, :telsector, :telpredio, :transporte, :condiciones,

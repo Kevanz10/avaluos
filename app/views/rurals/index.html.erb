@@ -63,39 +63,7 @@
             <!-- END ACTION BAR -->
           </div>
         </div>
-    <!-- LEFT SIDE -->
-    <div class="pull-left full-height visible-sm visible-xs">
-      <!-- START ACTION BAR -->
-      <div class="sm-action-bar">
-        <a href="#" class="btn-link toggle-sidebar" data-toggle="sidebar">
-          <span class="icon-set menu-hambuger"></span>
-        </a>
-      </div>
-      <!-- END ACTION BAR -->
-    </div>
-    <!-- RIGHT SIDE -->
-    <div class="pull-right full-height visible-sm visible-xs">
-      <!-- START ACTION BAR -->
-      <div class="sm-action-bar">
-        <a href="#" class="btn-link" data-toggle="quickview" data-toggle-element="#quickview">
-          <span class="icon-set menu-hambuger-plus"></span>
-        </a>
-      </div>
-      <!-- END ACTION BAR -->
-    </div>
     <!-- END MOBILE CONTROLS -->
-    <div class=" pull-left sm-table">
-      <div class="header-inner">
-        <div class="brand inline">
-          <img src="assets/logo.png" alt="logo" data-src="assets/logo.png" data-src-retina="assets/logo.png" width="78" height="22">
-        </div>
-      </div>
-    </div>
-    <div class=" pull-right">
-      <div class="header-inner">
-        <a href="#" class="btn-link icon-set menu-hambuger-plus m-l-20 sm-no-margin hidden-sm hidden-xs" data-toggle="quickview" data-toggle-element="#quickview"></a>
-      </div>
-    </div>
     <div class=" pull-right">
       <!-- START User Info-->
       <div class="visible-lg visible-md m-t-10">
@@ -153,7 +121,7 @@
             <!-- START PANEL -->
             <div class="panel panel-transparent">
               <div class="panel-heading">
-                <div class="btn-group pull-right m-b-10">
+                <div class="btn-group pull-left m-b-10">
                   <%= link_to "Crear Avaluo", new_rural_path, class: 'btn btn-default' %>
                 </div>
                 <div class="clearfix"></div>
@@ -166,15 +134,11 @@
                         <!-- NOTE * : Inline Style Width For Table Cell is Required as it may differ from user to user
 											Comman Practice Followed
 											-->
-                        <th style="width:1%">
-                          <button class="btn"><i class="fa fa-power-off" aria-hidden="true""></i>
-                          </button>
-                        </th>
                         <th style="width:20%">Asignado</th>
                         <th style="width:20%">Direccion</th>
-                        <th style="width:29%">Activities</th>
-                        <th style="width:15%">Status</th>
-                        <th style="width:15%">Last Update</th>
+                        <th style="width:30%">Fecha De Estado</th>
+                        <th style="width:29%">Status</th>
+                        <th style="width:15%">Ciudad</th>
                       </tr>
                     </thead>
 
@@ -182,24 +146,34 @@
                     <tbody>
                       <tr>
                         <td class="v-align-middle">
-                          <div class="checkbox ">
-                          </div>
+                          <p><%= avaluo.first_name %> <%= avaluo.last_name %></p>  
                         </td>
                         <td class="v-align-middle ">
-                          <p><%= avaluo.first_name %> <%= avaluo.last_name %></p>
+                          <p>
+                            <%= avaluo.titulation.claimant_address['tipo_via']%>
+                            <%= avaluo.titulation.claimant_address['via']%>
+                            <%= avaluo.titulation.claimant_address['compvia']%>
+                            #<%= avaluo.titulation.claimant_address['num']%>
+                            <%= avaluo.titulation.claimant_address['compnum']%>
+                            -<%= avaluo.titulation.claimant_address['placa'] %>
+                          </p>
                         </td>
                         <td class="v-align-middle">
-                        algo va aqui
+                          <p><%= avaluo.created_at.time%></p>  
+                        </td>
+                        <td class="v-align-middle">
+                          <p><%= avaluo.estado%> </p>
+                        </td>
+                        <td class="v-align-middle">
+                          <p><%= avaluo.titulation.municipio%></p>
+                          
                         </td>
                         <td class="v-align-middle">
                           <%= link_to "Editar", edit_rural_path(avaluo), class: 'btn btn-default' %>
-                          <%= link_to "Borrar", rural_path(avaluo), method: :delete, 
-                          data: { confirm: 'Estas seguro?'}, class: 'btn btn-default' %> 
+                          <%= link_to "", rural_path(avaluo), method: :delete, 
+                          data: { confirm: 'Desea Borrar? Este archivo no podra ser recuperado'}, class: 'btn btn-default fa fa-trash-o btn-width' %> 
                         </td>
-                        <td class="v-align-middle">
-
-                        </td>
-                      
+                        
                       </tr>
                       <% end %>
                     </tbody>
