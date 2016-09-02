@@ -2,29 +2,25 @@
 	<div class="row">
 		<div class= "col-md-3">
 			<%= property.label :t_inmue, "Tipo del inmueble"	%>
-			<br>
-				<%= select_tag "rural[property_attributes][t_inmue]", options_for_select(AVALUOS_RURALS['TINMUEBLE'].collect {|p| [p]}, @rural.property.tinmueble.nil? ? 
+			<%= select_tag "rural[property_attributes][t_inmue]", options_for_select(AVALUOS_RURALS['TINMUEBLE'].collect {|p| [p]}, @rural.property.tinmueble.nil? ? 
 			"" : @rural.property.tinmueble['t_inmue']) %>
 		</div>
 
 		<div class= "col-md-3">
 			<%= property.label :u_inmue, "Uso del inmueble"	%>
-			<br>
-				<%= select_tag "rural[property_attributes][u_inmue]", options_for_select(AVALUOS_RURALS['USOSECTOR'].collect {|p| [p]}, @rural.property.uinmueble.nil? ? 
+			<%= select_tag "rural[property_attributes][u_inmue]", options_for_select(AVALUOS_RURALS['USOSECTOR'].collect {|p| [p]}, @rural.property.uinmueble.nil? ? 
 			"" : @rural.property.uinmueble['u_inmue']) %>
 		</div>
 
 		<div class= "col-md-3">
 			<%= property.label :cla_inmue, "Clase de inmueble"	%>
-			<br>
-				<%= select_tag "rural[property_attributes][cla_inmue]", options_for_select(AVALUOS_RURALS['CINMUEBLE'].collect {|p| [p]}, @rural.property.clainmueble.nil? ? 
+			<%= select_tag "rural[property_attributes][cla_inmue]", options_for_select(AVALUOS_RURALS['CINMUEBLE'].collect {|p| [p]}, @rural.property.clainmueble.nil? ? 
 			"" : @rural.property.clainmueble['cla_inmue']) %>
 		</div>
 
 		<div class= "col-md-3">
 			<%= property.label :t_vivienda, "Tipo del vivienda"	%>
-			<br>
-				<%= select_tag "rural[property_attributes][t_vivienda]", options_for_select(AVALUOS_RURALS['TIVIVIENDA'].collect {|p| [p]}, @rural.property.tvivienda.nil? ? 
+			<%= select_tag "rural[property_attributes][t_vivienda]", options_for_select(AVALUOS_RURALS['TIVIVIENDA'].collect {|p| [p]}, @rural.property.tvivienda.nil? ? 
 			"" : @rural.property.tvivienda['t_vivienda']) %>
 		</div>
 	</div>
@@ -32,26 +28,22 @@
 	<div class="row">
 		<div class= "col-md-3">
 			<%= property.label :d_tinmue, "Descripción"	%>
-			<br>
-				<%= text_field_tag "rural[property_attributes][d_tinmue]" , @rural.property.tinmueble.nil? ? "" : @rural.property.tinmueble['d_tinmue'], { class: 'form-control' }  %>
+			<%= text_field_tag "rural[property_attributes][d_tinmue]" , @rural.property.tinmueble.nil? ? "" : @rural.property.tinmueble['d_tinmue'], { class: 'form-control' }  %>
 		</div>
 		
 		<div class= "col-md-3">
 			<%= property.label :d_uinmue, "Descripción"	%>
-			<br>
-				<%= text_field_tag "rural[property_attributes][d_uinmue]", @rural.property.uinmueble.nil? ? "" : @rural.property.uinmueble['d_uinmue'], { class: 'form-control' }  %>
+			<%= text_field_tag "rural[property_attributes][d_uinmue]", @rural.property.uinmueble.nil? ? "" : @rural.property.uinmueble['d_uinmue'], { class: 'form-control' }  %>
 		</div>
 
 		<div class= "col-md-3">
 			<%= property.label :d_clainme, "Descripción"	%>
-			<br>
-				<%= text_field_tag "rural[property_attributes][d_clainme]", @rural.property.clainmueble.nil? ? "" : @rural.property.clainmueble['d_clainme'], { class: 'form-control' }  %>
+			<%= text_field_tag "rural[property_attributes][d_clainme]", @rural.property.clainmueble.nil? ? "" : @rural.property.clainmueble['d_clainme'], { class: 'form-control' }  %>
 		</div>
 
 		<div class= "col-md-3">
 			<%= property.label :d_tvivienda, "Descripción"	%>
-			<br>
-				<%= text_field_tag "rural[property_attributes][d_tvivienda]", @rural.property.tvivienda.nil? ? "" : @rural.property.tvivienda['d_tvivienda'], { class: 'form-control' }  %>
+			<%= text_field_tag "rural[property_attributes][d_tvivienda]", @rural.property.tvivienda.nil? ? "" : @rural.property.tvivienda['d_tvivienda'], { class: 'form-control' }  %>
 		</div>
 	</div>
 	
@@ -63,7 +55,6 @@
 		</div>
 
 		<div class="row faded">
-						<br>
 						<div class="row">
 							<div class="row">
 								<div class= "col-md-4">
@@ -74,41 +65,35 @@
 								
 								<div class= "col-md-4">
 									<%= property.label :nedificios, "No. Edificios"	%>
-									<br>
 									<%= property.text_field :nedificios, class: 'form-control' %>
 								</div>
 
 								<div class= "col-md-4">
 									<%= property.label :upisos, "Unidades por piso"	%>
-									<br>
 									<%= property.text_field :upisos, class: 'form-control' %>
 								</div>
 							</div>
 						</div>
-						<br>
 						<div class="row">
 							<div class="row">
 								<div class= "col-md-4">
 									<%= property.label :ubicacion, "Ubicación"	%>
-									<br>
+		
 									<%= property.select :ubicacion, AVALUOS_RURALS['UBICACION'].collect {|p| [p]}, {include_blank: true} %>
 								</div>
 								
 								<div class= "col-md-4">
-									<%= property.label :tunidades, "Total unidades"	%>
-									<br>
+									<%= property.label :tunidades, "Total unidades"	%>	
 									<%= property.text_field :tunidades, class: 'form-control' %>
 								</div>
 
 								<div class= "col-md-4">
 									<%= property.label :coeficiente, "Coeficiente %"	%>
-									<br>
 									<%= property.text_field :coeficiente, class: 'form-control' %>
 								</div>
 							</div>
 						</div>
 
-						<br>
 						<div class="row">
 						<h4>Dotación comunal</h4>
 							<div class="row">

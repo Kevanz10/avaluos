@@ -1,15 +1,20 @@
 
-<div class="form-group">
+<div>
 	<%= value.label :actualidad, "Actualidad Edificadora:"	%>
-	<%= value.text_field :actualidad, class: 'form-control' %>
+	<%= value.text_area :actualidad, class: 'form-control', :cols => 8, :rows => 8 %>
 </div>
 
-<div class="form-group">
+<div class="titu-margin">
 	<%= value.label :comportamiento, "Comportamiento oferta y demanda:"	%>
-	<%= value.text_field :comportamiento, class: 'form-control' %>
+	<%= value.text_area :comportamiento, class: 'form-control', :cols => 5, :rows => 5 %>
 </div>
 
-<div class="row">
+<div class="titu-margin">
+	<%= value.label :tiemepo, "Tiempo esperado de comercialización (en meses):"	%>
+	<%= value.text_field :tiempo, class: 'form-control', :cols => 5, :rows => 5 %>
+</div>
+
+<div class="row titu-margin">
 	<div class="col-md-4">
 		<%= value.label :valoruvr, "Valor UVR"	%>
 		<%= value.text_field :valoruvr, class: 'form-control' %>	
@@ -23,15 +28,14 @@
 		<%= value.text_field :vasegurable, class: 'form-control' %>	
 	</div>
 </div>
-<br>
 
-<div class="row">
+<div class="row titu-margin">
 	<div class="col-md-3">
 		<%= value.label :vterreno, "Valor proporcional del terreno	"	%>
 		<%= value.text_field :vterreno, class: 'form-control' %>	
 	</div>
 	<div class="col-md-3">
-		<%= value.label :iterreno, "Valor integral del terreno	"	%>
+		<%= value.label :iterreno, "Porcentaje Terreno"	%>
 		<%= value.text_field :iterreno, class: 'form-control' %>	
 	</div>
 	<div class="col-md-3">
@@ -43,20 +47,18 @@
 		<%= value.text_field :vconstruccion, class: 'form-control' %>	
 	</div>
 </div>
-<br>
-<div>
-	<%= value.label :garantia, "Calificación garantia"	%>
-	<%= value.text_field :garantia, class: 'form-control' %>		
+
+<div class="titu-margin">
+	<%= value.label :garantia, "Calificación garantia", class: 'inline-label'	%>
+	<%= value.select :garantia, AVALUOS_RURALS['FAV'].collect {|p| [p]}, {include_blank: true} %>		
 </div>
 
-<br>
-<div>
+<div class="titu-margin">
 	<%= value.label :observacion, "Observaciones"	%>
-	<%= value.text_field :observacion, class: 'form-control' %>		
+	<%= value.text_area :observacion, class: 'form-control', cols: 5 , rows: 5 %>		
 </div>
 
-<br>
-<div class="row">
+<div class="row titu-margin">
 	<div class="col-md-6">
 		<%= value.label :danexo, "Dirección anexos"	%>
 		<%= value.text_field :danexo, class: 'form-control' %>		
@@ -67,6 +69,28 @@
 	</div>
 </div>
 
+<div class="row titu-margin">
+	<div class="col-md-3">
+		<%= value.label :vrhonorarios, "Valor honorarios"	%>
+		<%= value.text_field :vrhonorarios, class: 'form-control' %>		
+	</div>
+	<div class="col-md-3">
+		<%= value.label :Gtraslado, "Gastos de traslado"	%>
+		<%= value.text_field :Gtraslado, class: 'form-control' %>		
+	</div>
+	<div class="col-md-3">
+		<%= value.label :subhonorarios, "Sub-total honorarios"	%>
+		<%= value.text_field :subhonorarios, class: 'form-control' %>		
+	</div>
+	<div class="col-md-3">
+		<%= value.label :ihonorarios, "Iva honorarios	"	%>
+		<%= value.text_field :ihonorarios, class: 'form-control' %>		
+	</div>
+	<div class="col-md-3 col-md-offset-4 titu-margin">
+		<%= value.label :total, "Total honorarios"	%>
+		<%= value.text_field :total, class: 'form-control' %>		
+	</div>
+</div>
 
 <h2>lo que sea</h2>
 <div class="items">

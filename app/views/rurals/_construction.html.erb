@@ -1,10 +1,24 @@
 <div class="row">
-	
-	<br>
-	<div class= "text-center">
-		<%= const.label :econstruction, "Estado de la construcción"	%>
-		<%= const.select :econstruction,AVALUOS_RURALS['ESTADO'].collect {|p| [p]}, {include_blank: true} %>
+	<div class="row">
+
+		<div class= "col-md-4">
+			<%= const.label :econstruction, "Estado de la construcción"	%>
+			<%= const.select :econstruction,AVALUOS_RURALS['ESTADO'].collect {|p| [p]}, {include_blank: true} %>
+		</div>
+
+		<div class= "col-md-4">
+			<%= const.label :remodelado, "Remodelado"	%>
+			<div class="remodelar toggle-modern" data-toggle-on="<%= !const.object.cobra.to_i.zero? %>"></div>
+			<%= const.check_box :remodelado, class: "remodelado", hidden: true %>		
+		</div>
+
+		<div class= "col-md-4">
+			<%= const.label :conservar, "Estado de la Conservación"	%>
+			<%= const.select :conservar,AVALUOS_RURALS['ESTADO'].collect {|p| [p]}, {include_blank: true} %>
+		</div>
+		
 	</div>
+
 	<div class="row">
 		<div class="col-md-4">
 			<%= const.label :npisos, "Número de pisos:"	%>
@@ -18,12 +32,10 @@
 			<div class="on-off">
 				<%= const.label :cobra, "En obra?"	%>
 				<div class="toggle toggle-modern" data-toggle-on="<%= !const.object.cobra.to_i.zero? %>"></div>
-
 				<%= const.check_box :cobra, class: "cobra", hidden: true %>		
 			</div>
 		</div>	
 	</div>
-	<br>
 	<div class="row">
 		<div class="col-md-4">
 			<%= const.label :años, "Año de construcción:"	%>
@@ -39,7 +51,6 @@
 			 {include_blank: true} %>
 		</div>	
 	</div>
-	<br>
 	<div class="row">
 		<div class="col-md-4">
 			<%= const.label :estructura, "Estructura"	%>
@@ -58,7 +69,6 @@
 		</div>	
 	</div>
 
-	<br>
 	<div class="row">
 		<div class="col-md-4">
 			<%= const.label :fachada, "Fachada:"	%>
@@ -76,7 +86,7 @@
 			 {include_blank: true} %>
 		</div>	
 	</div>
-	<br>
+
 	<div class="row">
 		<div class="col-md-4">
 			<%= const.label :daños, "Daños:"	%>
@@ -94,35 +104,29 @@
 			 {include_blank: true} %>
 		</div>	
 	</div>
-	<br>
 	<div class="row">
 		<div class="col-md-3">
 			<%= const.label :testructura, "Material o Tipo de estructura:"	%>
-			<br>
 			<%= const.select :testructura, AVALUOS_RURALS['TESTRUCTURA'].collect {|p| [p]},
 			 {include_blank: true} %>
 		</div>
 		<div class="col-md-3">
 			<%= const.label :ventilar, "Ventilación:"	%>
-			<br>
 			<%= const.select :ventilar, AVALUOS_RURALS['VENTILAR'].collect {|p| [p]},
 			 {include_blank: true} %>
 		</div>
 		<div class="col-md-3">
 			<%= const.label :planta, "Irregularidad Planta: "	%>
-			<br>
 			<%= const.select :planta, AVALUOS_RURALS['IRREGULAR'].collect {|p| [p]},
 			 {include_blank: true} %>
 		</div>	
 		<div class="col-md-3">
 			<%= const.label :altura, "Irregularidad Altura: "	%>
-			<br>
 			<%= const.select :altura, AVALUOS_RURALS['IRREGULAR'].collect {|p| [p]},
 			 {include_blank: true} %>
 		</div>	
 	</div>
-	<h1>Dependencias</h1>
-	<br>
+	<h4 class='text-left titu-margin'><b>Dependencias</b></h4>
 	<div class="row">
 		<div class="col-md-4">
 			<%= const.label :habitacion, "Habitaciones:"	%>
@@ -137,7 +141,6 @@
 			<%= const.text_field :shabitacion, class: 'form-control' %>
 		</div>	
 	</div>
-	<br>
 	<div class="row">
 		<div class="col-md-4">
 			<%= const.label :closet, "Closets:"	%>
@@ -152,7 +155,6 @@
 			<%= const.text_field :comedor, class: 'form-control' %>
 		</div>	
 	</div>
-	<br>
 	<div class="row">
 		<div class="col-md-4">
 			<%= const.label :pribanos, "Baños privados:"	%>
@@ -167,7 +169,6 @@
 			<%= const.text_field :serbanos, class: 'form-control' %>
 		</div>	
 	</div>
-	<br>
 	<div class="row">
 		<div class="col-md-4">
 			<%= const.label :cocina, "Cocinas:"	%>
@@ -182,7 +183,6 @@
 			<%= const.text_field :balcon, class: 'form-control' %>
 		</div>	
 	</div>
-	<br>
 	<div class="row">
 		<div class="col-md-4">
 			<%= const.label :terraza, "Terrazas:"	%>
@@ -197,7 +197,6 @@
 			<%= const.text_field :jardin, class: 'form-control' %>
 		</div>	
 	</div>
-	<br>
 	<div class="row">
 		<div class="col-md-4">
 			<%= const.label :zonaropa, "Zonas de ropas:"	%>
@@ -212,7 +211,6 @@
 			<%= const.text_field :locales, class: 'form-control' %>
 		</div>	
 	</div>
-	<br>
 	<div class="row">
 		<div class="col-md-6">
 			<%= const.label :oficina, "Oficinas:"	%>
@@ -223,51 +221,94 @@
 			<%= const.text_field :bodega, class: 'form-control' %>
 		</div>
 	</div>
-	<h1>Acabados</h1>
-	<br>
+	<h4 class='text-left'><b>Acabados</b></h4>
+	<h5>Estados</h5>
 	<div class="row">
 		<div class="col-md-3">
-			<%= const.label :construction['cpisos'],"Estado Pisos: " %><br>
+			<%= const.label :construction['cpisos'],"Estado Pisos: " %>
 			<%= select_tag "rural[construction_attributes][cpisos]", options_for_select(AVALUOS_RURALS['PACABADO'].collect {|p| [p]}, @rural.construction.estado.nil? ? "" : @rural.construction.estado['cpisos']), {include_blank: true} %>
 		</div>
 		<div class="col-md-3">
-			<%= const.label :construction['cmuroscmuros'],"Estado Muros: " %><br>
+			<%= const.label :construction['cmuroscmuros'],"Estado Muros: " %>
 			<%= select_tag "rural[construction_attributes][cmuros]", options_for_select(AVALUOS_RURALS['PACABADO'].collect {|p| [p]}, @rural.construction.estado.nil? ? "" : @rural.construction.estado['cmuros']),{include_blank: true} %>
 		</div>
 		<div class="col-md-3">
-			<%= const.label :construction['ctechos'],"Estado Techos: " %><br>
+			<%= const.label :construction['ctechos'],"Estado Techos: " %>
 			<%= select_tag "rural[construction_attributes][ctechos]", options_for_select(AVALUOS_RURALS['PACABADO'].collect {|p| [p]}, @rural.construction.estado.nil? ? "" : @rural.construction.estado['ctechos']),{include_blank: true} %>
 		</div>
 		<div class="col-md-3">
-			<%= const.label :construction['cmadera'],"Estado C. Madera: " %><br>
+			<%= const.label :construction['cmadera'],"Estado C. Madera: " %>
 			<%= select_tag "rural[construction_attributes][cmadera]", options_for_select(AVALUOS_RURALS['PACABADO'].collect {|p| [p]}, @rural.construction.estado.nil? ? "" : @rural.construction.estado['cmadera']),{include_blank: true} %>
 		</div>
 	</div>
 
 	<div class="row">
 				<div class="col-md-4">
-			<%= const.label :construction['cmetal'],"Estado C.metal: " %><br>
+			<%= const.label :construction['cmetal'],"Estado C.metal: " %>
 			<%= select_tag "rural[construction_attributes][cmetal]", options_for_select(AVALUOS_RURALS['PACABADO'].collect {|p| [p]}, @rural.construction.estado.nil? ? "" : @rural.construction.estado['cmetal']),{include_blank: true} %>
 		</div>
 		<div class="col-md-4">
-			<%= const.label :construction['cbanos'],"Estado Baños: " %><br>
+			<%= const.label :construction['cbanos'],"Estado Baños: " %>
 			<%= select_tag "rural[construction_attributes][cbanos]", options_for_select(AVALUOS_RURALS['PACABADO'].collect {|p| [p]}, @rural.construction.estado.nil? ? "" : @rural.construction.estado['cbanos']),{include_blank: true} %>
 		</div>
 		<div class="col-md-4">
-			<%= const.label :construction['ccocina'],"Estado Cocina: " %><br>
+			<%= const.label :construction['ccocina'],"Estado Cocina: " %>
 			<%= select_tag "rural[construction_attributes][ccocina]", options_for_select(AVALUOS_RURALS['PACABADO'].collect {|p| [p]}, @rural.construction.estado.nil? ? "" : @rural.construction.estado['ccocina']),{include_blank: true} %>
 		</div>
 	</div>
 
 	<div class="row">
-		<h1>Garajes</h1>
-		<div>
+		<h5>Calidad</h5>
+		<div class="col-md-3">
+			<%= const.label :rpisos,"Calidad pisos: " %>
+			<%= const.select :rpisos, AVALUOS_RURALS['RCALIDAD'].collect {|p| [p]},
+			 {include_blank: true} %>	
+		</div>
+		<div class="col-md-3">
+			<%= const.label :rmuros,"Calidad muros: " %>
+			<%= const.select :rmuros, AVALUOS_RURALS['RCALIDAD'].collect {|p| [p]},
+			 {include_blank: true} %>	
+		</div>
+		<div class="col-md-3">
+			<%= const.label :rtechos,"Calidad techos: " %>
+			<%= const.select :rtechos, AVALUOS_RURALS['RCALIDAD'].collect {|p| [p]},
+			 {include_blank: true} %>	
+		</div>
+
+		<div class="col-md-3">
+			<%= const.label :rmadera,"Calidad C.Madera: " %>
+			<%= const.select :rmadera, AVALUOS_RURALS['RCALIDAD'].collect {|p| [p]},
+			 {include_blank: true} %>	
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-4">
+			<%= const.label :rmetal,"Calidad C. Metal: " %>
+			<%= const.select :rmetal, AVALUOS_RURALS['RCALIDAD'].collect {|p| [p]},
+			 {include_blank: true} %>	
+		</div>
+
+		<div class="col-md-4">
+			<%= const.label :rbanos,"Calidad Baños: " %>
+			<%= const.select :rbanos, AVALUOS_RURALS['RCALIDAD'].collect {|p| [p]},
+			 {include_blank: true} %>	
+		</div>
+
+		<div class="col-md-4">
+			<%= const.label :rcocina,"Calidad cocina: " %>
+			<%= const.select :rcocina, AVALUOS_RURALS['RCALIDAD'].collect {|p| [p]},
+			 {include_blank: true} %>	
+		</div>
+	</div>
+
+	<div class="row">
+		<h4 class='text-left'><b>Garajes</b></h1>
+		<div class='text-left'>
 			<%= const.label :tgaraje, "Tipo de Garaje:"	%>
-			<br>
 			<%= const.select :tgaraje, AVALUOS_RURALS['TGARAJE'].collect {|p| [p]},
 			 {include_blank: true} %>
 		</div>
-		<br>
 		<div>
 			<%= const.label :observacion, "Observaciones garajes:"	%>
 			<%= const.text_field :observacion, class: 'form-control' %>
@@ -275,12 +316,24 @@
 	</div>
 
 	<div class="row">
-		<h1>Depositos</h1>
-		<div class= 'col-md-6'>
+		<h4 class='text-left'><b>Depositos</b></h1>
+		<div class= 'col-md-5'>
 			<%= const.label :privado, "Privado:"	%>
 			<%= const.select :privado, AVALUOS_RURALS['ESTRATO'].collect {|p| [p]},
 			 {include_blank: true} %>
 		</div>
+		<div class= 'col-md-5'>
+			<%= const.label :exclusivo, "Exclusivo:"	%>
+			<%= const.select :exclusivo, AVALUOS_RURALS['ESTRATO'].collect {|p| [p]},
+			 {include_blank: true} %>
+		</div>
+		<div class= 'col-md-2'>
+			<%= const.label :total, "Total depositos:"	%>
+			<%= const.text_field :total, class: 'form-control' %>
+		</div>
+
+
+
 		
 	</div>
 	

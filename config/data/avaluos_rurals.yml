@@ -5,6 +5,12 @@ ESTADO: ['Nueva', 'Usada']
 PISOS: ['Reforzado', 'No Reforzado']
 
 TYPE: ['C.C.', 'Pasaporte']
+
+RCALIDAD: ['Sencillo', 'Normal', 'Lujoso', 'Sin Acabados']
+
+CREDITO: ['Vivienda', 'Diferente de vivienda']
+
+SEGMENTOS: ['Personal', 'Personal plus', 'prefencial', 'Bancacolombia']
  
 ESTRUCTURA: ['Muro de carga', 'Mampostería estructural', 'Tradicional', 'Metalica', 
             'Industrializada', 'Otros']
@@ -30,6 +36,7 @@ VENTILAR: ['Bueno', 'Regular', 'Malo']
 
 PACABADO: ['Bueno', 'Regular', 'Malo', 'Sin acabados']
 
+FAV: ['Favorable', 'DesFavorable']
 
 IRREGULAR: ['Sin irregularidad', 'Con irregularidad', 'No disponible']
 

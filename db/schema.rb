@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160823204402) do
+ActiveRecord::Schema.define(version: 20160902083429) do
 
   create_table "constructions", force: :cascade do |t|
     t.text     "estado"
@@ -53,7 +53,6 @@ ActiveRecord::Schema.define(version: 20160823204402) do
     t.string   "locales"
     t.string   "oficina"
     t.string   "bodega"
-    t.text     "calidad"
     t.string   "tgaraje"
     t.string   "observacion"
     t.string   "privado"
@@ -63,6 +62,16 @@ ActiveRecord::Schema.define(version: 20160823204402) do
     t.string   "cobra"
     t.string   "econstruction"
     t.integer  "rural_id"
+    t.string   "remodelado"
+    t.string   "conservar"
+    t.string   "rpisos"
+    t.string   "rmuros"
+    t.string   "rtechos"
+    t.string   "rmadera"
+    t.string   "rmetal"
+    t.string   "rbanos"
+    t.string   "rcocina"
+    t.string   "total"
   end
 
   create_table "evaluates", force: :cascade do |t|
@@ -172,6 +181,11 @@ ActiveRecord::Schema.define(version: 20160823204402) do
     t.float    "longitude"
     t.string   "cctype"
     t.integer  "user_id"
+    t.string   "entidad"
+    t.string   "segmento"
+    t.string   "objecto"
+    t.string   "motivo"
+    t.string   "credito"
   end
 
   create_table "titulations", force: :cascade do |t|
@@ -232,6 +246,11 @@ ActiveRecord::Schema.define(version: 20160823204402) do
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.integer  "rural_id"
+    t.string   "vrhonorarios"
+    t.string   "Gtraslado"
+    t.string   "subhonorarios"
+    t.string   "ihonorarios"
+    t.string   "total"
   end
 
 end

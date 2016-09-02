@@ -53,8 +53,8 @@ class RuralsController < ApplicationController
   		params.require(:rural).permit(:document_number, :first_name,
   									 :last_name, :s_surname, :cellphone, :email, 
                      :claimant_department, :claimant_city, :second_name,
-                     :cctype, :claimant_address, :tvia, :via, :compvia, 
-                     :num, :compnum, :placa, :adicional,
+                     :cctype, :claimant_address, :entidad,:segmento, :objecto, :motivo, :credito,
+                     :tvia, :via, :compvia, :num, :compnum, :placa, :adicional,
                      neighborhood_attributes: [:id, :alcantasector, :alcantapredio, :estrato, :evias,
                       :rural_id, :acueducsector, :acueducpredio, :blegal, :vpavimentadas, :gassector,
                       :gaspredio, :toposector, :svias, :telsector, :telpredio, :transporte, :condiciones,
@@ -70,7 +70,9 @@ class RuralsController < ApplicationController
                                               :estudio, :balcon, :terraza, :patiointer, :jardin, :zonaropa,
                                               :zonaverde, :locales, :oficina, :bodega, :calidad, :tgaraje,
                                               :observacion, :privado, :exclusivo, :cpisos, :cmuros, :ctechos, :cmadera,
-                                              :cmetal,:cbanos, :ccocina, :cobra, :econstruction],
+                                              :cmetal,:cbanos, :ccocina, :cobra, :econstruction, 
+                                              :rpisos, :rmuros, :rtechos, :rmadera, :rmetal, 
+                                              :rbanos, :rcocina, :remodelado, :conservar, :total],
                     property_attributes:      [:id_type, :tinmueble, :uinmueble, :clainmueble, :tvivienda,
                                               :phorizontal, :conjunto, :nedificios, :upisos, :ubicacion,
                                               :tunidades, :coeficiente, :porteria, :juegos, :citofono, 
@@ -89,7 +91,8 @@ class RuralsController < ApplicationController
                       value_attributes: [:actualidad, :comportamiento, :valoruvr, :avaluouvr,
                                          :id, :vasegurable, :vterreno, :vconstruccion, 
                                          :vconstruccion, :garantia, :observacion, :danexo,
-                                         :odireccion, :rural_id, :iterreno ])
+                                         :vrhonorarios, :Gtraslado, :subhonorarios, :ihonorarios,
+                                         :total, :odireccion, :rural_id, :iterreno, :tiempo ])
                      
     end
 end

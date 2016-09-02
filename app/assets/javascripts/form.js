@@ -310,8 +310,8 @@ document.addEventListener("turbolinks:load", function(e) {
   $('.horizontal').toggles({
     drag: false,
     text:{
-      on:"No",
-      off:"Si"
+      on:"Si",
+      off:"No"
     },
     checkbox:$('.phorizontal')
   });
@@ -532,6 +532,15 @@ document.addEventListener("turbolinks:load", function(e) {
       off:"No"
     },
     checkbox:$('.pvisitan')
+  });
+
+  $('.remodelar').toggles({
+    drag: true,
+    text:{
+      on:"Si",
+      off:"No"
+    },
+    checkbox:$('.remodelado')
   });
 
   

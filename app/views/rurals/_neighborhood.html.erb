@@ -29,7 +29,7 @@
 			 {include_blank: true} %>
 		</div>				
 	</div>
-	<br>
+
 	<!-- Acueducto row -->
 
 	<div class="row">
@@ -62,7 +62,7 @@
 				<%= neighborhood.check_box :vpavimentadas, class: "vpavimenta", hidden: true %>
 		</div>				
 	</div>
-	<br>
+
 	<!-- Gas row -->
 	<div class="row">
 		<h4 class= "col-md-2 text-center">Gas</h1>
@@ -95,7 +95,6 @@
 		</div>				
 	</div>
 
-	<br>
 		<!-- Telefono row -->
 	<div class="row">
 		<h4 class= "col-md-2 text-center">Telefono</h1>
@@ -117,7 +116,6 @@
 		
 		<div class="col-md-3 text-center">
 			<%= neighborhood.label :transporte, "Transporte: "	%>
-			<br>
 			<%= neighborhood.select :transporte, AVALUOS_RURALS['VENTILAR'].collect {|p| [p]},
 			 {include_blank: true} %>
 		</div>	
@@ -151,21 +149,19 @@
 		
 		<div class="col-md-3 text-center">
 			<%= neighborhood.label :andenes, "Andenes en las vias: : "	%>
-			<br>
 			<div class="andenvias toggle-modern" data-toggle-on="<%= @rural.neighborhood.andenes.nil? ? false : !neighborhood.object.andenes.to_i.zero? %>"></div>
 				<%= neighborhood.check_box :andenes, class: "anden", hidden: true %>
 		</div>	
 			
-			<div class="col-md-3 text-center">
+		<div class="col-md-3 text-center">
 			<%= neighborhood.label :usector, "Uso Predominante del Sector: "	%>
 				<%= neighborhood.select :usector, AVALUOS_RURALS['USOSECTOR'].collect {|p| [p]},
 			 {include_blank: true} %>
 		</div>
-		<br>
-
+	</div>
 		<!-- Amoblamiento e impacto row -->
-		<divi>
-			<div>
+		<div>
+			<div class='row'>
 				<h4 class= 'col-md-6'>Amoblamiento urbano</h4>
 				<h4 class= 'col-md-6'>Impacto ambiental negativo</h4>
 			</div>
@@ -288,7 +284,6 @@
 				</div>
 			</div>
 		</div>
-		<br>
 
 		<div class="row">
 			<h3>Perspectivas de valorización</h3>

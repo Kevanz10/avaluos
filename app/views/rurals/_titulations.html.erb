@@ -1,11 +1,11 @@
 <div class=row>
 	<div class='row'>
-		<div class="form-group col-md-6">
+		<div class="col-md-6">
 			<%= titu.label :depart, "Departamento"	%>
 			<%= titu.select :depart, AVALUOS_RURALS['DEPARTMENT'].collect {|p| [p]}, {include_blank: true} %>
 		</div>
 
-		<div class="form-group col-md-6">
+		<div class="col-md-6">
 			<%= titu.label :municipio, "Municipio:"	%>
 			<%= titu.select :municipio, AVALUOS_RURALS['CITIES'].collect {|p| [p]}, {include_blank: true} %>
 		</div>
@@ -25,55 +25,48 @@
 
 		<div class="col-md-4">
 			<%= titu.label :sector, "Sector:"	%>
-			<br>
 			<%= titu.select :sector, AVALUOS_RURALS['SECTOR'].collect {|p| [p]},{include_blank: true} %>
 		</div>
 	</div>
 
-	<h3>Direccion del inmueble</h3>
+	<h4 class='text-left'><b>Direccion del inmueble</b></h4>
  		<div class='row'>
- 			<div class="col-md-3">
-		 		<%= titu.label :titulation['tvia'], "Tipo de via" %><br>
+ 			<div class="col-md-2">
+		 		<%= titu.label :titulation['tvia'], "Tipo de via" %>
 			  <%= select_tag "rural[titulation_attributes][tvia]", options_for_select(AVALUOS_RURALS['TVIA'].collect {|p| [p]}, @rural.titulation.claimant_address.nil? ? 
 			"" : @rural.titulation.claimant_address['tipo_via']) %>
 			</div>	
 
-			<div class= 'col-md-3'>
+			<div class= 'col-md-2'>
 				<%= titu.label :titulation['via'], "Via:" %>
 				<%= text_field_tag "rural[titulation_attributes][via]" , @rural.titulation.claimant_address.nil? ? "" : @rural.titulation.claimant_address['via'] , { class: 'form-control' } %>
 			</div>
 
-			<div class= 'col-md-3'>
+			<div class= 'col-md-2'>
 				<%= titu.label :titulation['compvia'], "Complemento Via:" %>
 				<%= text_field_tag "rural[titulation_attributes][compvia]" , @rural.titulation.claimant_address.nil? ? "" : @rural.titulation.claimant_address['compvia'] , { class: 'form-control' } %>
 			</div>
 
-			<div class= 'col-md-3'>
+			<div class= 'col-md-2'>
 			  <%= titu.label :titulation['num'], "Numero:" %>
 			  <%= text_field_tag "rural[titulation_attributes][num]" , @rural.titulation.claimant_address.nil? ? "" : @rural.titulation.claimant_address['num'] , { class: 'form-control' } %>
-			</div>
- 		</div>
- 					
- 		<div class="row">
- 			<br>
- 			<div class= 'col-md-4'>
+			</div> 					
+ 			<div class= 'col-md-2'>
 			  <%= titu.label :titulation['compnum'], "	Complemento Numero:" %>
 			  <%= text_field_tag "rural[titulation_attributes][compnum]" , @rural.titulation.claimant_address.nil? ? "" : @rural.titulation.claimant_address['compnum'] , { class: 'form-control' } %>
 			</div>
 
-			<div class= 'col-md-4'>
+			<div class= 'col-md-1'>
 				<%= titu.label :Titulation['placa'], "Placa" %>
 				<%= text_field_tag "rural[titulation_attributes][placa]" , @rural.titulation.claimant_address.nil? ? "" : @rural.titulation.claimant_address['placa'] ,  { class: 'form-control' } %>
 			</div>
 
-			<div class= 'col-md-4'>
+			<div class= 'col-md-1'>
 				<%= titu.label :titulation['adicional'], "Adicional" %>
 				<%= text_field_tag "rural[titulation_attributes][adicional]" , @rural.titulation.claimant_address.nil? ? "" : @rural.titulation.claimant_address['adicional'] , { class: 
 				  		'form-control' } %>
 			</div>	   
  		</div>
-
- 		<br>
 
  		<div class="row">
  			<div class="col-md-4">
@@ -92,8 +85,6 @@
  			</div>
  		</div>
 
-				<br>
-
  		<div class="row">
  			<div class="col-md-4">
 	 			<%= titu.label :sematrinmo, "Matricula inmobiliaria 2º:" %>
@@ -107,7 +98,6 @@
 
  			<div class="col-md-4">
 	 			<%= titu.label :ciuescritura, "Ciudad de escritura:" %>
-	 			<br>
 	 			<%= titu.select :ciuescritura, AVALUOS_RURALS['CITIES'].collect {|p| [p]}, {include_blank: true}%>
  			</div>
  		</div>
@@ -116,14 +106,13 @@
  			<%= titu.label :fecha, "Fecha de escritura:" %>
 	 		<%= titu.text_field :fecha, class: 'form-control' %>
  		</div>
- 		<br>
  		<div class="row">
  			<div class="col-md-12">
 	 			<%= titu.hidden_field :latitude,  id: 'latitude' %>
 	 			<%= titu.hidden_field :longitude , id: 'longitude' %>
  			</div>
  		</div>
-
+		<h4 class='text-left'><b>Georreferenciación</b></h4>
  		<% if !(titu.object.latitude && titu.object.longitude).nil? %>
  			<div id="map"></div>
 		<% end %>

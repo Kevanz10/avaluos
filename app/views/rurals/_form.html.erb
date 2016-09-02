@@ -1,5 +1,6 @@
 <div class="panel-heading">  
   <%= form_for @rural, html: {class: "avaluo-form panel-body"} do |f| %>
+    <h1 class='text-center titles'>Información Básica</h1>
     <h4><b>Datos del cliente</b></h4>
     <div class="row">
       <div class='col-md-6 text-center'>
@@ -56,7 +57,7 @@
     <div class="row">
       <div>
         <div class="row">
-        <h4><b>Dirección del solicitante</b></h4> 
+        <h4 class='text-left'><b>Dirección del solicitante</b></h4> 
         </div>
 
         <div class="row">
@@ -108,8 +109,37 @@
       </div>
     </div>
 
+    <div class="row">
+      <h4 class='text-left'><b>Información de la entidad</b></h1>
+      <div class='col-md-6 text-center'>
+        <%= f.label :entidad, "Entidad" %>
+        <%= f.text_field :entidad, class: 'form-control' %>
+      </div>
+      <div class= 'col-md-6 text-center'>
+        <%= f.label :segmento, "Segmento" %>
+        <%= f.text_field :segmento, class: 'form-control' %>
+      </div>
+      </div>
     <div>
-      <h1>Ubicacion del inmueble</h1>
+
+    <div class="row">
+      <h4 class='text-left'><b>Información del avaluo</b></h1>
+      <div class='col-md-4'>
+        <%= f.label :objecto, "Objeto del avalúo" %>
+        <%= f.text_field :objecto, class: 'form-control' %>
+      </div>
+      <div class= 'col-md-4'>
+        <%= f.label :motivo, "Motivo del avalúo:" %>
+        <%= f.text_field :motivo, class: 'form-control' %>
+      </div>
+      <div class= 'col-md-4'>
+        <%= f.label :credito, "Tipo Crédito:" %>
+         <%= f.select :credito, AVALUOS_RURALS['CREDITO'].collect {|p| [p]}, {include_blank: true} %>
+      </div>
+    </div>
+ 
+    <h1 class='text-center titu-margin titles'>Titulación</h1>
+    <h4><b>Ubicacion del inmueble</b></h1>
       <div class= "titulation-form">
         <% if @rural.titulation.nil? %>
           <%= f.fields_for :titulation, @rural.build_titulation do |titu|%>
@@ -122,23 +152,10 @@
       <% end %>
     </div>
 
+
     <div>
-      <h1>Información de construcción</h1>
-      <div class= "titulation-form">
-        <% if @rural.construction.nil? %>
-          <%= f.fields_for :construction, @rural.build_construction do |const|%>
-            <% render "construction", const: const %>
-          <% end %>
-        <% else %>
-        <%= f.fields_for :construction, @rural.construction do |const|%>
-          <% render "construction", const: const %>
-        <% end  %>
-      <% end %>
-    </div>
-    
-    
-    <div>
-      <h1>Información de neighborhood</h1>
+      <h1 class='text-center titu-margin titles'>Información del Barrio</h1>
+      <h4><b>Servicios públicos</b></h1>
       <div class= "titulation-form">
         <% if @rural.neighborhood.nil? %>
           <%= f.fields_for :neighborhood, @rural.build_neighborhood do |neighborhood|%>
@@ -152,7 +169,7 @@
     </div>
 
     <div>
-      <h1>Información del inmueble</h1>
+      <h1 class='text-center titu-margin titles'>Información del inmueble</h1>
       <div class= "titulation-form">
         <% if @rural.property.nil? %>
           <%= f.fields_for :property, @rural.build_property do |property|%>
@@ -165,9 +182,22 @@
       <% end %>
     </div>
 
+    <div>
+      <h1 class='text-center titu-margin titles'>Información del construcción</h1>
+      <div class= "titulation-form">
+        <% if @rural.construction.nil? %>
+          <%= f.fields_for :construction, @rural.build_construction do |const|%>
+            <% render "construction", const: const %>
+          <% end %>
+        <% else %>
+        <%= f.fields_for :construction, @rural.construction do |const|%>
+          <% render "construction", const: const %>
+        <% end  %>
+      <% end %>
+    </div>
 
     <div>
-      <h1>Valor razonable</h1>
+      <h1 class='text-center titu-margin titles'>Valor razonable</h1>
       <div>
         <% if @rural.value.nil? %>
           <%= f.fields_for :value, @rural.build_value do |value|%>
