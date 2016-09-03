@@ -63,7 +63,39 @@
             <!-- END ACTION BAR -->
           </div>
         </div>
+    <!-- LEFT SIDE -->
+    <div class="pull-left full-height visible-sm visible-xs">
+      <!-- START ACTION BAR -->
+      <div class="sm-action-bar">
+        <a href="#" class="btn-link toggle-sidebar" data-toggle="sidebar">
+          <span class="icon-set menu-hambuger"></span>
+        </a>
+      </div>
+      <!-- END ACTION BAR -->
+    </div>
+    <!-- RIGHT SIDE -->
+    <div class="pull-right full-height visible-sm visible-xs">
+      <!-- START ACTION BAR -->
+      <div class="sm-action-bar">
+        <a href="#" class="btn-link" data-toggle="quickview" data-toggle-element="#quickview">
+          <span class="icon-set menu-hambuger-plus"></span>
+        </a>
+      </div>
+      <!-- END ACTION BAR -->
+    </div>
     <!-- END MOBILE CONTROLS -->
+    <div class=" pull-left sm-table">
+      <div class="header-inner">
+        <div class="brand inline">
+          <img src="assets/logo.png" alt="logo" data-src="assets/logo.png" data-src-retina="assets/logo.png" width="78" height="22">
+        </div>
+      </div>
+    </div>
+    <div class=" pull-right">
+      <div class="header-inner">
+        <a href="#" class="btn-link icon-set menu-hambuger-plus m-l-20 sm-no-margin hidden-sm hidden-xs" data-toggle="quickview" data-toggle-element="#quickview"></a>
+      </div>
+    </div>
     <div class=" pull-right">
       <!-- START User Info-->
       <div class="visible-lg visible-md m-t-10">
@@ -121,7 +153,7 @@
             <!-- START PANEL -->
             <div class="panel panel-transparent">
               <div class="panel-heading">
-                <div class="btn-group pull-left m-b-10">
+                <div class="btn-group pull-right m-b-10">
                   <%= link_to "Crear Avaluo", new_rural_path, class: 'btn btn-default' %>
                 </div>
                 <div class="clearfix"></div>

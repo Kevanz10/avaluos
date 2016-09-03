@@ -1,7 +1,7 @@
 <div class="panel-heading">  
   <%= form_for @rural, html: {class: "avaluo-form panel-body"} do |f| %>
     <div class='row text-right'>
-        <%= f.label :estado,"Estado", class: 'bold-estado' %>
+        <%= f.label :estado, "Estado" , class: 'bold-estado' %>
         <%= f.select :estado, AVALUOS_RURALS['RESTADO'].collect {|p| [p]},  {include_blank: true}%>
     </div>
     <h1 class='text-center titles'>Información Básica</h1>
