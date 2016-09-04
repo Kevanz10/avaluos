@@ -32,3 +32,21 @@ label {
 .btn-width{
 	width: 100%;
 }
+
+body{
+  background: url('../assets/blur.jpg') !important;
+  background-size: cover !important;
+}
+
+.form_login{
+  margin: 15% 41%;
+}
+
+.welcome-title{
+  position: relative;
+  top: 25%;
+  border-bottom: 1px solid grey;
+  width: 50%;
+  /* text-align: center; */
+  left: 25%;
+}
