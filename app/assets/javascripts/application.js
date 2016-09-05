@@ -24,3 +24,4 @@
 //= require form
 //= require turbolinks
 //= require bootstrap.min
+
