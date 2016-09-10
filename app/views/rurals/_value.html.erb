@@ -14,6 +14,92 @@
 	<%= value.text_field :tiempo, class: 'form-control', :cols => 5, :rows => 5 %>
 </div>
 
+<h4 class='text-center'><b>Valor Razonable</b></h4>
+  <div class="panel-body">
+		<div class="table-responsive">
+		<table class="table table-hover" id="basicTable">
+		  <thead>
+		    <tr>
+		      <!-- NOTE * : Inline Style Width For Table Cell is Required as it may differ from user to user
+				Comman Practice Followed
+				-->
+		      <th style="width:20%">Descripcion</th>
+		      <th style="width:10%">Nombre</th>
+		      <th style="width:15%">Unidad de medida</th>
+		      <th style="width:10%">Area</th>
+		      <th style="width:15%">Valor unitario</th>
+		      <th style="width:15%">Valor Total	</th>
+		      <th style="width:10%">Porcentaje </th>	
+		    </tr>
+		  </thead>
+		  <% @evaluates.each do |e| %>
+		  <tbody>
+		    <tr>
+		      <td class="v-align-middle">
+		        <p><%= e.descripcion %>  
+		      </td>
+		      <td class="v-align-middle ">
+		        <p>
+		          <%= e.nombre%>
+		        </p>
+		      </td>
+		      <td class="v-align-middle">
+		        <p>
+		          <%= e.unidad%>
+		        </p>
+		      </td>
+		      <td class="v-align-middle">
+		         <%= e.area%>
+		      </td>
+		      <td class="v-align-middle">
+		       <%= e.unitario%>
+		      </td>
+		      <td class="v-align-middle">
+		    	<p id='vtotal'></p>
+		      </td> 
+		    </tr>
+		  <% end %>
+		  </tbody>
+		</table> 
+	</div>
+</div>
+										
+
+<a href="#" class="add btn btn-default">Agregar Valor Razonable</a>
+<div class="items">
+  <%= value.nested_fields_for :evaluates, html: {class: "evaluate"}  do |e|%>
+    <fieldset class="item">
+      <div class="row">
+        <div class="col-md-2">
+          <%= e.label :descripcion, 'Descripción' %>
+          <%= e.select :descripcion, AVALUOS_RURALS['RAZONABLE'].collect {|p| [p]}, {include_blank: true} %>
+        </div>
+        <div class="col-md-3">
+          <%= e.label :nombre, 'Nombre' %>
+          <%= e.text_field :nombre, class: 'form-control' %>
+        </div>
+        <div class="col-md-2">
+          <%= e.label :unidad, 'Unidad de medida' %>
+          <%= e.select :unidad, AVALUOS_RURALS['UNIDAD'].collect {|p| [p]}, {include_blank: true} %>
+        </div>
+        <div class="col-md-2">
+          <%= e.label :area, 'Area' %>
+          <%= e.text_field :area, class: 'form-control'  %>
+        </div>
+         <div class="col-md-2">
+          <%= e.label :unitario, 'Valor unitario' %>
+          <%= e.text_field :unitario, class: 'form-control' %>
+        </div>
+        <div class='col-md-1'>
+          <a href="" class="btn btn-danger remove titu-margin fa fa-trash-o"></a>
+          <%= e.hidden_field :id %>
+          <%= e.hidden_field :_destroy %> 
+        </div> 
+      </div>
+    </fieldset>    
+  <% end %>
+</div>
+
 <div class="row titu-margin">
 	<div class="col-md-4">
 		<%= value.label :valoruvr, "Valor UVR"	%>
@@ -35,7 +121,7 @@
 		<%= value.text_field :vterreno, class: 'form-control' %>	
 	</div>
 	<div class="col-md-3">
-		<%= value.label :iterreno, "Porcentaje Terreno"	%>
+		<%= value.label :iterreno, "Valor integral del terreno"	%>
 		<%= value.text_field :iterreno, class: 'form-control' %>	
 	</div>
 	<div class="col-md-3">
@@ -45,6 +131,30 @@
 	<div class="col-md-3">
 		<%= value.label :vconstruccion, "Valor integral de la construcción	"	%>
 		<%= value.text_field :vconstruccion, class: 'form-control' %>	
+	</div>
+</div>
+
+
+<div class="row titu-margin">
+	<div class="col-md-2">
+		<%= value.label :vrhonorarios, "Valor honorarios"	%>
+		<%= value.text_field :vrhonorarios, class: 'form-control' %>		
+	</div>
+	<div class="col-md-2">
+		<%= value.label :Gtraslado, "Gastos de traslado"	%>
+		<%= value.text_field :Gtraslado, class: 'form-control' %>		
+	</div>
+	<div class="col-md-3">
+		<%= value.label :subhonorarios, "Sub-total honorarios"	%>
+		<%= value.text_field :subhonorarios, class: 'form-control' %>		
+	</div>
+	<div class="col-md-2">
+		<%= value.label :ihonorarios, "Iva honorarios	"	%>
+		<%= value.text_field :ihonorarios, class: 'form-control' %>		
+	</div>
+	<div class="col-md-3">
+		<%= value.label :total, "Total honorarios"	%>
+		<%= value.text_field :total, class: 'form-control' %>		
 	</div>
 </div>
 
@@ -68,44 +178,3 @@
 		<%= value.text_field :odireccion, class: 'form-control' %>		
 	</div>
 </div>
-
-<div class="row titu-margin">
-	<div class="col-md-3">
-		<%= value.label :vrhonorarios, "Valor honorarios"	%>
-		<%= value.text_field :vrhonorarios, class: 'form-control' %>		
-	</div>
-	<div class="col-md-3">
-		<%= value.label :Gtraslado, "Gastos de traslado"	%>
-		<%= value.text_field :Gtraslado, class: 'form-control' %>		
-	</div>
-	<div class="col-md-3">
-		<%= value.label :subhonorarios, "Sub-total honorarios"	%>
-		<%= value.text_field :subhonorarios, class: 'form-control' %>		
-	</div>
-	<div class="col-md-3">
-		<%= value.label :ihonorarios, "Iva honorarios	"	%>
-		<%= value.text_field :ihonorarios, class: 'form-control' %>		
-	</div>
-	<div class="col-md-3 col-md-offset-4 titu-margin">
-		<%= value.label :total, "Total honorarios"	%>
-		<%= value.text_field :total, class: 'form-control' %>		
-	</div>
-</div>
-
-<h2>lo que sea</h2>
-<div class="items">
-  <%= value.nested_fields_for :evaluates, html: {class: "evaluate"}  do |e|%>
-    <fieldset class="item">
-      <%= e.label :descripcion %>
-      <%= e.text_field :descripcion %>
-
-      <a href="#" class="remove">remove</a>
-
-      <%= e.hidden_field :id %>
-      <%= e.hidden_field :_destroy %>
-      </fieldset>
-  <% end %>
-</div>
-<a href="#" class="add">add phone</a>
-
-

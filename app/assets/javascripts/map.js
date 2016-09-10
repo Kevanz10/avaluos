@@ -1,5 +1,4 @@
-document.addEventListener("turbolinks:load", function(e) {
 
-  $('FORM').nestedFields();
-
+jQuery(document).ready(function($) {
+	  $('FORM').nestedFields();
 });

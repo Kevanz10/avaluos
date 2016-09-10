@@ -173,7 +173,6 @@
                         <th style="width:15%">Ciudad</th>
                       </tr>
                     </thead>
-
 										<% @rurals.each do |avaluo| %>
                     <tbody>
                       <tr>
@@ -197,15 +196,13 @@
                           <p><%= avaluo.estado%> </p>
                         </td>
                         <td class="v-align-middle">
-                          <p><%= avaluo.titulation.municipio%></p>
-                          
+                          <p><%= avaluo.titulation.municipio%></p>  
                         </td>
                         <td class="v-align-middle">
                           <%= link_to "Editar", edit_rural_path(avaluo), class: 'btn btn-default' %>
                           <%= link_to "", rural_path(avaluo), method: :delete, 
                           data: { confirm: 'Desea Borrar? Este archivo no podra ser recuperado'}, class: 'btn btn-default fa fa-trash-o btn-width' %> 
-                        </td>
-                        
+                        </td> 
                       </tr>
                       <% end %>
                     </tbody>

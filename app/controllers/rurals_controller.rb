@@ -15,6 +15,7 @@ class RuralsController < ApplicationController
 
   def edit
     @rural = Rural.find(params[:id])
+    @evaluates= Rural.find(params[:id]).value.evaluates.all
   end
 
   def show
@@ -92,7 +93,10 @@ class RuralsController < ApplicationController
                                          :id, :vasegurable, :vterreno, :vconstruccion, 
                                          :vconstruccion, :garantia, :observacion, :danexo,
                                          :vrhonorarios, :Gtraslado, :subhonorarios, :ihonorarios,
-                                         :total, :odireccion, :rural_id, :iterreno, :tiempo ])
+                                         :total, :odireccion, :rural_id, :iterreno, :tiempo, evaluates_attributes: [:descripcion,
+                                          :nombre, :unidad, :area, :unitario,
+                                            :vtotal, :_destroy, :id, :value_id, :rural_id] ],
+                      )
                      
     end
 end

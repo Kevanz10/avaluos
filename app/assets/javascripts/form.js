@@ -17,6 +17,25 @@ function initMap() {
 
 }
 
+//operations
+
+jQuery(document).ready(function($) {
+  var area = $("[id*=area]")
+  var vtotal = $("[id*=vtotal]")
+
+  if (area != 'undefined') {
+    for (var i=0; i < ($("[id*=_unitario]")).length; i++) { 
+      unitario = $("[id*=_unitario]")
+      var times = parseInt($("[id*=_unitario]").length);
+      var area = parseInt($("[id*=_area]").val());
+      var unit = parseInt($("[id*=_unitario]").val());
+      total = parseFloat($("[id*=_unitario]")[i].value) * parseFloat($("[id*=_area]")[i].value);
+      var vtotal = $("[id*=vtotal]")[i];
+      $(vtotal).append(total);
+    }
+  } 
+});
+
 //form's toogles functions
 document.addEventListener("turbolinks:load", function(e) {
 	
@@ -554,34 +573,5 @@ document.addEventListener("turbolinks:load", function(e) {
   $('.fades').on('click', '.click', showTicket);
   
  
-
-
-	
-	
-
-	
-
-	
-
-
-
-
-
-
-	// 	$('.neighbor_blegal').toggles({
-	// 	drag: false,
- //    text:{
- //      on:"Si",
- //      off:"No"
- //    },
- //    checkbox:$('.blegal')
-	// });
-	// $('.toggle').on('toggle', function(e, active) {
-	// 	debugger
-	// 	input = $(this).siblings('input')
-	// 	$(this).toggles({
-	// 		checkbox:input
-	// 	})
-	// });
 });
 

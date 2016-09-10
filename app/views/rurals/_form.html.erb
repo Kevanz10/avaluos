@@ -114,7 +114,7 @@
     </div>
 
     <div class="row">
-      <h4 class='text-left'><b>Información de la entidad</b></h1>
+      <h4 class='text-left'><b>Información de la entidad</b></h4>
       <div class='col-md-6 text-center'>
         <%= f.label :entidad, "Entidad" %>
         <%= f.text_field :entidad, class: 'form-control' %>
@@ -127,7 +127,7 @@
     <div>
 
     <div class="row">
-      <h4 class='text-left'><b>Información del avaluo</b></h1>
+      <h4 class='text-left'><b>Información del avaluo</b></h4>
       <div class='col-md-4'>
         <%= f.label :objecto, "Objeto del avalúo" %>
         <%= f.text_field :objecto, class: 'form-control' %>
@@ -213,11 +213,14 @@
         <% end  %>
       <% end %>
     </div>
-    
-    <div class=form-group>
-      <%= f.submit%>
+
+    <div>
+      <%= f.submit class: 'btn btn-success titu-margin' %>
     </div>
   <% end %>
 </div>
+
+
+
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAG25Xm2Cl8lAq10P9H_ROAPOBC0DtTTcs&callback=initMap" async defer></script>

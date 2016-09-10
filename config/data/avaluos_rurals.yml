@@ -17,12 +17,16 @@ SEGMENTOS: ['Personal', 'Personal plus', 'prefencial', 'Bancacolombia']
 ESTRUCTURA: ['Muro de carga', 'Mampostería estructural', 'Tradicional', 'Metalica', 
             'Industrializada', 'Otros']
 
+RAZONABLE: ['Area de construcción','Otros']
+
 SISMO: ['No disponible', 'Reparados', 'No Reparados']
 
 CUBIERTA: ['Placa concreto imp', 'Teja Plástica', 'Teja de Barro', 'Teja Fibrocemento',            'Teja metálica', 'Otros']
 
 FACHADA: ['Ladrillo a la vista', 'Pañete y pintura', 'Graniplast', 'Flotante', 
         'Concreto Texturado', 'Otros']
+
+UNIDAD: ['M2', 'Hectareas', 'Fanegadas', 'Global']
 
 TFACHADA: ['0 a 3 metros', '3 a 6 metros', 'Mayor a 3 metros']
 
