@@ -32,32 +32,34 @@
 		      <th style="width:10%">Porcentaje </th>	
 		    </tr>
 		  </thead>
-		  <% @evaluates.each do |e| %>
-		  <tbody>
-		    <tr>
-		      <td class="v-align-middle">
-		        <p><%= e.descripcion %>  
-		      </td>
-		      <td class="v-align-middle ">
-		        <p>
-		          <%= e.nombre%>
-		        </p>
-		      </td>
-		      <td class="v-align-middle">
-		        <p>
-		          <%= e.unidad%>
-		        </p>
-		      </td>
-		      <td class="v-align-middle">
-		         <%= e.area%>
-		      </td>
-		      <td class="v-align-middle">
-		       <%= e.unitario%>
-		      </td>
-		      <td class="v-align-middle">
-		    	<p id='vtotal'></p>
-		      </td> 
-		    </tr>
+		  <% if !@evaluates.nil?%>
+			  <% @evaluates.each do |e| %>
+			  <tbody>
+			    <tr>
+			      <td class="v-align-middle">
+			        <p><%= e.descripcion %>  
+			      </td>
+			      <td class="v-align-middle ">
+			        <p>
+			          <%= e.nombre%>
+			        </p>
+			      </td>
+			      <td class="v-align-middle">
+			        <p>
+			          <%= e.unidad%>
+			        </p>
+			      </td>
+			      <td class="v-align-middle">
+			         <%= e.area%>
+			      </td>
+			      <td class="v-align-middle">
+			       <%= e.unitario%>
+			      </td>
+			      <td class="v-align-middle">
+			    	<p id='vtotal'></p>
+			      </td> 
+			    </tr>
+				<% end %>
 		  <% end %>
 		  </tbody>
 		</table> 

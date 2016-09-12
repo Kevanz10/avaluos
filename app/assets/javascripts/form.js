@@ -20,8 +20,17 @@ function initMap() {
 //operations
 
 jQuery(document).ready(function($) {
-  var area = $("[id*=area]")
-  var vtotal = $("[id*=vtotal]")
+  var phorizontal =  $('.click.horizontal').data('toggle-on');
+  var area = $("[id*=area]");
+  var vtotal = $("[id*=vtotal]");
+ 
+  debugger;
+  if (phorizontal == true){
+    $('.faded').css('display','block');
+  }else{
+    $('.faded').hide()
+  }
+  
 
   if (area != 'undefined') {
     for (var i=0; i < ($("[id*=_unitario]")).length; i++) { 
@@ -565,7 +574,6 @@ document.addEventListener("turbolinks:load", function(e) {
   
 //Slide toggle function 
   function showTicket (event) {
-    debugger;
     event.preventDefault()
     $(this).closest('.fades').find('.faded').slideToggle();
   }
