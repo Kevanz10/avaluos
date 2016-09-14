@@ -5,8 +5,9 @@
       <%= devise_error_messages! %>
 
       <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true %>
+      <%= f.text_field :login, autofocus: true, %>
+      <%= f.password_field :password %>
+
       </div>
 
       <div class="field">
@@ -30,8 +31,3 @@
     <%= render "devise/shared/links" %>
 </div>
 
-<style>
-  body{
-    background: url('https://newevolutiondesigns.com/images/freebies/city-wallpaper-47.jpg') !important;
-  }
-</style>

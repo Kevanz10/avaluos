@@ -24,11 +24,10 @@ jQuery(document).ready(function($) {
   var area = $("[id*=area]");
   var vtotal = $("[id*=vtotal]");
  
-  debugger;
   if (phorizontal == true){
     $('.faded').css('display','block');
   }else{
-    $('.faded').hide()
+    $('.faded').hide();
   }
   
 
