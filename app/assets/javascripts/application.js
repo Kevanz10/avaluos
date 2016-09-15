@@ -22,6 +22,5 @@
 //= require toggles
 //= require toggles.min
 //= require form
-//= require turbolinks
 //= require bootstrap.min
 

@@ -9,7 +9,6 @@ class ApplicationController < ActionController::Base
   	rurals_path
 	end
 
-
   protected
 
 	def configure_permitted_parameters

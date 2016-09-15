@@ -3,11 +3,10 @@
 <head>
   <title>Avaluos</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
-  <meta name="turbolinks-cache-control" content="no-cache">
 </head>
-<body data-no-turbolinks='true' class='fixed-header dashboard'>
+<body class='fixed-header dashboard'>
 	<!-- BEGIN SIDEBAR -->
   <div class="page-sidebar" data-pages="sidebar">
     <!-- BEGIN SIDEBAR HEADER -->
@@ -104,7 +103,7 @@
         <!-- START User Info-->
         <div class="visible-lg visible-md m-t-10">
           <div class="pull-left p-r-10 p-t-10 fs-16 font-heading">
-            <span class="semi-bold"><%= current_user.email %></span>
+            <span class="semi-bold">Username: <%= current_user.username %></span>
             
           </div>
           <div class="dropdown pull-right">
