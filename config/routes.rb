@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
-
   resources :rurals
-
+  #set devise log in form as root path
   devise_scope :user do
     root :to => 'devise/sessions#new'
+    get  'users/admin_new' => 'users#admin_new'
+    post 'users/admin_create' => 'users#admin_create'
   end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

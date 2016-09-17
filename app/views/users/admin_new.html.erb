@@ -1,11 +1,11 @@
 <div class='text-center'>
     <h2>Regístrate</h2>
 
-    <%= form_for (@user, :url => '/users/admin_create' do |f| %>
+    <%= form_for(@user, :url => '/users/admin_create')do |f| %>
       <%= devise_error_messages! %>
 
       <div class="field">
-      <%= f.text_field :username, class: 'form-control'%>
+      <%= f.text_field :username%>
       </div>
 
       <div class="field">
@@ -25,7 +25,5 @@
         <%= f.submit "Sign up" %>
       </div>
     <% end %>
-
-    <%= render "devise/shared/links" %>
 </div>
 
