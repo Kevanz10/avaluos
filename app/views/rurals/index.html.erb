@@ -1,60 +1,91 @@
-<div class="panel panel-transparent">
-  <div class="panel-heading">
-    <div class="btn-group pull-right m-b-10">
-      <%= link_to "Crear Avaluo", new_rural_path, class: 'btn btn-default' %>
+<div class="page-content-wrapper">
+  <!-- START PAGE CONTENT -->
+  <div class="content">
+    <!-- START JUMBOTRON -->
+    <div class="jumbotron" data-pages="parallax">
+      <div class="container-fluid container-fixed-lg sm-p-l-20 sm-p-r-20">
+        <div class="inner">
+          <!-- START BREADCRUMB -->
+          <ul class="breadcrumb text-center">
+            <li>Avalúos</li><i class="fa fa-building-o user-padding" aria-hidden="true"></i>
+          </ul>
+          <!-- END BREADCRUMB -->
+        </div>
+      </div>
     </div>
-    <div class="clearfix"></div>
-  </div>
-  <div class="panel-body">
-    <div class="table-responsive">
-      <table class="table table-hover" id="basicTable">
-        <thead>
-          <tr>
-            <!-- NOTE * : Inline Style Width For Table Cell is Required as it may differ from user to user
-					Comman Practice Followed
-					-->
-            <th style="width:20%">Asignado</th>
-            <th style="width:20%">Direccion</th>
-            <th style="width:30%">Fecha De Estado</th>
-            <th style="width:29%">Status</th>
-            <th style="width:15%">Ciudad</th>
-          </tr>
-        </thead>
-				<% @rurals.each do |avaluo| %>
-          <tbody>
-            <tr>
-              <td class="v-align-middle">
-                <p><%= avaluo.first_name %> <%= avaluo.last_name %></p>  
-              </td>
-              <td class="v-align-middle ">
-                <p>
-                  <%= avaluo.titulation.claimant_address['tipo_via']%>
-                  <%= avaluo.titulation.claimant_address['via']%>
-                  <%= avaluo.titulation.claimant_address['compvia']%>
-                  #<%= avaluo.titulation.claimant_address['num']%>
-                  <%= avaluo.titulation.claimant_address['compnum']%>
-                  -<%= avaluo.titulation.claimant_address['placa'] %>
-                </p>
-              </td>
-              <td class="v-align-middle">
-                <p><%= avaluo.created_at.time%></p>  
-              </td>
-              <td class="v-align-middle">
-                <p><%= avaluo.estado%> </p>
-              </td>
-              <td class="v-align-middle">
-                <p><%= avaluo.titulation.municipio%></p>  
-              </td>
-              <td class="v-align-middle">
-                <%= link_to "Editar", edit_rural_path(avaluo), class: 'btn btn-default' %>
-                <%= link_to "", rural_path(avaluo), method: :delete, 
-                data: { confirm: 'Desea Borrar? Este archivo no podra ser recuperado'}, class: 'btn btn-default fa fa-trash-o btn-width' %> 
-              </td> 
-            </tr>
-          </tbody>
-        <% end %>
-      </table>
+    <!-- END JUMBOTRON -->
+      <!-- START CONTAINER FLUID -->
+    <div class="container-fluid container-fixed-lg">
+      <div class="container-fluid container-fixed-lg bg-white">
+        <!-- START PANEL -->
+        <div class="panel panel-transparent"> 
+          <div class="panel-heading text-center">
+          <div class="panel panel-transparent">
+            <div class="panel-heading">
+              <div class="btn-group pull-right m-b-10">
+                <%= link_to "Crear Avaluo", new_rural_path, class: 'btn btn-default' %>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+            <div class="panel-body">
+              <div class="table-responsive">
+                <table class="table table-hover" id="basicTable">
+                  <thead>
+                    <tr>
+                      <!-- NOTE * : Inline Style Width For Table Cell is Required as it may differ from user to user
+          					Comman Practice Followed
+          					-->
+                      <th style="width:20%">Asignado</th>
+                      <th style="width:20%">Direccion</th>
+                      <th style="width:30%">Fecha De Estado</th>
+                      <th style="width:29%">Status</th>
+                      <th style="width:15%">Ciudad</th>
+                    </tr>
+                  </thead>
+          				<% @rurals.each do |avaluo| %>
+                    <tbody>
+                      <tr>
+                        <td class="v-align-middle">
+                          <p><%= avaluo.first_name %> <%= avaluo.last_name %></p>  
+                        </td>
+                        <td class="v-align-middle ">
+                          <p>
+                            <%= avaluo.titulation.claimant_address['tipo_via']%>
+                            <%= avaluo.titulation.claimant_address['via']%>
+                            <%= avaluo.titulation.claimant_address['compvia']%>
+                            #<%= avaluo.titulation.claimant_address['num']%>
+                            <%= avaluo.titulation.claimant_address['compnum']%>
+                            -<%= avaluo.titulation.claimant_address['placa'] %>
+                          </p>
+                        </td>
+                        <td class="v-align-middle">
+                          <p><%= avaluo.created_at.time%></p>  
+                        </td>
+                        <td class="v-align-middle">
+                          <p><%= avaluo.estado%> </p>
+                        </td>
+                        <td class="v-align-middle">
+                          <p><%= avaluo.titulation.municipio%></p>  
+                        </td>
+                        <td class="v-align-middle">
+                          <%= link_to "Editar", edit_rural_path(avaluo), class: 'btn btn-default' %>
+                          <%= link_to "", rural_path(avaluo), method: :delete, 
+                          data: { confirm: 'Desea Borrar? Este archivo no podra ser recuperado'}, class: 'btn btn-default fa fa-trash-o btn-width' %> 
+                        </td> 
+                      </tr>
+                    </tbody>
+                  <% end %>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- END PANEL -->
+          </div>
+        </div>  
+      </div>
     </div>
+
+
   </div>
 </div>
-<!-- END PANEL -->
+</div>

@@ -1,29 +1,57 @@
-<div class='text-center'>
-    <h2>Regístrate</h2>
-
-    <%= form_for(@user, :url => '/users/admin_create')do |f| %>
-      <%= devise_error_messages! %>
-
-      <div class="field">
-      <%= f.text_field :username%>
+<div class="page-content-wrapper">
+  <!-- START PAGE CONTENT -->
+  <div class="content">
+    <!-- START JUMBOTRON -->
+    <div class="jumbotron" data-pages="parallax">
+      <div class="container-fluid container-fixed-lg sm-p-l-20 sm-p-r-20">
+        <div class="inner">
+          <!-- START BREADCRUMB -->
+          <ul class="breadcrumb text-center">
+            <li>Crear Usuario</li><i class="fa fa-user user-padding" aria-hidden="true"></i>
+          </ul>
+          <!-- END BREADCRUMB -->
+        </div>
       </div>
+    </div>
+    <!-- END JUMBOTRON -->
+      <!-- START CONTAINER FLUID -->
+      <div class="container-fluid container-fixed-lg">
+      <div class="container-fluid container-fixed-lg bg-white">
+        <!-- START PANEL -->
+        <div class="panel panel-transparent"> 
+<div class="panel-heading text-center"> 
+      <%= form_for(@user, :url => '/users/admin_create')do |f| %>
+        <%= devise_error_messages! %>
+        
+        <div class="row form-group">
+          <div class="col-md-4 col-md-offset-4">
+            <%= f.label :username, 'Usuario'%>
+            <%= f.text_field :username, class: 'form-control'%>
+           </div>   
+        </div>
 
-      <div class="field">
-        <%= f.label :password %>
-        <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
-      </div>
+        <div class="row form-group">
+          <div class="col-md-4 col-md-offset-4">
+            <%= f.label :password, 'Contraseña' %>
+            <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %>
+            <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+          </div>
+        </div>
 
-      <div class="field">
-        <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off" %>
-      </div>
+        <div class="row form-group">
+          <div class="col-md-4 col-md-offset-4">
+            <%= f.label :password_confirmation, 'Repite Contraseña' %>
+            <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
+          </div>
+        </div>
 
-      <div class="actions">
-        <%= f.submit "Sign up" %>
-      </div>
-    <% end %>
+        <div class="row"> 
+            <%= f.submit "Crear Usuario", class: 'btn btn-success' %>
+            <%= link_to "Cancelar", rurals_path, class: 'btn btn-success' %>       
+        </div>
+      <% end %>
+ 
 </div>
-
+</div>

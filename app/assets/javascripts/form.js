@@ -45,7 +45,7 @@ jQuery(document).ready(function($) {
 });
 
 //form's toogles functions
-document.addEventListener("turbolinks:load", function(e) {
+jQuery(document).ready(function($){
 	
 	
 	$('.toggle').toggles({

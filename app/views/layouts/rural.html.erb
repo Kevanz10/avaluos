@@ -90,20 +90,22 @@
       <div class=" pull-left sm-table">
         <div class="header-inner">
           <div class="brand inline">
-            <%= image_tag 'logo.png', alt: 'logo', width: '78', height: '22' %>
+            <%= image_tag 'logo.png', alt: 'logo', width: '80', height: '22' %>
           </div>
-        </div>
-      </div>
-      <div class=" pull-right">
-        <div class="header-inner">
-          <a href="#" class="btn-link icon-set menu-hambuger-plus m-l-20 sm-no-margin hidden-sm hidden-xs" data-toggle="quickview" data-toggle-element="#quickview"></a>
         </div>
       </div>
       <div class=" pull-right">
         <!-- START User Info-->
         <div class="visible-lg visible-md m-t-10">
           <div class="pull-left p-r-10 p-t-10 fs-16 font-heading">
-            <span class="semi-bold">Username: <%= current_user.username %></span>
+            <% if current_user.admin?%>
+              <span class="semi-bold">Usuario: <%= current_user.username %></span>
+              <i class="fa fa-user-secret" aria-hidden="true"></i>
+            <%else%>
+              <span class="semi-bold">Usuario: <%= current_user.username %></span>
+              <i class="fa fa-user" aria-hidden="true"></i>
+            <%end%>
+            
           </div>
           <div class="dropdown pull-right">
             <button class="profile-dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -136,29 +138,9 @@
       </div>
     </div>
   </div>
-<div class="page-content-wrapper">
-  <!-- START PAGE CONTENT -->
-  <div class="content">
-    <!-- START JUMBOTRON -->
-    <div class="jumbotron" data-pages="parallax">
-      <div class="container-fluid container-fixed-lg sm-p-l-20 sm-p-r-20">
-        <div class="inner">
-          <!-- START BREADCRUMB -->
-          <ul class="breadcrumb text-center">
-            <li>Informe de avalúo</li>
-          </ul>
-          <!-- END BREADCRUMB -->
-        </div>
-      </div>
-    </div>
-    <!-- END JUMBOTRON -->
-      <!-- START CONTAINER FLUID -->
-      <div class="container-fluid container-fixed-lg">
-      <div class="container-fluid container-fixed-lg bg-white">
-        <!-- START PANEL -->
-        <div class="panel panel-transparent">
+
           <%= yield %>
-        </div>
+     
             
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
 	</script>

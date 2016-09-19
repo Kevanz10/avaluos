@@ -1,7 +1,5 @@
 <h2 class="text-muted text-center welcome-title">Bienvenido! Inicia tu sesión</h2>
 <div class="form_login">
-  
-
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="form-group">
       <p><%= f.label :login, 'Usuario' %>
@@ -24,8 +22,6 @@
       <%= f.submit "Entrar", class: 'btn btn-primary btn-width' %>
     </div>
   <% end %>
-
-  <%= render "devise/shared/links" %>
 </div>
 
 

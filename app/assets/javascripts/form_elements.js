@@ -1,7 +1,4 @@
 $(document).ready(function() {
-
-
-
     var elems = Array.prototype.slice.call(document.querySelectorAll('.switchery'));
 
     elems.forEach(function(html) {
