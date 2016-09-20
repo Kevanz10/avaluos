@@ -18,6 +18,7 @@
 //= require pace.min
 //= require modernizr.custom
 //= require pages.min
+//= require form-toggle.js
 //= require pages
 //= require toggles
 //= require toggles.min

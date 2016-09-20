@@ -23,6 +23,9 @@
           <div class="panel panel-transparent">
             <div class="panel-heading">
               <div class="btn-group pull-right m-b-10">
+                <% flash.each do |message_type, message| %>
+                <div class="alert alert-<%= message_type %>"><%= message %></div>
+              <% end %>
                 <%= link_to "Crear Avaluo", new_rural_path, class: 'btn btn-default' %>
               </div>
               <div class="clearfix"></div>
@@ -42,6 +45,8 @@
                       <th style="width:15%">Ciudad</th>
                     </tr>
                   </thead>
+                  <%if !@rurals.nil?%>
+                  
           				<% @rurals.each do |avaluo| %>
                     <tbody>
                       <tr>
@@ -76,6 +81,8 @@
                     </tbody>
                   <% end %>
                 </table>
+                <%end%>
+
               </div>
             </div>
           </div>

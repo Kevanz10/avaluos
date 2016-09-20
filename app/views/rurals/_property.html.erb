@@ -50,7 +50,7 @@
 	<div class= 'fades'>
 		<div class="row">
 			<%= property.label :phorizontal, "Sometido a propiedad horizontal"	%>
-			<div class="click horizontal toggle-modern" data-toggle-on="<%= @rural.property.phorizontal.nil? ? false : !property.object.phorizontal.to_i.zero? %>"></div>
+			<div class="click horizontal toggle-modern" data-toggle-on="<%= @rural.property.phorizontal.nil? ? true : !property.object.phorizontal.to_i.zero? %>"></div>
 			<%= property.check_box :phorizontal, class: "phorizontal", hidden: true %>
 		</div>
 		

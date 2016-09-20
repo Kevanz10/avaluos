@@ -52,7 +52,7 @@
 			  <%= text_field_tag "rural[titulation_attributes][num]" , @rural.titulation.claimant_address.nil? ? "" : @rural.titulation.claimant_address['num'] , { class: 'form-control' } %>
 			</div> 					
  			<div class= 'col-md-2'>
-			  <%= titu.label :titulation['compnum'], "	Complemento Numero:" %>
+			  <%= titu.label :titulation['compnum'], "	Complemento Num.:" %>
 			  <%= text_field_tag "rural[titulation_attributes][compnum]" , @rural.titulation.claimant_address.nil? ? "" : @rural.titulation.claimant_address['compnum'] , { class: 'form-control' } %>
 			</div>
 

@@ -3,8 +3,6 @@ class UsersController < ApplicationController
   layout 'rural', only: [:admin_new]
 	skip_before_filter :require_no_authentication, only: [:cancel ]
 
- 
-
   def admin_new
   	@user = User.new
   end
@@ -12,10 +10,12 @@ class UsersController < ApplicationController
   def admin_create
     @user = User.new(user_params)
       if @user.save
-        redirect_to rurals_path, notice: "User succesfully created!" 
+        flash[:success] = "Welcome to the Sample App!"
+        render rurals_path
       else
-          render :new
-      end
+        flash[:error] = "No se pude crear el usuario"
+        render :template => 'rurals/index'
+    end
   end
 
   def admin_update
