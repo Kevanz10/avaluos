@@ -2,6 +2,8 @@ class UsersController < ApplicationController
 	layout 'user'
   layout 'rural', only: [:admin_new]
 	skip_before_filter :require_no_authentication, only: [:cancel ]
+  
+
 
   def admin_new
   	@user = User.new

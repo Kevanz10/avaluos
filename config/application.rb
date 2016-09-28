@@ -28,6 +28,7 @@ module Avaluos
     config.active_record.raise_in_transactional_callbacks = true
     config.to_prepare do
         Devise::SessionsController.layout 'user'
+        Devise::RegistrationsController.layout 'rural'
     end
   end
 end

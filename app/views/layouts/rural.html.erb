@@ -115,8 +115,8 @@
             </button>
             <ul class="dropdown-menu profile-dropdown" role="menu">
               <li>
-                <%= link_to edit_user_registration_path do %>
-                  Cambiar Contrasena
+                <%= link_to edit_user_registration_path(current_user) do %>
+                  Cambiar Contraseña
                  <i class="fa fa-cog fa-fw"></i> 
                 <% end %>
               </li>
