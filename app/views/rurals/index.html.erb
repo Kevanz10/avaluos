@@ -21,11 +21,7 @@
         <div class="panel panel-transparent"> 
           <div class="panel-heading text-center">
           <div class="panel panel-transparent">
-            <div class="panel-heading">
-              <div class="btn-group pull-right m-b-10">
-                <% flash.each do |message_type, message| %>
-                <div class="alert alert-<%= message_type %>"><%= message %></div>
-              <% end %>
+            <div class="panel-heading text-right">
                 <%= link_to "Crear Avaluo", new_rural_path, class: 'btn btn-default' %>
               </div>
               <div class="clearfix"></div>

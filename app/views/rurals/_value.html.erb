@@ -14,7 +14,7 @@
 	<%= value.text_field :tiempo, class: 'form-control', :cols => 5, :rows => 5 %>
 </div>
 
-<h4 class='text-center'><b>Valor Razonable</b></h4>
+<h4 class='text-left'><b>Valor Razonable</b></h4>
   <div class="panel-body">
 		<div class="table-responsive">
 		<table class="table table-hover" id="basicTable">
@@ -34,40 +34,51 @@
 		  </thead>
 		  <% if !@evaluates.nil?%>
 			  <% @evaluates.each do |e| %>
-			  <tbody>
-			    <tr>
-			      <td class="v-align-middle">
-			        <p><%= e.descripcion %>  
-			      </td>
-			      <td class="v-align-middle ">
-			        <p>
-			          <%= e.nombre%>
-			        </p>
-			      </td>
-			      <td class="v-align-middle">
-			        <p>
-			          <%= e.unidad%>
-			        </p>
-			      </td>
-			      <td class="v-align-middle">
-			         <%= e.area%>
-			      </td>
-			      <td class="v-align-middle">
-			       <%= e.unitario%>
-			      </td>
-			      <td class="v-align-middle">
-			    	<p id='vtotal'></p>
-			      </td> 
-			    </tr>
+				  <tbody>
+				    <tr>
+				      <td class="v-align-middle">
+				        <p><%= e.descripcion %></p>  
+				      </td>
+				      <td class="v-align-middle ">
+				        <p>
+				          <%= e.nombre%>
+				        </p>
+				      </td>
+				      <td class="v-align-middle">
+				        <p>
+				          <%= e.unidad%>
+				        </p>
+				      </td>
+				      <td class="v-align-middle">
+				         <%= e.area%>
+				      </td>
+				      <td class="v-align-middle">
+				       <%= e.unitario%>
+				      </td>
+				      <td class="v-align-middle">
+				    		<p id='vtotal'></p>
+				      </td>
+				      <td class="v-align-middle">
+				    		<p id='porcent'>jijijii</p>
+				      </td>
+				    </tr>
 				<% end %>
-		  <% end %>
-		  </tbody>
+					<tr>
+					  <td class="v-align-middle"></td>
+				    <td class="v-align-middle "></td>
+				    <td class="v-align-middle"></td>
+				    <td class="v-align-middle"></td>
+				    <td class="v-align-middle">Valor Total:</td>
+						<td class="v-align-middle">
+							<p id='suma'></p>
+				 		</td>
+				 	</tr> 
+				</tbody>
+			<% end %>
 		</table> 
 	</div>
 </div>
-										
-
-<a href="#" class="add btn btn-default">Agregar Valor Razonable</a>
+<a href="#" class="add btn btn-default text-left">Agregar Valor Razonable</a>
 <div class="items">
   <%= value.nested_fields_for :evaluates, html: {class: "evaluate"}  do |e|%>
     <fieldset class="item">
@@ -105,11 +116,11 @@
 <div class="row titu-margin">
 	<div class="col-md-4">
 		<%= value.label :valoruvr, "Valor UVR"	%>
-		<%= value.text_field :valoruvr, class: 'form-control' %>	
+		<%= value.text_field :valoruvr, class: 'form-control', id: 'vuvr', :disabled => true %>	
 	</div>
 	<div class="col-md-4">
 		<%= value.label :avaluouvr, "Valor avaluo en UVR"	%>
-		<%= value.text_field :avaluouvr, class: 'form-control' %>	
+		<%= value.text_field :avaluouvr, class: 'form-control', id:'valueuvr' %>	
 	</div>
 	<div class="col-md-4">
 		<%= value.label :vasegurable, "Valor asegurable"	%>

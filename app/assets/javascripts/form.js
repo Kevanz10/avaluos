@@ -23,6 +23,17 @@ jQuery(document).ready(function($) {
   var phorizontal =  $('.click.horizontal').data('toggle-on');
   var area = $("[id*=area]");
   var vtotal = $("[id*=vtotal]");
+  var suma = 0;
+  var comparative = parseFloat($("[id*=_unitario]")[0].value);
+  var mayor = 0;
+  var menor = 0;
+  var valoruvr = parseFloat($('#vuvr').val('243.2294'));
+  var valueuvr = $('#vuvr').val();
+  var current ;
+  var current_porcentaje;
+  var length = $("[id*=_unitario]").length;
+  var valor_total = 0;
+  var currentvtotal;currentvtotal
  
   if (phorizontal == true){
     $('.faded').css('display','block');
@@ -30,7 +41,6 @@ jQuery(document).ready(function($) {
     $('.faded').hide();
   }
   
-
   if (area != 'undefined') {
     for (var i=0; i < ($("[id*=_unitario]")).length; i++) { 
       unitario = $("[id*=_unitario]")
@@ -41,5 +51,30 @@ jQuery(document).ready(function($) {
       var vtotal = $("[id*=vtotal]")[i];
       $(vtotal).append(total);
     }
-  } 
+    //Total value loop
+    for (var i=0; i < length-1; i++) {
+      current = parseFloat($("[id*=_unitario]")[i].value);
+      suma +=parseFloat($("[id*=_unitario]")[i].value);
+    }
+    
+    var totaluvr= suma/valueuvr ;
+    var h = parseFloat(totaluvr.toFixed(3));
+    $('#valueuvr').val(h);
+    //valor total function
+    $.each($("[id*=vtotal]"), function(index,value) {
+      valor_total +=parseFloat($(this).text());
+      current_porcentaje =parseFloat(parseFloat($(this).text())/valor_total)*100;
+    });
+    $('#suma').text(valor_total);
+
+    //porcentaje function
+    $.each($("[id*=vtotal]"), function(index,value) {
+      current_porcentaje =parseFloat(parseFloat($(this).text())/valor_total)*100;
+      current_porcentaje = current_porcentaje.toFixed(2);
+      $(this).parent().next().find('#porcent').text(current_porcentaje);
+      debugger;
+    });
+    
+  }    
 });
+

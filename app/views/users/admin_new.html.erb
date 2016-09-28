@@ -47,6 +47,13 @@
           </div>
         </div>
 
+        <div class="row form-group">
+          <div class="col-md-4 col-md-offset-4">
+            <%= f.label :admin, 'Admin?', class: 'inline-label' %>
+            <%= f.check_box :admin%>
+          </div>
+        </div>
+
         <div class="row"> 
             <%= f.submit "Crear Usuario", class: 'btn btn-success' %>
             <%= link_to "Cancelar", rurals_path, class: 'btn btn-success' %>       

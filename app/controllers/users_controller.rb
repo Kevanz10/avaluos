@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
       if @user.save
         flash[:success] = "Welcome to the Sample App!"
-        render rurals_path
+        redirect_to rurals_path
       else
         flash[:error] = "No se pude crear el usuario"
         render :template => 'rurals/index'
@@ -30,6 +30,6 @@ class UsersController < ApplicationController
   private
 
 	def user_params
-	  params.require(:user).permit(:id, :username, :password, :password_confirmation)
+	  params.require(:user).permit(:id, :username, :password, :password_confirmation,:admin)
 	end
 end
