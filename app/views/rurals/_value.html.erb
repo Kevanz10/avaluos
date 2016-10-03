@@ -15,8 +15,8 @@
 </div>
 
 <h4 class='text-left'><b>Valor Razonable</b></h4>
-  <div class="panel-body">
-		<div class="table-responsive">
+<div class="panel-body">
+	<div class="table-responsive">
 		<table class="table table-hover" id="basicTable">
 		  <thead>
 		    <tr>
@@ -62,7 +62,7 @@
 				    		<p id='porcent'>jijijii</p>
 				      </td>
 				    </tr>
-				<% end %>
+					<% end %>
 					<tr>
 					  <td class="v-align-middle"></td>
 				    <td class="v-align-middle "></td>
@@ -78,7 +78,10 @@
 		</table> 
 	</div>
 </div>
-<a href="#" class="add btn btn-default text-left">Agregar Valor Razonable</a>
+
+<div class="text-left">
+	<a href="" class="add btn btn-default">Agregar Valor Razonable</a>
+</div>
 <div class="items">
   <%= value.nested_fields_for :evaluates, html: {class: "evaluate"}  do |e|%>
     <fieldset class="item">
@@ -99,7 +102,7 @@
           <%= e.label :area, 'Area' %>
           <%= e.text_field :area, class: 'form-control'  %>
         </div>
-         <div class="col-md-2">
+        <div class="col-md-2">
           <%= e.label :unitario, 'Valor unitario' %>
           <%= e.text_field :unitario, class: 'form-control' %>
         </div>
@@ -191,3 +194,57 @@
 		<%= value.text_field :odireccion, class: 'form-control' %>		
 	</div>
 </div>
+
+<script>
+	 if ($("[id*=area]")) {
+    var vtotal = $("[id*=vtotal]");
+    var suma = 0;
+    var comparative = parseFloat($("[id*=_unitario]")[0].value);
+    var mayor = 0;
+    var menor = 0;
+    var valoruvr = $('#vuvr').val('243.2294');
+    var uvr_float = parseFloat(valoruvr.val());
+    var valueuvr = $('#vuvr').val();
+    var current = 0 ;
+    var current_porcentaje = 0;
+    var length = $("[id*=_unitario]").length;
+    var valor_total = 0;
+    var currentvtotal;
+    var area = $("[id*=area]");
+
+    for (var i=0; i < ($("[id*=_unitario]")).length; i++) { 
+   	  unitario = $("[id*=_unitario]");
+      var times = parseInt($("[id*=_unitario]").length);
+      var area = parseInt($("[id*=_area]").val());
+      var unit = parseInt($("[id*=_unitario]").val());
+      total = parseFloat($("[id*=_unitario]")[i].value) * parseFloat($("[id*=_area]")[i].value);
+      var vtotal = $("[id*=vtotal]")[i];
+      $(vtotal).append(total);
+    }
+
+    //Total value loop
+    for (var i=0; i < length; ++i) {
+      current = parseFloat($("[id*=_unitario]")[i].value);
+      suma +=parseFloat($("[id*=_unitario]")[i].value);
+    }
+    
+    var totaluvr= suma/valueuvr;
+
+    var h = parseFloat(totaluvr.toFixed(3));
+    $('#valueuvr').val(h);
+    //valor total function
+    $.each($("[id*=vtotal]"), function(index,value) {
+      valor_total +=parseFloat($(this).text());
+      current_porcentaje =parseFloat(parseFloat($(this).text())/valor_total)*100;
+    });
+    $('#suma').text(valor_total);
+
+    //porcentaje function
+    $.each($("[id*=vtotal]"), function(index,value) {
+      current_porcentaje =parseFloat(parseFloat($(this).text())/valor_total)*100;
+      current_porcentaje = current_porcentaje.toFixed(2);
+      $(this).parent().next().find('#porcent').text(current_porcentaje);
+    });  
+  }
+	
+</script>

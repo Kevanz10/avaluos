@@ -24,4 +24,5 @@
 //= require toggles.min
 //= require form
 //= require bootstrap.min
+//= require google_map
 
