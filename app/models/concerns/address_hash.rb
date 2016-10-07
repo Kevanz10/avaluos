@@ -2,9 +2,9 @@ module AddressHash
 	extend ActiveSupport::Concern
 	
 	def address_hash
-    hash = { tipo_via: tvia, via: via, compvia: compvia, 
-    				numeral: '#', num: num, compnum: compnum, separador: '-',
-    				placa: placa, adicional: adicional }
+    hash = { tipo_via: self.tvia, via: self.via, compvia: self.compvia, 
+    				numeral: '#', num: self.num, compnum: self.compnum, separador: '-',
+    				placa: self.placa, adicional: self.adicional }
     self.claimant_address = hash
   end
 

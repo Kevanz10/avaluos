@@ -32,39 +32,38 @@
 	<h4 class='text-left'><b>Direccion del inmueble</b></h4>
  		<div class='row'>
  			<div class="col-md-2">
-		 		<%= titu.label :titulation['tvia'], "Tipo de via" %>
-			  <%= select_tag "rural[titulation_attributes][tvia]", options_for_select(AVALUOS_RURALS['TVIA'].collect {|p| [p]}, @rural.titulation.claimant_address.nil? ? 
-			"" : @rural.titulation.claimant_address['tipo_via']) %>
+		 		<%= titu.label :tvia, "Tipo de via" %>
+		 		<%= titu.select :tvia, AVALUOS_RURALS['TVIA'].collect {|p| [p]},{include_blank: true} %>
 			</div>	
 
 			<div class= 'col-md-2'>
-				<%= titu.label :titulation['via'], "Via:" %>
-				<%= text_field_tag "rural[titulation_attributes][via]" , @rural.titulation.claimant_address.nil? ? "" : @rural.titulation.claimant_address['via'] , { class: 'form-control' } %>
+				<%= titu.label :via, "Via:" %>
+				<%= titu.text_field :via, class: 'form-control' %>
 			</div>
 
 			<div class= 'col-md-2'>
-				<%= titu.label :titulation['compvia'], "Complemento Via:" %>
-				<%= text_field_tag "rural[titulation_attributes][compvia]" , @rural.titulation.claimant_address.nil? ? "" : @rural.titulation.claimant_address['compvia'] , { class: 'form-control' } %>
+				<%= titu.label :compvia, "Complemento Via:" %>
+				<%= titu.text_field :compvia, class: 'form-control' %>
 			</div>
 
 			<div class= 'col-md-2'>
-			  <%= titu.label :titulation['num'], "Numero:" %>
-			  <%= text_field_tag "rural[titulation_attributes][num]" , @rural.titulation.claimant_address.nil? ? "" : @rural.titulation.claimant_address['num'] , { class: 'form-control' } %>
+				<%= titu.label :num, "Numero:" %>
+				<%= titu.text_field :num, class: 'form-control' %>
 			</div> 					
+
  			<div class= 'col-md-2'>
-			  <%= titu.label :titulation['compnum'], "	Complemento Num.:" %>
-			  <%= text_field_tag "rural[titulation_attributes][compnum]" , @rural.titulation.claimant_address.nil? ? "" : @rural.titulation.claimant_address['compnum'] , { class: 'form-control' } %>
+ 				<%= titu.label :compnum, "Complemento Num:" %>
+				<%= titu.text_field :compnum, class: 'form-control' %>
 			</div>
 
 			<div class= 'col-md-1'>
-				<%= titu.label :Titulation['placa'], "Placa" %>
-				<%= text_field_tag "rural[titulation_attributes][placa]" , @rural.titulation.claimant_address.nil? ? "" : @rural.titulation.claimant_address['placa'] ,  { class: 'form-control' } %>
+				<%= titu.label :placa, "Placa:" %>
+				<%= titu.text_field :placa, class: 'form-control' %>
 			</div>
 
 			<div class= 'col-md-1'>
-				<%= titu.label :titulation['adicional'], "Adicional" %>
-				<%= text_field_tag "rural[titulation_attributes][adicional]" , @rural.titulation.claimant_address.nil? ? "" : @rural.titulation.claimant_address['adicional'] , { class: 
-				  		'form-control' } %>
+				<%= titu.label :adicional, "Adicional:" %>
+				<%= titu.text_field :adicional, class: 'form-control' %>
 			</div>	   
  		</div>
 

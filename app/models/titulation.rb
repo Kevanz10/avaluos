@@ -3,7 +3,6 @@ class Titulation < ActiveRecord::Base
 
 	belongs_to :rural
 	serialize :claimant_address, JSON
-	attr_accessor :tvia, :via, :adicional, :num, :compvia, :placa, :compnum
 
 	before_save :address_hash
 	before_save :full_street_address
@@ -14,7 +13,7 @@ class Titulation < ActiveRecord::Base
 	def full_street_address
 		if !self.claimant_address.nil?
 			a = claimant_address.values.join('')
-			a + ', ' + municipio + ', ' + depart
+			a + ', ' + self.municipio + ', ' + self.depart
 		end
 	end
 end
