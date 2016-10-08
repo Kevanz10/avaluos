@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160917104144) do
+ActiveRecord::Schema.define(version: 20161007143641) do
 
   create_table "constructions", force: :cascade do |t|
     t.text     "estado"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20160917104144) do
     t.string   "locales"
     t.string   "oficina"
     t.string   "bodega"
+    t.text     "calidad"
     t.string   "tgaraje"
     t.string   "observacion"
     t.string   "privado"
@@ -88,14 +89,19 @@ ActiveRecord::Schema.define(version: 20160917104144) do
   end
 
   create_table "neighborhoods", force: :cascade do |t|
+    t.text     "alcantarillado"
     t.string   "estrato"
     t.string   "evias"
+    t.text     "acueducto"
     t.string   "blegal"
     t.string   "vpavimentadas"
+    t.text     "gas"
     t.string   "toposector"
     t.string   "svias"
+    t.text     "telefono"
     t.string   "transporte"
     t.string   "condiciones"
+    t.text     "engeria"
     t.string   "andenes"
     t.string   "usector"
     t.string   "parques"
@@ -112,8 +118,8 @@ ActiveRecord::Schema.define(version: 20160917104144) do
     t.string   "otro"
     t.string   "cicloruta"
     t.string   "pvalorizacion"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.string   "alcantasector"
     t.string   "alcantapredio"
     t.string   "acueducsector"
@@ -209,6 +215,13 @@ ActiveRecord::Schema.define(version: 20160917104144) do
     t.float    "latitude"
     t.float    "longitude"
     t.integer  "rural_id"
+    t.string   "tvia"
+    t.string   "via"
+    t.string   "adicional"
+    t.string   "num"
+    t.string   "compvia"
+    t.string   "placa"
+    t.string   "compnum"
   end
 
   create_table "users", force: :cascade do |t|

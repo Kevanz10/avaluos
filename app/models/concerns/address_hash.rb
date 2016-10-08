@@ -1,18 +1,5 @@
 module AddressHash
 	extend ActiveSupport::Concern
-	
-	def address_hash
-    hash = { tipo_via: self.tvia, via: self.via, compvia: self.compvia, 
-    				numeral: '#', num: self.num, compnum: self.compnum, separador: '-',
-    				placa: self.placa, adicional: self.adicional }
-    self.claimant_address = hash
-  end
-
-  def estados
-    estados_hash = { cpisos: cpisos, cmuros: cmuros , ctechos: ctechos, cmadera: cmadera,
-             cmetal: cmetal, cbanos: cbanos, ccocina: ccocina }
-  	self.estado = estados_hash
-  end
 
   def tinmueble_hash
     inmueble_hash = { t_inmue: t_inmue, d_tinmue: d_tinmue}

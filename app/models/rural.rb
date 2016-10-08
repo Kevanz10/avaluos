@@ -10,7 +10,6 @@ class Rural < ActiveRecord::Base
 	accepts_nested_attributes_for :titulation, :construction, :neighborhood, 
 																:property, :value, :evaluates, allow_destroy: true
 	serialize :claimant_address, JSON
-	before_save :address_hash
 
 	attr_accessor :tvia, :via, :adicional, :num, :compvia, :placa, :compnum
 end
