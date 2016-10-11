@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161007143641) do
+ActiveRecord::Schema.define(version: 20161011002211) do
 
   create_table "constructions", force: :cascade do |t|
     t.text     "estado"
@@ -73,6 +73,13 @@ ActiveRecord::Schema.define(version: 20161007143641) do
     t.string   "rbanos"
     t.string   "rcocina"
     t.string   "total"
+    t.string   "episos"
+    t.string   "emuros"
+    t.string   "etechos"
+    t.string   "emadera"
+    t.string   "emetal"
+    t.string   "ebanos"
+    t.string   "ecocina"
   end
 
   create_table "evaluates", force: :cascade do |t|
